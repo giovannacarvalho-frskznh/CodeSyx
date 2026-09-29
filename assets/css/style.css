@@ -515,3 +515,82 @@ top: 1px;
     transition: transform 0.5s ease;
     
 }
+
+.btn-full {
+    width: 100%;
+    margin-top: 6px;
+
+}
+
+.btn-primeiro:hover {
+    transform: translateY(-4px);
+}
+
+.link-alternativo {
+    text-align: center;
+    font-size: 0.75rem;
+    margin-top: 12px;
+}
+
+.link-alternativo A {
+    color: #3EDF81;);
+    text-decoration: none;
+
+}
+
+.lado-mascote{ 
+    position: absolute;
+    top: 0;
+    width: 50%;
+    left: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color:#0B2A45;
+    background-image:url("../img/mascote.png");
+    background-size: cover;
+    background-position: center;
+
+}
+
+.mascote{
+    width: 75%;
+    max-height: 390px;
+    transition: transform 0.8s ease;
+}
+
+.frase {
+    max-width: 350px;
+    margin-top: 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+
+}
+
+.container-auth.invertido .card-auth {
+    transform: translateX(calc(100% + 40px));
+}
+
+.container-auth.invertido .lado-mascote {
+    transform: translateX(-100%);
+}
+
+.container-auth.invertido .mascote {
+    transform: scaleX(-1);
+}
+
+.container-auth.invertido .tela-login {
+    display: block;
+}
+
+.container-auth.invertido .tela-cadastro {
+    display: none;
+}
+
+.sem-animacao,
+.semanimacao * {
+    transition: none !important;
+}
