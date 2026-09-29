@@ -406,3 +406,112 @@ main {
 position: relative;
 top: 1px;
 }
+
+.container-auth{
+    position: relative;
+    width: 1000px;
+    height: 650px;
+    margin: 40px auto;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: var(--cor-de-fundo);
+    box-shadow: 0 0 40px rgba(1, 165, 185, 0.3);
+}
+
+.card-auth,
+.lado-mascote {
+    transition: transform 0.8s ease;
+}
+
+.card-auth{
+    position: absolute;
+    top: 16px;
+    bottom: 16px;
+    left: 20px;
+    width: calc(-50%-40px);
+    padding: 24px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid transparent;
+    border-radius: 26px;
+    background: linear-gradient(var(--cor-de-fundo)) padding-box,
+    linear-gradient(160deg, #01A5B9, #0064A7) border-box;
+}
+
+.card-auth .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+}
+
+.card-auth .logo img{
+    width: 48px;
+    height: auto;
+}
+
+.card-auth .logo h2{
+    font-size: 1.9rem;
+}
+
+.subtitulo-auth {
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600px;
+    margin: 8px 0 16px;
+}
+
+.tela-login {
+    display: none;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 10px;
+}
+
+.grupo-input label{
+    font-size: 0.75ren;
+}
+
+.grupo-input,
+.input-select {
+    padding: 8px 12px;
+    border: 1px solid #1fa9a0;
+    border-radius: 8px;
+    background-color: #16224d;
+    color: var(--cor-letra-geral);
+    font-family: inherit;
+    font-size: 0.8rem;
+}
+
+.input-select option {
+    background-color: #16224d;
+}
+
+.grupo-input input:focus,
+.input-select:focus {
+    outline: 2px solid #3EDF81;
+}
+
+.grupo-input input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 100px #16224d inset;
+    -webkit-text-fill-color: #fff;
+}
+
+.btn-primeiro {
+    padding: 11px;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #3EDF81, var(--cor-principal02));
+    color: var(--cor-letra-geral);
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    
+}
