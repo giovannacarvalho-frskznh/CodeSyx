@@ -407,8 +407,6 @@ position: relative;
 top: 1px;
 }
 
-
-
 .container-auth{
     position: relative;
     width: 1000px;
@@ -596,3 +594,4 @@ top: 1px;
 .semanimacao * {
     transition: none !important;
 }
+
