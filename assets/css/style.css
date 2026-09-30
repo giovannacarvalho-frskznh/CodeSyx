@@ -610,5 +610,6 @@ top: 1px;
 /* abre direto no cadastro sem animar, o js usa isso */
 .sem-animacao,
 .sem-animacao * {
+    padding: 0;
     transition: none !important; /* important passa por cima de qualquer regra, so usa quando precisa */
 }
