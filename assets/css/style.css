@@ -85,10 +85,6 @@ header {
     color: var(--cor-letra-nav);
 }
 
-.nav-home-header li a:hover {
-    color: var(--cor-letra-nav);
-}
-
 .nav-home-header li a {
     position: relative;
     color: var(--cor-letra-nav);
