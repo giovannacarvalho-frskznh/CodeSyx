@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.title = "CodeSyx - Login";
     }
 
-    // faz o cadastro e o login trocarem  na hora, sem recarregarr
+    // faz o cadastro e o login trocarem na hora, sem recarregar
     document.querySelectorAll('a[href="#cadastro"]').forEach((link) => {
         link.addEventListener("click", (e) => {
             e.preventDefault();
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Se abrir com login.html#cadastro (vindo da home), já abre no cadastro sem animar
+    // Se abrir com cadastro.html#cadastro (vindo da home), já abre no cadastro sem animar
     if (location.hash === "#cadastro") {
         auth.classList.add("sem-animacao");
         mostrarCadastro();
@@ -50,14 +50,36 @@ document.addEventListener("DOMContentLoaded", () => {
     senha.addEventListener("input", conferirSenhas);
     confirmar.addEventListener("input", conferirSenhas);
 
-    // Sem back-end: só impede o envio por enquanto
+    // LOGIN: confere o e-mail e a senha no usuarios.json e manda pra tela inicial
     document.getElementById("form-login").addEventListener("submit", (e) => {
         e.preventDefault();
-        // depois: window.location.href = "inicial.html";
+
+        const emailDigitado = document.getElementById("login-email").value.trim();
+        const senhaDigitada = document.getElementById("login-senha").value;
+        const erroLogin = document.getElementById("erro-login");
+
+        fetch("../assets/js/usuarios.json")
+            .then((resposta) => resposta.json())
+            .then((usuarios) => {
+                const usuarioEncontrado = usuarios.find(
+                    (u) => u.email === emailDigitado && u.senha === senhaDigitada
+                );
+
+                if (usuarioEncontrado) {
+                    localStorage.setItem("usuarioLogado", usuarioEncontrado.nome);
+                    window.location.href = "inicial.html";
+                } else {
+                    erroLogin.textContent = "E-mail ou senha incorretos.";
+                }
+            })
+            .catch(() => {
+                erroLogin.textContent = "Erro ao verificar login. Tente novamente.";
+            });
     });
 
+    // Sem back-end: o cadastro só impede o envio e volta pro login
     document.getElementById("form-cadastro").addEventListener("submit", (e) => {
         e.preventDefault();
-        mostrarLogin(); // depois de cadastrar, volta para o login
+        mostrarLogin();
     });
 });

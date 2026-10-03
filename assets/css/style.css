@@ -609,3 +609,1389 @@ top: 1px;
     padding: 0;
     transition: none !important; /* important passa por cima de qualquer regra, so usa quando precisa */
 }
+
+
+
+/*Reset da pagina */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* variaveis */
+
+:root {
+    --dark-blue: #0a1433;
+    --sidebar-blue: #0b1738;
+    --card-blue: #12396e;
+
+    --blue: #008cff;
+
+    --green: #6fcc39;
+    --light-green: #00ff66;
+
+    --white: #ffffff;
+
+    --text: #e9edf7;
+    --muted: #b7c0d4;
+}
+
+
+/* Body */
+
+body {
+    min-height: 100vh;
+
+    background: var(--dark-blue);
+
+    color: var(--white);
+
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* Header*/
+
+.header {
+    width: 100%;
+    height: 102px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 36px;
+
+    background: var(--dark-blue);
+
+    border-bottom: 1px solid var(--blue);
+
+    position: relative;
+
+    z-index: 10;
+}
+
+
+/* LOGO */
+
+.logo-area {
+    width: 300px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.logo-icon {
+    width: 76px;
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--light-green);
+
+    font-size: 52px;
+}
+
+
+.logo-text {
+    font-family: Georgia, serif;
+
+    font-size: 38px;
+
+    font-weight: 700;
+}
+
+
+.logo-text span {
+    color: #00dca8;
+}
+
+
+/* BUSCA */
+
+.search-form {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.search-input {
+    width: 540px;
+    height: 52px;
+
+    padding: 0 20px;
+
+    border: 1px solid var(--blue);
+
+    border-radius: 10px;
+
+    background: #1d2c52;
+
+    color: var(--white);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+
+.search-input::placeholder {
+    color: #c4cada;
+}
+
+
+.search-input:focus {
+    border-color: var(--green);
+}
+
+
+/* NOTIFICAÇÃO */
+
+.notification-button {
+    width: 70px;
+    height: 50px;
+
+    margin-left: 20px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--white);
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* layout */
+
+.page-layout {
+    min-height: calc(100vh - 102px);
+
+    display: grid;
+
+    grid-template-columns:
+        268px
+        minmax(0, 1fr)
+        384px;
+}
+
+
+/*Sidebar Esquerda*/
+
+.sidebar {
+    min-height: calc(100vh - 102px);
+
+    padding: 58px 17px 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: var(--sidebar-blue);
+
+    border-right: 1px solid var(--blue);
+}
+
+
+.sidebar-navigation {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+.sidebar-link {
+    height: 64px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 0 28px;
+
+    color: var(--white);
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: 500;
+
+    border-radius: 14px;
+}
+
+
+.sidebar-link:hover {
+    background: #162654;
+}
+
+
+.sidebar-link.active {
+    background: #32a935;
+}
+
+
+/* ÍCONES DA SIDEBAR */
+
+.sidebar-icon {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+
+/* card motivacional esquerda */
+
+.sidebar-message {
+    margin-top: auto;
+
+    padding: 24px 18px;
+
+    min-height: 150px;
+
+    border: 1px solid var(--blue);
+
+    border-radius: 18px;
+
+    background: #26375f;
+}
+
+
+.sidebar-message h2 {
+    color: var(--green);
+
+    font-size: 20px;
+
+    line-height: 1.5;
+}
+
+
+.sidebar-message p {
+    margin-top: 5px;
+
+    color: var(--white);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* Comteudo principal */
+
+.main-content {
+    min-width: 0;
+
+    padding: 0 28px 60px;
+
+    overflow: hidden;
+}
+
+
+/* Hero */
+
+.hero {
+    min-height: 460px;
+
+    position: relative;
+
+    padding: 30px;
+
+    overflow: hidden;
+
+    background-image:
+        url("../img/Fundo-tela-inicial.png   ");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 600px;
+}
+
+
+.welcome-text {
+    margin-bottom: 12px;
+
+    color: var(--green);
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+
+.hero-title {
+    font-size: 40px;
+
+    line-height: 1.35;
+
+    font-weight: 700;
+}
+
+
+.hero-title span {
+    color: var(--green);
+}
+
+
+.hero-description {
+    margin-top: 8px;
+
+    color: var(--white);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+.primary-button {
+    margin-top: 40px;
+
+    height: 60px;
+
+    padding: 0 24px;
+
+    border: 0;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        100deg,
+        var(--green),
+        #00bfa5,
+        #008cff
+    );
+
+    color: var(--white);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.primary-button:hover {
+    filter: brightness(1.1);
+}
+
+
+/*Recomendações */
+
+.recommendations {
+    padding-top: 35px;
+}
+
+
+.section-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+}
+
+
+.section-header h2 {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    font-size: 23px;
+}
+
+
+.section-icon {
+    color: var(--green);
+
+    font-size: 27px;
+}
+
+
+.see-all {
+    color: var(--green);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/*Grid de pessoas */
+
+.people-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+
+    align-items: stretch;
+}
+
+
+/*
+    O HTML possui um quarto card
+    para poder ser usado no futuro.
+
+    Atualmente o Figma possui apenas
+    três recomendações.
+*/
+
+.person-card:nth-child(n + 4) {
+    display: none;
+}
+
+
+/*CARD DE PESSOA*/
+
+.person-card {
+    height: 270px;
+
+    padding: 14px 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    border: 1px solid var(--blue);
+
+    border-radius: 16px;
+
+    background: #0c3266;
+}
+
+
+.person-card:hover {
+    border-color: var(--green);
+}
+
+
+/* Avatar */
+
+.avatar {
+    width: 62px;
+    height: 62px;
+
+    margin-bottom: 8px;
+
+    border: 2px solid var(--blue);
+
+    border-radius: 50%;
+
+    background: #26375f;
+}
+
+
+/* Nome */
+
+.person-card h3 {
+    min-height: 22px;
+
+    font-size: 15px;
+
+    line-height: 1.3;
+}
+
+
+/* Curso */
+
+.person-course {
+    min-height: 34px;
+
+    margin-top: 5px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.4;
+}
+
+
+/* Matéria */
+
+.person-subject {
+    min-height: 34px;
+
+    margin-top: 2px;
+
+    color: var(--green);
+
+    font-size: 12px;
+
+    line-height: 1.4;
+}
+
+
+/* TAGS */
+
+.tags {
+    min-height: 40px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 4px;
+
+    margin-top: 2px;
+}
+
+
+.tags span {
+    padding: 4px 9px;
+
+    border-radius: 15px;
+
+    background: var(--green);
+
+    color: #09230d;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+/* botao conctar */
+
+.connect-button {
+    min-height: 35px;
+
+    margin-top: auto;
+
+    padding: 4px 17px;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    background: var(--green);
+
+    color: #071b0a;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.connect-button:hover {
+    filter: brightness(1.1);
+}
+
+
+
+/*SIDEBAR DIREITA*/
+
+.right-sidebar {
+    min-height: calc(100vh - 102px);
+
+    padding: 20px 18px 40px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+
+    background: var(--dark-blue);
+}
+
+
+/*Card De Progresso*/
+
+.progress-card {
+    padding: 20px;
+
+    border: 1px solid var(--blue);
+
+    border-radius: 18px;
+
+    background: #26375f;
+}
+
+
+.card-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.card-title h2 {
+    font-size: 19px;
+}
+
+
+.title-icon {
+    font-size: 24px;
+}
+
+
+.xp-area {
+    margin-top: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+.xp-circle {
+    width: 64px;
+    height: 64px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 5px solid var(--green);
+
+    border-radius: 50%;
+
+    color: var(--green);
+
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+
+.xp-info {
+    flex: 1;
+}
+
+
+.xp-info strong {
+    font-size: 17px;
+}
+
+
+.progress-bar {
+    width: 100%;
+
+    height: 16px;
+
+    margin-top: 8px;
+
+    border: 2px solid var(--blue);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.progress-fill {
+    width: 45%;
+
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        var(--green),
+        var(--blue)
+    );
+}
+
+
+.progress-divider {
+    height: 1px;
+
+    margin: 20px 0 12px;
+
+    background: #315071;
+}
+
+
+.progress-card h3 {
+    font-size: 13px;
+}
+
+
+.area-tags {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+
+.area-tags span {
+    flex: 1;
+
+    padding: 6px 7px;
+
+    border-radius: 8px;
+
+    background: #0d193d;
+
+    color: var(--green);
+
+    text-align: center;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+/*SOS DÚVIDAs*/
+
+.help-card {
+    padding: 20px;
+
+    border: 1px solid var(--blue);
+
+    border-radius: 18px;
+
+    background: #101f46;
+}
+
+
+.help-header {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+}
+
+
+.help-header h2 {
+    font-size: 19px;
+}
+
+
+.help-header p {
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+.online {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 7px 12px;
+
+    border-radius: 10px;
+
+    background: #052c32;
+
+    font-size: 11px;
+}
+
+
+.online i,
+.available i {
+    width: 9px;
+    height: 9px;
+
+    display: inline-block;
+
+    border-radius: 50%;
+
+    background: #00ff4c;
+}
+
+
+.help-content {
+    margin-top: 18px;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    background: #075eb2;
+}
+
+
+.help-content h3 {
+    font-size: 15px;
+}
+
+
+.help-content p {
+    margin-top: 4px;
+
+    font-size: 11px;
+}
+
+
+.available {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 15px;
+
+    font-size: 11px;
+}
+
+
+.help-button {
+    width: 100%;
+
+    height: 38px;
+
+    margin-top: 18px;
+
+    border: 0;
+
+    border-radius: 12px;
+
+    background: var(--green);
+
+    color: #0a2410;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.help-button:hover {
+    filter: brightness(1.1);
+}
+
+
+
+/*Card Motivacional Direita  */
+
+.right-message {
+    min-height: 230px;
+
+    margin-top: auto;
+
+    padding: 25px 20px;
+
+    background: #26375f;
+
+    text-align: center;
+}
+
+
+.target-icon {
+    margin-bottom: 16px;
+
+    color: var(--green);
+
+    font-size: 58px;
+
+    line-height: 1;
+}
+
+
+.right-message h2 {
+    color: var(--white);
+
+    font-size: 17px;
+
+    line-height: 1.5;
+}
+
+
+.right-message p {
+    margin-top: 18px;
+
+    color: var(--white);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/*Responsividadee */
+
+@media (max-width: 1200px) {
+
+    .page-layout {
+        grid-template-columns:
+            230px
+            minmax(0, 1fr);
+    }
+
+
+    .right-sidebar {
+        display: none;
+    }
+
+
+    .logo-area {
+        width: 240px;
+    }
+
+
+    .search-input {
+        width: 450px;
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .page-layout {
+        display: block;
+    }
+
+
+    .sidebar {
+        display: none;
+    }
+
+
+    .main-content {
+        padding: 0 20px 40px;
+    }
+
+
+    .people-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .header {
+        padding: 0 20px;
+    }
+
+
+    .logo-area {
+        width: auto;
+    }
+
+
+    .logo-text {
+        font-size: 28px;
+    }
+
+
+    .logo-icon {
+        width: 45px;
+
+        font-size: 38px;
+    }
+
+
+    .search-input {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .header {
+        height: auto;
+
+        padding: 15px;
+
+        flex-wrap: wrap;
+
+        gap: 12px;
+    }
+
+
+    .logo-area {
+        width: 100%;
+    }
+
+
+    .search-form {
+        order: 3;
+
+        width: 100%;
+    }
+
+
+    .notification-button {
+        position: absolute;
+
+        right: 10px;
+
+        top: 20px;
+    }
+
+
+    .hero-title {
+        font-size: 30px;
+    }
+
+
+    .people-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .section-header {
+        align-items: flex-start;
+    }
+
+
+    .section-header h2 {
+        font-size: 20px;
+    }
+
+}
+
+
+/*  Login,Senha E o Cadastro*/
+
+.container-auth {
+    position: relative;
+
+    width: 1000px;
+    height: 650px;
+
+    margin: 40px auto;
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    background: var(--dark-blue);
+
+    box-shadow: 0 0 40px rgba(0, 140, 255, 0.25);
+}
+
+.card-auth,
+.lado-mascote {
+    transition: transform 0.8s ease;
+}
+
+.card-auth {
+    position: absolute;
+
+    top: 16px;
+    bottom: 16px;
+    left: 20px;
+
+    width: calc(50% - 40px);
+
+    padding: 24px 36px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border: 2px solid var(--blue);
+    border-radius: 26px;
+
+    background: var(--dark-blue);
+}
+
+.card-auth .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 2px;
+
+    margin-bottom: 10px;
+}
+
+.card-auth .logo img {
+    width: 48px;
+    height: auto;
+}
+
+.card-auth .logo h2 {
+    font-family: Georgia, serif;
+
+    font-size: 1.9rem;
+}
+
+.card-auth .logo span {
+    color: #00dca8;
+}
+
+.subtitulo-auth {
+    text-align: center;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    margin: 8px 0 6px;
+}
+
+/* texto pequeno de apoio embaixo do título, usado nas telas de senha */
+.texto-auxiliar {
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 0.78rem;
+    line-height: 1.4;
+
+    margin-bottom: 16px;
+}
+
+/* telas escondidas por padrão: login e cadastro já existiam,
+   estas quatro são as novas do fluxo de "esqueci minha senha" */
+.tela-login,
+.tela-recuperar,
+.tela-verificar,
+.tela-definir-senha,
+.tela-senha-redefinida {
+    display: none;
+}
+
+/* classe que o JS liga em QUALQUER uma dessas telas pra mostrar ela */
+.tela-visivel {
+    display: block !important;
+}
+
+/* quando uma tela extra está ativa, login e cadastro ficam escondidos
+   mesmo que o container esteja ou não com a classe "invertido" */
+.container-auth.tela-extra-ativa .tela-login,
+.container-auth.tela-extra-ativa .tela-cadastro {
+    display: none !important;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    margin-bottom: 10px;
+}
+
+.grupo-input label {
+    font-size: 0.75rem;
+}
+
+.grupo-input input,
+.input-select {
+    padding: 8px 12px;
+
+    border: 1px solid var(--blue);
+    border-radius: 8px;
+
+    background: #1d2c52;
+
+    color: var(--white);
+
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8rem;
+}
+
+.input-select option {
+    background: #1d2c52;
+}
+
+.grupo-input input:focus,
+.input-select:focus {
+    outline: 2px solid var(--green);
+}
+
+/* evita o fundo branco do autopreenchimento do navegador */
+.grupo-input input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 100px #1d2c52 inset;
+    -webkit-text-fill-color: #fff;
+}
+
+/* link "Esqueceu sua senha?" dentro do form de login */
+.link-esqueceu {
+    text-align: right;
+
+    font-size: 0.75rem;
+
+    margin: -4px 0 14px;
+}
+
+.link-esqueceu a {
+    color: var(--green);
+
+    text-decoration: none;
+}
+
+.btn-primeiro {
+    padding: 11px;
+
+    border: 0;
+    border-radius: 20px;
+
+    background: linear-gradient(100deg, var(--green), #00bfa5, var(--blue));
+
+    color: var(--white);
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    margin-top: 6px;
+}
+
+.btn-primeiro:hover {
+    filter: brightness(1.1);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.link-alternativo {
+    text-align: center;
+
+    font-size: 0.75rem;
+
+    margin-top: 12px;
+}
+
+.link-alternativo a {
+    color: var(--green);
+
+    text-decoration: none;
+}
+
+.lado-mascote {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 50%;
+    height: 100%;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: var(--sidebar-blue);
+}
+
+.mascote {
+    width: 75%;
+    max-height: 390px;
+
+    transition: transform 0.8s ease;
+}
+
+.frase {
+    max-width: 340px;
+
+    margin-top: 12px;
+
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* login: o js liga a classe "invertido" e tudo troca de lado */
+
+.container-auth.invertido .card-auth {
+    transform: translateX(calc(100% + 40px));
+}
+
+.container-auth.invertido .lado-mascote {
+    transform: translateX(-100%);
+}
+
+.container-auth.invertido .mascote {
+    transform: scaleX(-1);
+}
+
+.container-auth.invertido .tela-login {
+    display: block;
+}
+
+.container-auth.invertido .tela-cadastro {
+    display: none;
+}
+
+/* abre direto numa tela sem animar (usado pelo js) */
+.sem-animacao,
+.sem-animacao * {
+    transition: none !important;
+}

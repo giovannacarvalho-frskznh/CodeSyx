@@ -1,167 +1,638 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/style.css">
+
     <title>CodeSyx - Início</title>
+
+    <link rel="stylesheet" href="/CodeSyx/assets/css/style.css">
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
+
 <body>
 
-    <!-- Topo -->
-    <header class="topo">
-        <div class="logo">
-            <img src="../assets/img/logo.png" alt="Logo CodeSyx">
-            <h2>Code<span>Syx</span></h2>
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header class="header">
+
+        <div class="logo-area">
+
+            <div class="logo-icon">
+                <img src="/CodeSyx/assets/img/logo.png" alt="">
+            </div>
+
+            <span class="logo-text">
+                Code<span>Syx</span>
+            </span>
+
         </div>
 
-        <div class="busca">
-            <input type="text" placeholder="Buscar pessoas, linguagens, matérias...">
-        </div>
 
-        <button class="sino">🔔</button>
+        <form class="search-form" id="searchForm">
+
+            <input type="search" id="searchInput" class="search-input"
+                placeholder="Buscar pessoas, linguagens, matérias...">
+
+        </form>
+
+
+        <button type="button" class="notification-button" id="notificationButton" aria-label="Notificações">
+
+            ♧
+
+        </button>
+
     </header>
 
-    <div class="pagina-inicial">
 
-        <!-- Menu lateral -->
-        <nav class="menu-lateral">
-            <a href="#" class="item-menu ativo">Início</a>
-            <a href="#" class="item-menu">Encontrar pessoas</a>
-            <a href="#" class="item-menu">Conversas</a>
-            <a href="#" class="item-menu">Perfil</a>
 
-            <div class="caixa-frase">
-                <p>Juntos, vamos mais longe.</p>
-                <span>Estude, Evolua e Conquiste.</span>
-            </div>
-        </nav>
+    <!-- =========================
+         LAYOUT DA PÁGINA
+    ========================== -->
 
-        <!-- Conteúdo central -->
-        <main class="conteudo-central">
+    <div class="page-layout">
 
-            <section class="boas-vindas">
-                <p class="saudacao">Bem-vindo(a), Usuário!</p>
-                <h1>Encontre sua <span class="destaque">turma</span>. Evolua junto</h1>
-                <p class="texto-boas-vindas">
-                    Conecte-se com outros estudantes da sua área, mesmo semestre
-                    ou que já passaram pela matéria. Juntos, o aprendizado fica mais fácil.
+
+        <!-- =========================
+             MENU LATERAL ESQUERDO
+        ========================== -->
+
+        <aside class="sidebar">
+
+            <nav class="sidebar-navigation" aria-label="Menu principal">
+
+
+                <!-- INÍCIO -->
+
+                <a href="#" class="sidebar-link active">
+
+                    <span class="sidebar-icon">
+                        ⌂
+                    </span>
+
+                    <span>
+                        Início
+                    </span>
+
+                </a>
+
+
+                <!-- ENCONTRAR PESSOAS -->
+
+                <a href="#" class="sidebar-link" id="findPeopleLink">
+
+                    <img src="../assets/img/Find User Male.png" alt="" class="sidebar-icon">
+
+                    <span>
+                        Encontrar pessoas
+                    </span>
+
+                </a>
+
+
+                <!-- CONVERSAS -->
+
+                <a href="#" class="sidebar-link">
+
+                    <img src="../assets/img/Speech Bubble.png " alt="" class="sidebar-icon">
+
+                    <span>
+                        Conversas
+                    </span>
+
+                </a>
+
+
+                <!-- PERFIL -->
+
+                <a href="#" class="sidebar-link">
+
+                    <img src="../assets/img/Profile.png" alt="" class="sidebar-icon">
+
+                    <span>
+                        Perfil
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+
+            <!-- CARD MOTIVACIONAL -->
+
+            <section class="sidebar-message">
+
+                <h2>
+                    Juntos, vamos<br>
+                    mais longe.
+                </h2>
+
+                <p>
+                    Estude, Evolua e<br>
+                    Conquiste.
                 </p>
-                <button class="botao-verde">Encontrar pessoas</button>
+
             </section>
 
-            <section class="recomendacoes">
-                <div class="titulo-recomendacoes">
-                    <h2>Recomendações para você</h2>
-                    <a href="#">Ver todos →</a>
-                </div>
+        </aside>
 
-                <div class="lista-cards">
 
-                    <div class="card-pessoa">
-                        <div class="foto-pessoa"></div>
-                        <h3>Lucas Almeida</h3>
-                        <p>2º semestre - GTI</p>
-                        <p>Python Listas</p>
-                        <div class="tags-pessoa">
-                            <span>Python</span>
-                            <span>Funções</span>
-                            <span>Listas</span>
-                        </div>
-                        <button class="botao-conectar">Conectar-se</button>
-                    </div>
 
-                    <div class="card-pessoa">
-                        <div class="foto-pessoa"></div>
-                        <h3>Gabriel Santos</h3>
-                        <p>3º semestre - ADS</p>
-                        <p>Java POO</p>
-                        <div class="tags-pessoa">
-                            <span>POO</span>
-                            <span>Java</span>
-                            <span>React</span>
-                        </div>
-                        <button class="botao-conectar">Conectar-se</button>
-                    </div>
+        <!-- =========================
+             CONTEÚDO PRINCIPAL
+        ========================== -->
 
-                    <div class="card-pessoa">
-                        <div class="foto-pessoa"></div>
-                        <h3>Ana Castela</h3>
-                        <p>2º semestre - Ciência da Computação</p>
-                        <p>Java Banco de Dados</p>
-                        <div class="tags-pessoa">
-                            <span>POO</span>
-                            <span>Java</span>
-                            <span>SQL</span>
-                        </div>
-                        <button class="botao-conectar">Conectar-se</button>
-                    </div>
+        <main class="main-content">
 
-                    <div class="card-pessoa">
-                        <div class="foto-pessoa"></div>
-                        <h3>Ana Castela</h3>
-                        <p>2º semestre - Ciência da Computação</p>
-                        <p>Java Banco de Dados</p>
-                        <div class="tags-pessoa">
-                            <span>POO</span>
-                            <span>Java</span>
-                            <span>SQL</span>
-                        </div>
-                        <button class="botao-conectar">Conectar-se</button>
-                    </div>
+
+            <!-- =========================
+                 HERO
+            ========================== -->
+
+            <section class="hero">
+
+                <div class="hero-content">
+
+
+                    <p class="welcome-text">
+                        Bem-vindo(a), Usuário!
+                    </p>
+
+
+                    <h1 class="hero-title">
+
+                        Encontre sua
+                        <span>turma.</span>
+
+                        <br>
+
+                        <span>
+                            Evolua junto.
+                        </span>
+
+                    </h1>
+
+
+                    <p class="hero-description">
+
+                        Conecte-se com outros estudantes da sua área,<br>
+                        mesmo semestre ou que já passaram pela matéria.<br>
+                        Juntos, o aprendizado fica mais fácil.
+
+                    </p>
+
+
+                    <button type="button" class="primary-button" id="findPeopleButton">
+
+                        Encontrar pessoas
+
+                    </button>
 
                 </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 RECOMENDAÇÕES
+            ========================== -->
+
+            <section class="recommendations" id="recommendations">
+
+
+                <!-- CABEÇALHO DA SEÇÃO -->
+
+                <div class="section-header">
+
+                    <h2>
+
+                        <span class="section-icon">
+                            ♧
+                        </span>
+
+                        Recomendações para você
+
+                    </h2>
+
+
+                    <a href="#" class="see-all">
+
+                        Ver todos →
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- =========================
+                     CARDS DE PESSOAS
+                ========================== -->
+
+                <div class="people-grid">
+
+
+                    <!-- CARD 1 -->
+
+                    <article class="person-card">
+
+                        <div class="avatar"></div>
+
+
+                        <h3>
+                            Lucas Almeida
+                        </h3>
+
+
+                        <p class="person-course">
+                            2º semestre - GTI
+                        </p>
+
+
+                        <p class="person-subject">
+                            Python Listas
+                        </p>
+
+
+                        <div class="tags">
+
+                            <span>
+                                Python
+                            </span>
+
+                            <span>
+                                Funções
+                            </span>
+
+                            <span>
+                                Listas
+                            </span>
+
+                        </div>
+
+
+                        <button type="button" class="connect-button" data-user="Lucas Almeida">
+
+                            Conectar-se
+
+                        </button>
+
+                    </article>
+
+
+
+                    <!-- CARD 2 -->
+
+                    <article class="person-card">
+
+                        <div class="avatar"></div>
+
+
+                        <h3>
+                            Gabriel Santos
+                        </h3>
+
+
+                        <p class="person-course">
+                            3º semestre - ADS
+                        </p>
+
+
+                        <p class="person-subject">
+                            Java POO
+                        </p>
+
+
+                        <div class="tags">
+
+                            <span>
+                                POO
+                            </span>
+
+                            <span>
+                                Java
+                            </span>
+
+                            <span>
+                                React
+                            </span>
+
+                        </div>
+
+
+                        <button type="button" class="connect-button" data-user="Gabriel Santos">
+
+                            Conectar-se
+
+                        </button>
+
+                    </article>
+
+
+
+                    <!-- CARD 3 -->
+
+                    <article class="person-card">
+
+                        <div class="avatar"></div>
+
+
+                        <h3>
+                            Ana Castela
+                        </h3>
+
+
+                        <p class="person-course">
+                            2º semestre - Ciência da Computação
+                        </p>
+
+
+                        <p class="person-subject">
+                            Java Banco de Dados
+                        </p>
+
+
+                        <div class="tags">
+
+                            <span>
+                                POO
+                            </span>
+
+                            <span>
+                                Java
+                            </span>
+
+                            <span>
+                                SQL
+                            </span>
+
+                        </div>
+
+
+                        <button type="button" class="connect-button" data-user="Ana Castela">
+
+                            Conectar-se
+
+                        </button>
+
+                    </article>
+
+
+
+                    <!-- CARD 4
+                         Mantido para futuro uso -->
+
+                    <article class="person-card">
+
+                        <div class="avatar"></div>
+
+
+                        <h3>
+                            Maria Silva
+                        </h3>
+
+
+                        <p class="person-course">
+                            2º semestre - ADS
+                        </p>
+
+
+                        <p class="person-subject">
+                            JavaScript Avançado
+                        </p>
+
+
+                        <div class="tags">
+
+                            <span>
+                                JavaScript
+                            </span>
+
+                            <span>
+                                Web
+                            </span>
+
+                            <span>
+                                DOM
+                            </span>
+
+                        </div>
+
+
+                        <button type="button" class="connect-button" data-user="Maria Silva">
+
+                            Conectar-se
+
+                        </button>
+
+                    </article>
+
+                </div>
+
             </section>
 
         </main>
 
-        <!-- Coluna direita -->
-        <aside class="coluna-direita">
 
-            <div class="card-progresso">
-                <h3>Seu progresso</h3>
-                <div class="xp">
-                    <span class="circulo-xp">XP</span>
-                    <span>120 XP</span>
-                </div>
-                <div class="barra-xp">
-                    <div class="barra-xp-preenchida"></div>
-                </div>
-                <p class="label-area">Sua área</p>
-                <div class="tags-area">
-                    <span>ADS</span>
-                    <span>2ºSemestre</span>
-                    <span>Python</span>
-                </div>
-            </div>
 
-            <div class="card-sos">
-                <div class="topo-sos">
-                    <h3>SOS Dúvida</h3>
-                    <span class="status-online">Online</span>
-                </div>
-                <p>Encontre alguém em instantes</p>
+        <!-- =========================
+             MENU LATERAL DIREITO
+        ========================== -->
 
-                <div class="ajuda-disponivel">
-                    <div class="topo-ajuda">
-                        <div>
-                            <strong>Python Listas</strong>
-                            <p>2ºSemestre</p>
-                        </div>
-                        <span>3 pessoas disponíveis</span>
+        <aside class="right-sidebar">
+
+
+            <!-- =========================
+                 PROGRESSO
+            ========================== -->
+
+            <section class="progress-card">
+
+
+                <div class="card-title">
+
+                    <span class="title-icon">
+                        ☷
+                    </span>
+
+                    <h2>
+                        Seu progresso
+                    </h2>
+
+                </div>
+
+
+
+                <div class="xp-area">
+
+
+                    <div class="xp-circle">
+                        <span>
+                            XP
+                        </span>
                     </div>
-                    <button class="botao-verde botao-full">Encontrar ajuda agora</button>
-                </div>
-            </div>
 
-            <div class="card-motivacional">
-                <p>Seu esforço te leva mais longe.</p>
-                <span>Grandes conquistas começam com pequenas conversas</span>
-            </div>
+
+                    <div class="xp-info">
+
+                        <strong>
+                            120 XP
+                        </strong>
+
+
+                        <div class="progress-bar">
+
+                            <div class="progress-fill"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="progress-divider"></div>
+
+
+                <h3>
+                    Sua área
+                </h3>
+
+
+                <div class="area-tags">
+
+                    <span>
+                        ADS
+                    </span>
+
+                    <span>
+                        2ºSemestre
+                    </span>
+
+                    <span>
+                        Python
+                    </span>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 SOS DÚVIDA
+            ========================== -->
+
+            <section class="help-card">
+
+
+                <div class="help-header">
+
+
+                    <div>
+
+                        <h2>
+                            SOS Dúvida
+                        </h2>
+
+                        <p>
+                            Encontre alguém em instantes
+                        </p>
+
+                    </div>
+
+
+                    <span class="online">
+
+                        <i></i>
+
+                        Online
+
+                    </span>
+
+                </div>
+
+
+
+                <article class="help-content">
+
+                    <h3>
+                        Python Lista
+                    </h3>
+
+
+                    <p>
+                        2º Semestre
+                    </p>
+
+
+                    <span class="available">
+
+                        <i></i>
+
+                        3 pessoas disponíveis
+
+                    </span>
+
+
+                    <button type="button" class="help-button" id="helpButton">
+
+                        Encontrar ajuda agora
+
+                    </button>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- =========================
+                 CARD MOTIVACIONAL
+            ========================== -->
+
+            <section class="right-message">
+
+
+                <div class="target-icon">
+                    ◎
+                </div>
+
+
+                <h2>
+
+                    Seu esforço te leva<br>
+                    mais longe.
+
+                </h2>
+
+
+                <p>
+
+                    Grandes conquistas começam<br>
+                    com pequenas conversas
+
+                </p>
+
+            </section>
 
         </aside>
 
     </div>
 
 </body>
+
 </html>

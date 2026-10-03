@@ -1,0 +1,17 @@
+[
+    {
+        "nome": "Eder Daniel",
+        "email": "eder@codesyx.com",
+        "senha": "123456"
+    },
+    {
+        "nome": "Alice",
+        "email": "alice@codesyx.com",
+        "senha": "123456"
+    },
+    {
+        "nome": "Giovana",
+        "email": "giovana@codesyx.com",
+        "senha": "123456"
+    }
+]

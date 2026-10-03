@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/style.css">
     <title>CodeSyx - Login</title>
 </head>
+
 <body>
     <main class="container-auth invertido">
 
@@ -32,7 +34,11 @@
                             <input type="password" id="login-senha" placeholder="Digite sua Senha..." required>
                         </div>
 
+                        <p class="link-esqueceu"><a href="#recuperar"> Esqueceu sua senha?</a></p>
+
+                       
                         <button type="submit" class="btn-primeiro btn-full">Entrar</button>
+                        <p class="erro-login" id="erro-login"></p>
                     </form>
                     <p class="link-alternativo">Não tem uma conta?<a href="#cadastro"> Faça Cadastro</a></p>
                 </div>
@@ -76,17 +82,70 @@
                     <p class="link-alternativo">Já tem uma conta?<a href="#login"> Faça Login</a></p>
                 </div>
 
+                <!-- RECUPERAR SENHA (informar e-mail) -->
+                <div class="tela tela-recuperar">
+                    <p class="subtitulo-auth">Esqueceu sua senha?</p>
+                    <p class="texto-auxiliar">Redefinir senha, informe seu E-mail</p>
+                    <form action="#" class="form-auth" id="form-recuperar">
+                        <div class="grupo-input">
+                            <label for="recuperar-email">E-mail</label>
+                            <input type="email" id="recuperar-email" placeholder="Digite seu e-mail..." required>
+                        </div>
+                        <button type="submit" class="btn-primeiro btn-full">Recuperar senha</button>
+                    </form>
+                    <p class="link-alternativo">Ainda não tem uma conta?<a href="#cadastro"> Cadastre-se</a></p>
+                </div>
+
+                <!-- VERIFICAR E-MAIL -->
+                <div class="tela tela-verificar">
+                    <p class="subtitulo-auth">Verifique seu e-mail</p>
+                    <p class="texto-auxiliar">Abra o aplicativo de e-mail para verificar</p>
+                    <button type="button" class="btn-primeiro btn-full" id="btn-abrir-email">Abrir aplicativo de
+                        e-mail</button>
+                    <p class="link-alternativo">Não recebeu o e-mail? <a href="#recuperar">Clique para reenviar</a></p>
+                    <p class="link-alternativo"><a href="#login">← Voltar para login</a></p>
+                </div>
+
+                <!-- DEFINIR NOVA SENHA -->
+                <div class="tela tela-definir-senha">
+                    <p class="subtitulo-auth">Definir nova senha</p>
+                    <p class="texto-auxiliar">Sua senha deve ser diferente das senhas usadas anteriormente</p>
+                    <form action="#" class="form-auth" id="form-definir-senha">
+                        <div class="grupo-input">
+                            <label for="nova-senha">Senha</label>
+                            <input type="password" id="nova-senha" placeholder="Digite sua nova senha..." required>
+                        </div>
+                        <div class="grupo-input">
+                            <label for="confirmar-nova-senha">Confirmar senha</label>
+                            <input type="password" id="confirmar-nova-senha" placeholder="Confirme sua nova senha..."
+                                required>
+                        </div>
+                        <button type="submit" class="btn-primeiro btn-full">Redefinir senha</button>
+                    </form>
+                    <p class="link-alternativo"><a href="#login">← Voltar para login</a></p>
+                </div>
+
+                <!-- SENHA REDEFINIDA -->
+                <div class="tela tela-senha-redefinida">
+                    <p class="subtitulo-auth">Senha redefinida</p>
+                    <p class="texto-auxiliar">Sua senha foi redefinida com sucesso. Clique para fazer login.</p>
+                    <button type="button" class="btn-primeiro btn-full" id="btn-continuar-redefinida">Continuar</button>
+                    <p class="link-alternativo"><a href="#login">← Voltar para login</a></p>
+                </div>
+
             </div>
         </div>
 
         <!-- Metade do mascote -->
         <div class="lado-mascote">
             <img src="../assets/img/mascote-auth.png" alt="Mascote CodeSyx" class="mascote">
-            <p class="frase">Aprender, criar e descobrir: juntos, vamos transformar cada desafio em uma nova conquista!</p>
+            <p class="frase">Aprender, criar e descobrir: juntos, vamos transformar cada desafio em uma nova conquista!
+            </p>
         </div>
 
     </main>
 
     <script src="../assets/js/script.js"></script>
 </body>
+
 </html>
