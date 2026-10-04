@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>CodeSyx - Encontrar Pessoas</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo-area">
+            <img src="../assets/img/logo.png" alt="logo CodeSyx" class="logo-icon">
+            <span class="logo-text">Code<span>Syx</span></span>
+        </div>
+
+        <form action="#" class="search-form">
+            <input type="text" class="search-input" placeholder="Buscar pessoas, linguagens, matérias...">
+        </form>
+
+        <button type="button" class="notification-button" aria-label="Notificações">🔔</button>
+
+        <div class="user-area">
+            <img src="../assets/img/avatar-carlos.png" alt="Foto de Carlos" class="user-avatar">
+            <div class="user-info">
+                <p class="user-nome">Carlos</p>
+                <p class="user-curso">1°Semestre | ADS</p>
+            </div>
+            <button type="button" class="user-dropdown" aria-label="Abrir menu do usuário">⌄</button>
+        </div>
+    </header>
+
+    <div class="page-layout">
+
+        <aside class="sidebar">
+            <nav class="sidebar-navigation">
+                <a href="inicial.html" class="sidebar-link">
+                    <span class="sidebar-icon">🏠</span>
+                    Início
+                </a>
+                <a href="encontrar-pessoas.html" class="sidebar-link active">
+                    <span class="sidebar-icon">🔎</span>
+                    Encontrar pessoas
+                </a>
+                <a href="conversas.html" class="sidebar-link">
+                    <span class="sidebar-icon">💬</span>
+                    Conversas
+                </a>
+                <a href="perfil.html" class="sidebar-link">
+                    <span class="sidebar-icon">📍</span>
+                    Perfil
+                </a>
+            </nav>
+
+            <div class="sidebar-message">
+                <h2>Juntos, vamos mais longe.</h2>
+                <p>Estude, Evolua e Conquiste.</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <section class="hero-pessoas">
+                <div class="hero-pessoas-texto">
+                    <h1>Encontrar <span>pessoas</span></h1>
+                    <p>Conecte-se com outros estudantes e encontre seu parceiro ideal para estudar</p>
+                </div>
+
+                <img src="../assets/img/mascote-pessoas.png" alt="Mascote CodeSyx" class="hero-pessoas-mascote">
+
+                <div class="hero-pessoas-tags">
+                    <span class="tag-linguagem python"><img src="../assets/img/icone-python.png" alt="">Python</span>
+                    <span class="tag-linguagem java"><img src="../assets/img/icone-java.png" alt="">Java</span>
+                    <span class="tag-linguagem sql"><img src="../assets/img/icone-sql.png" alt="">SQL</span>
+                </div>
+            </section>
+
+            <section class="filtros-pessoas">
+                <div class="filtro-campo">
+                    <label for="filtro-cursos">Cursos</label>
+                    <select id="filtro-cursos">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+
+                <div class="filtro-campo">
+                    <label for="filtro-semestre">Semestre</label>
+                    <select id="filtro-semestre">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+
+                <div class="filtro-campo">
+                    <label for="filtro-linguagens">Linguagens</label>
+                    <select id="filtro-linguagens">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+
+                <div class="filtro-campo">
+                    <label for="filtro-aprender">Preciso aprender</label>
+                    <select id="filtro-aprender">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+
+                <button type="button" class="btn-limpar-filtros">Limpar</button>
+            </section>
+
+            <section class="pessoas-resultado">
+                <div class="pessoas-resultado-titulo">
+                    <h2>Pessoas <span>Disponíveis</span></h2>
+                    <p class="pessoas-resultado-contagem">
+                        <span class="bolinha-status"></span>
+                        3 Resultados
+                    </p>
+                </div>
+
+                <ul class="pessoas-lista">
+
+                    <li class="pessoa-linha">
+                        <div class="pessoa-perfil">
+                            <img src="../assets/img/avatar-ana.png" alt="Foto de Ana Costa" class="pessoa-foto">
+                            <div>
+                                <h3>Ana Costa</h3>
+                                <p>ADS 3°Semestre</p>
+                            </div>
+                        </div>
+
+                        <div class="pessoa-coluna">
+                            <p class="pessoa-coluna-titulo">Pode te ensinar</p>
+                            <div class="pessoa-tags">
+                                <span>Python</span>
+                                <span>Lógica</span>
+                                <span>Git</span>
+                            </div>
+                        </div>
+
+                        <div class="pessoa-coluna">
+                            <p class="pessoa-coluna-titulo">Quer aprender</p>
+                            <div class="pessoa-tags">
+                                <span>Java</span>
+                                <span>React</span>
+                            </div>
+                        </div>
+
+                        <div class="pessoa-compatibilidade">
+                            <div class="compatibilidade-barra">
+                                <div class="compatibilidade-preenchimento" style="width: 30%;"></div>
+                            </div>
+                            <p>30% Compatibilidade</p>
+                        </div>
+
+                        <button type="button" class="btn-ver-perfil">Ver perfil</button>
+                    </li>
+
+                    <li class="pessoa-linha">
+                        <div class="pessoa-perfil">
+                            <img src="../assets/img/avatar-gabriel.png" alt="Foto de Gabriel Santos" class="pessoa-foto">
+                            <div>
+                                <h3>Gabriel Santos</h3>
+                                <p>ADS 3°Semestre</p>
+                            </div>
+                        </div>
+
+                        <div class="pessoa-coluna">
+                            <p class="pessoa-coluna-titulo">Pode te ensinar</p>
+                            <div class="pessoa-tags">
+                                <span>Java</span>
+                                <span>POO</span>
+                                <span>React</span>
+                            </div>
+                        </div>
+
+                        <div class="pessoa-coluna">
+                            <p class="pessoa-coluna-titulo">Quer aprender</p>
+                            <div class="pessoa-tags">
+                                <span>Python</span>
+                                <span>Lógica</span>
+                            </div>
+                        </div>
+
+                        <div class="pessoa-compatibilidade">
+                            <div class="compatibilidade-barra">
+                                <div class="compatibilidade-preenchimento" style="width: 30%;"></div>
+                            </div>
+                            <p>30% Compatibilidade</p>
+                        </div>
+
+                        <button type="button" class="btn-ver-perfil">Ver perfil</button>
+                    </li>
+
+                    <li class="pessoa-linha">
+                        <div class="pessoa-perfil">
+                            <img src="../assets/img/avatar-lucas.png" alt="Foto de Lucas Almeida" class="pessoa-foto">
+                            <div>
+                                <h3>Lucas Almeida</h3>
+                                <p>ADS 2°Semestre</p>
+                            </div>
+                        </div>
+
+                        <div class="pessoa-coluna">
+                            <p class="pessoa-coluna-titulo">Pode te ensinar</p>
+                            <div class="pessoa-tags">
+                                <span>Python</span>
+                                <span>Funções</span>
+                                <span>Listas</span>
+                            </div>
+                        </div>
+
+                        <div class="pessoa-coluna">
+                            <p class="pessoa-coluna-titulo">Quer aprender</p>
+                            <div class="pessoa-tags">
+                                <span>Java</span>
+                                <span>React</span>
+                            </div>
+                        </div>
+
+                        <div class="pessoa-compatibilidade">
+                            <div class="compatibilidade-barra">
+                                <div class="compatibilidade-preenchimento" style="width: 30%;"></div>
+                            </div>
+                            <p>30% Compatibilidade</p>
+                        </div>
+
+                        <button type="button" class="btn-ver-perfil">Ver perfil</button>
+                    </li>
+
+                </ul>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html>
