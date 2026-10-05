@@ -18,42 +18,73 @@
 
 
 <body>
+<header class="header">
 
-    <!-- =========================
-         CABEÇALHO
-    ========================== -->
+    <div class="logo-area">
 
-    <header class="header">
+        <div class="logo-icon">
+            <img src="../assets/img/logo.png" alt="logo CodeSyx">
+        </div>
 
-        <div class="logo-area">
+        <span class="logo-text">
+            Code<span>Syx</span>
+        </span>
 
-            <div class="logo-icon">
-                <img src="/CodeSyx/assets/img/logo.png" alt="">
-            </div>
+    </div>
 
-            <span class="logo-text">
-                Code<span>Syx</span>
-            </span>
+
+    <form action="#" class="search-form">
+
+        <input
+            type="search"
+            class="search-input"
+            placeholder="Buscar pessoas, linguagens, matérias..."
+        >
+
+    </form>
+
+
+    <button
+        type="button"
+        class="notification-button"
+        aria-label="Notificações">
+
+        🔔
+
+    </button>
+
+
+    <div class="user-area">
+
+        <img
+            src="../assets/img/avatar-carlos.png"
+            alt="Foto de Carlos"
+            class="user-avatar">
+
+        <div class="user-info">
+
+            <p class="user-nome">
+                Carlos
+            </p>
+
+            <p class="user-curso">
+                1°Semestre | ADS
+            </p>
 
         </div>
 
+        <button
+            type="button"
+            class="user-dropdown"
+            aria-label="Abrir menu do usuário">
 
-        <form class="search-form" id="searchForm">
-
-            <input type="search" id="searchInput" class="search-input"
-                placeholder="Buscar pessoas, linguagens, matérias...">
-
-        </form>
-
-
-        <button type="button" class="notification-button" id="notificationButton" aria-label="Notificações">
-
-            ♧
+            ⌄
 
         </button>
 
-    </header>
+    </div>
 
+</header>
 
 
     <!-- =========================
@@ -89,16 +120,12 @@
 
                 <!-- ENCONTRAR PESSOAS -->
 
-                <a href="#" class="sidebar-link" id="findPeopleLink">
-
-                    <img src="../assets/img/Find User Male.png" alt="" class="sidebar-icon">
-
-                    <span>
-                        <a href="../pages/encontrar_pessoas.html"><p>Encontrar pessoas</p> </a>
-                  
-                    </span>
-
-                </a>
+             <a href="../pages/encontrar_pessoas.html" class="sidebar-link" id="findPeopleLink">
+    <img src="../assets/img/Find User Male.png" alt="" class="sidebar-icon">
+    <span>
+        Encontrar pessoas
+    </span>
+</a>
 
 
                 <!-- CONVERSAS -->
