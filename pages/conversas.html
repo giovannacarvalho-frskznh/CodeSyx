@@ -5,345 +5,165 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/conversas.css">
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <title>CodeSyx - Conversas</title>
 </head>
 
 <body>
 
-    
-  <header class="header">
+<header class="header">
 
     <div class="logo-area">
-
         <div class="logo-icon">
             <img src="../assets/img/logo.png" alt="logo CodeSyx">
         </div>
-
-        <span class="logo-text">
-            Code<span>Syx</span>
-        </span>
-
+        <span class="logo-text">Code<span>Syx</span></span>
     </div>
 
-
     <form action="#" class="search-form">
-
-        <input
-            type="search"
-            class="search-input"
-            placeholder="Buscar pessoas, linguagens, matérias..."
-        >
-
+        <input type="search" class="search-input" placeholder="Buscar pessoas, linguagens, matérias...">
     </form>
 
-
-    <button
-        type="button"
-        class="notification-button"
-        aria-label="Notificações">
-
-        🔔
-
-    </button>
-
+    <button type="button" class="notification-button" aria-label="Notificações">🔔</button>
 
     <div class="user-area">
-
-        <img
-            src="../assets/img/avatar-carlos.png"
-            alt="Foto de Carlos"
-            class="user-avatar">
+        <img src="../assets/img/avatar-carlos.png" alt="Foto de Carlos" class="user-avatar">
 
         <div class="user-info">
-
-            <p class="user-nome">
-                Carlos
-            </p>
-
-            <p class="user-curso">
-                1°Semestre | ADS
-            </p>
-
+            <p class="user-nome">Carlos</p>
+            <p class="user-curso">1°Semestre | ADS</p>
         </div>
 
-        <button
-            type="button"
-            class="user-dropdown"
-            aria-label="Abrir menu do usuário">
-
-            ⌄
-
-        </button>
-
+        <button type="button" class="user-dropdown" aria-label="Abrir menu do usuário">⌄</button>
     </div>
 
 </header>
 
 
-    <!-- LAYOUT DA PÁGINA -->
-    <div class="page-layout">
+<div class="page-layout">
 
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
 
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
+        <nav class="sidebar-navigation">
 
-            <nav class="sidebar-navigation">
+            <a href="inicial.html" class="sidebar-link">
+                <span class="sidebar-icon">⌂</span>
+                Início
+            </a>
 
-                <a href="inicial.html" class="sidebar-link">
+            <a href="encontrar_pessoas.html" class="sidebar-link">
+                <img src="../assets/img/Find User Male.png" alt="" class="sidebar-icon">
+                Encontrar pessoas
+            </a>
 
-                    <span class="sidebar-icon">
-                        ⌂
-                    </span>
+            <a href="conversas.html" class="sidebar-link active">
+                <img src="../assets/img/Speech Bubble.png" alt="" class="sidebar-icon">
+                Conversas
+            </a>
 
-                    Início
+            <a href="perfil.html" class="sidebar-link">
+                <img src="../assets/img/Profile.png" alt="" class="sidebar-icon">
+                Perfil
+            </a>
 
-                </a>
+        </nav>
 
+        <div class="sidebar-message">
+            <h2>Juntos, vamos mais longe.</h2>
+            <p>Estude, Evolua e Conquiste.</p>
+        </div>
 
-                <a href="../pages/encontrar_pessoas.html" class="sidebar-link">
+    </aside>
 
-                    <img
-                        src="../assets/img/Find User Male.png"
-                        alt=""
-                        class="sidebar-icon">
 
-                    Encontrar pessoas
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
 
-                </a>
+        <section class="conversas-container">
 
+            <!-- LISTA DE CONVERSAS -->
+            <aside class="conversas-lista">
 
-                <a href="conversas.html" class="sidebar-link active">
+                <h2 class="conversas-titulo">Conversas</h2>
 
-                    <img
-                        src="../assets/img/Speech Bubble.png"
-                        alt=""
-                        class="sidebar-icon">
+                <button type="button" class="conversa-item active" data-chat="ana">
+                    <img src="../assets/img/avatar-ana.png" alt="Foto de Ana Costa" class="conversa-avatar">
+                    <div class="conversa-info">
+                        <div class="conversa-nome">Ana Costa</div>
+                        <div class="conversa-curso">ADS 3°Semestre</div>
+                        <div class="conversa-previa">Nenhuma mensagem ainda</div>
+                    </div>
+                </button>
 
-                    Conversas
+                <button type="button" class="conversa-item" data-chat="gabriel">
+                    <img src="../assets/img/avatar-gabriel.png" alt="Foto de Gabriel Santos" class="conversa-avatar">
+                    <div class="conversa-info">
+                        <div class="conversa-nome">Gabriel Santos</div>
+                        <div class="conversa-curso">ADS 3°Semestre</div>
+                        <div class="conversa-previa">Nenhuma mensagem ainda</div>
+                    </div>
+                </button>
 
-                </a>
+                <button type="button" class="conversa-item" data-chat="lucas">
+                    <img src="../assets/img/avatar-lucas.png" alt="Foto de Lucas Almeida" class="conversa-avatar">
+                    <div class="conversa-info">
+                        <div class="conversa-nome">Lucas Almeida</div>
+                        <div class="conversa-curso">ADS 2°Semestre</div>
+                        <div class="conversa-previa">Nenhuma mensagem ainda</div>
+                    </div>
+                </button>
 
+            </aside>
 
-                <a href="perfil.html" class="sidebar-link">
 
-                    <img
-                        src="../assets/img/Profile.png"
-                        alt=""
-                        class="sidebar-icon">
+            <!-- CHAT -->
+            <section class="chat-area">
 
-                    Perfil
+                <!-- CABEÇALHO DO CHAT -->
+                <div class="chat-header">
 
-                </a>
+                    <img src="../assets/img/avatar-ana.png" alt="Foto de Ana Costa" class="chat-avatar">
 
-            </nav>
-
-
-            <!-- MENSAGEM DA SIDEBAR -->
-            <div class="sidebar-message">
-
-                <h2>
-                    Juntos, vamos mais longe.
-                </h2>
-
-                <p>
-                    Estude, Evolua e Conquiste.
-                </p>
-
-            </div>
-
-        </aside>
-
-
-        <!-- CONTEÚDO PRINCIPAL -->
-        <main class="main-content">
-
-
-            <section class="conversas-container">
-
-
-                <!-- LISTA DE CONVERSAS -->
-                <aside class="conversas-lista">
-
-                    <h2 class="conversas-titulo">
-                        Conversas
-                    </h2>
-
-
-                    <!-- CONVERSA ANA -->
-                    <button
-                        type="button"
-                        class="conversa-item active">
-
-                        <img
-                            src="../assets/img/avatar-ana.png"
-                            alt="Foto de Ana Costa"
-                            class="conversa-avatar">
-
-                        <div class="conversa-info">
-
-                            <div class="conversa-nome">
-                                Ana Costa
-                            </div>
-
-                            <div class="conversa-curso">
-                                ADS 3°Semestre
-                            </div>
-
-                        </div>
-
-                    </button>
-
-
-                    <!-- OUTRAS CONVERSAS -->
-                    <button
-                        type="button"
-                        class="conversa-item">
-
-                        <img
-                            src="../assets/img/avatar-gabriel.png"
-                            alt="Foto de Gabriel Santos"
-                            class="conversa-avatar">
-
-                        <div class="conversa-info">
-
-                            <div class="conversa-nome">
-                                Gabriel Santos
-                            </div>
-
-                            <div class="conversa-curso">
-                                ADS 3°Semestre
-                            </div>
-
-                        </div>
-
-                    </button>
-
-
-                    <button
-                        type="button"
-                        class="conversa-item">
-
-                        <img
-                            src="../assets/img/avatar-lucas.png"
-                            alt="Foto de Lucas Almeida"
-                            class="conversa-avatar">
-
-                        <div class="conversa-info">
-
-                            <div class="conversa-nome">
-                                Lucas Almeida
-                            </div>
-
-                            <div class="conversa-curso">
-                                ADS 2°Semestre
-                            </div>
-
-                        </div>
-
-                    </button>
-
-
-                </aside>
-
-
-
-                <!-- CHAT -->
-                <section class="chat-area">
-
-
-                    <!-- CABEÇALHO DO CHAT -->
-                    <div class="chat-header">
-
-                        <img
-                            src="../assets/img/avatar-ana.png"
-                            alt="Foto de Ana Costa"
-                            class="chat-avatar">
-
-                        <div class="chat-user-info">
-
-                            <h2>
-                                Ana Costa
-                            </h2>
-
-                            <p>
-                                <span class="status-online"></span>
-                                Online
-                            </p>
-
-                        </div>
-
+                    <div class="chat-user-info">
+                        <h2>Ana Costa</h2>
+                        <p><span class="status-online"></span><span id="chat-status">Online</span></p>
                     </div>
 
+                    <button type="button" class="chat-limpar" id="btn-limpar">Limpar conversa</button>
 
-                    <!-- MENSAGENS -->
-                    <div class="chat-mensagens">
+                </div>
 
+                <!-- MENSAGENS  -->
+                <div class="chat-mensagens" id="chat-mensagens"></div>
 
-                        <!-- MENSAGEM RECEBIDA -->
-                        <div class="mensagem mensagem-recebida">
+                <!-- ÁREA DE ENVIO -->
+                <form class="chat-form" action="#">
 
-                            <p>
-                                Olá, tudo bem?
-                            </p>
+                    <input type="text" class="chat-input" placeholder="Digite uma mensagem" autocomplete="off">
 
-                        </div>
+                    <button type="submit" class="chat-send-button" aria-label="Enviar mensagem">➤</button>
 
+                </form>
 
-                        <!-- MENSAGEM ENVIADA -->
-                        <div class="mensagem mensagem-enviada">
-
-                            <p>
-                                Olá, tudo bem com você?
-                            </p>
-
-                        </div>
-
-
-                    </div>
-
-
-                    <!-- ÁREA DE ENVIO -->
-                    <form
-                        class="chat-form"
-                        action="#">
-
-                        <input
-                            type="text"
-                            class="chat-input"
-                            placeholder="Digite uma mensagem"
-                            autocomplete="off">
-
-                        <button
-                            type="submit"
-                            class="chat-send-button"
-                            aria-label="Enviar mensagem">
-
-                            ➤
-
-                        </button>
-
-                    </form>
-
-
-                    <!-- MASCOTE -->
-                    <img
-                        src="../assets/img/mascote-pessoas.png"
-                        alt="Mascote CodeSyx"
-                        class="chat-mascote">
-
-
-                </section>
+               
+                <img src="../assets/img/CodeSyx-mascote.png" alt="Mascote CodeSyx" class="chat-mascote">
 
             </section>
 
-        </main>
+        </section>
 
-    </div>
+    </main>
 
+</div>
 
-    <script src="../assets/js/script.js"></script>
+<script src="../assets/js/script.js"></script>
 
 </body>
 

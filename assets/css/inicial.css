@@ -1,0 +1,855 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+:root {
+  --azul-escuro: #0a1433;
+  --sidebar-azul: #0b1738;
+  --carta-azul: #12396e;
+
+  --azul: #008cff;
+
+  --verde: #6fcc39;
+  --verde-claro: #00ff66;
+
+  --branco: #ffffff;
+
+  --texto: #e9edf7;
+  --silenciado: #b7c0d4;
+}
+
+
+
+body {
+  min-height: 100vh;
+  background: var(--azul-escuro);
+  color: var(--branco);
+  font-family: "Poppins", sans-serif;
+}
+
+
+.header {
+  width: 100%;
+  height: 102px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 36px;
+
+  background: var(--azul-escuro);
+  border-bottom: 1px solid var(--azul);
+
+  position: relative;
+  z-index: 10;
+}
+
+/* LOGO */
+
+.logo-area {
+  width: 300px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-icon {
+  width: 76px;
+  height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--verde-claro);
+  font-size: 52px;
+}
+
+.logo-text {
+  font-family: Georgia, serif;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.logo-text span {
+  color: #00dca8;
+}
+
+/* BUSCA */
+
+.search-form {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  width: 540px;
+  height: 52px;
+
+  padding: 0 20px;
+
+  border: 1px solid var(--azul);
+  border-radius: 10px;
+
+  background: #1d2c52;
+  color: var(--branco);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #c4cada;
+}
+
+.search-input:focus {
+  border-color: var(--verde);
+}
+
+/* NOTIFICAÇÃO */
+
+.notification-button {
+  width: 70px;
+  height: 50px;
+
+  margin-left: 20px;
+
+  border: 0;
+  background: transparent;
+  color: var(--branco);
+  font-size: 28px;
+
+  cursor: pointer;
+}
+
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00e5ff;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-nome {
+    font-weight: 600;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.user-curso {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.user-dropdown {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+
+.page-layout {
+  min-height: calc(100vh - 102px);
+
+  display: grid;
+  grid-template-columns: 268px minmax(0, 1fr) 384px;
+}
+
+/*  SIDEBAR ESQUERDA */
+
+.sidebar {
+  min-height: calc(100vh - 102px);
+
+  padding: 58px 17px 25px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--sidebar-azul);
+  border-right: 1px solid var(--azul);
+}
+
+.sidebar-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sidebar-link {
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 0 28px;
+
+  color: var(--branco);
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+
+  border-radius: 14px;
+}
+
+.sidebar-link:hover {
+  background: #162654;
+}
+
+.sidebar-link.active {
+  background: #32a935;
+}
+
+/* ÍCONES DA SIDEBAR */
+
+.sidebar-icon {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* CARD MOTIVACIONAL ESQUERDA */
+
+.sidebar-message {
+  margin-top: auto;
+
+  padding: 24px 18px;
+  min-height: 150px;
+
+  border: 1px solid var(--azul);
+  border-radius: 18px;
+
+  background: #26375f;
+}
+
+.sidebar-message h2 {
+  color: var(--verde);
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.sidebar-message p {
+  margin-top: 5px;
+  color: var(--branco);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.main-content {
+  min-width: 0;
+  padding: 0 28px 60px;
+  overflow: hidden;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 520px;
+    position: relative;
+    padding: 30px;
+    overflow: hidden;
+   
+
+    background-image: url("../img/Fundo-tela-inicial.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.welcome-text {
+  margin-bottom: 12px;
+  color: var(--verde);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.hero-title {
+  font-size: 40px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.hero-title span {
+  color: var(--verde);
+}
+
+.hero-description {
+  margin-top: 8px;
+  color: var(--branco);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.primary-button {
+  margin-top: 40px;
+
+  height: 60px;
+  padding: 0 24px;
+
+  border: 0;
+  border-radius: 18px;
+
+  background: linear-gradient(100deg, var(--verde), #00bfa5, #008cff);
+  color: var(--branco);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  filter: brightness(1.1);
+}
+
+
+
+.recommendations {
+  padding-top: 35px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+.section-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  font-size: 23px;
+}
+
+.section-icon {
+  color: var(--verde);
+  font-size: 27px;
+}
+
+.see-all {
+  color: var(--verde);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* GRID DE PESSOAS */
+
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+
+/*
+  O HTML possui um quarto card para poder ser usado no futuro.
+  Atualmente o Figma possui apenas três recomendações.
+*/
+
+.person-card:nth-child(n + 4) {
+  display: none;
+}
+
+/* CARD DE PESSOA */
+
+.person-card {
+  height: 270px;
+  padding: 14px 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  border: 1px solid var(--azul);
+  border-radius: 16px;
+
+  background: #0c3266;
+}
+
+.person-card:hover {
+  border-color: var(--verde);
+}
+
+/* AVATAR */
+
+.avatar {
+  width: 62px;
+  height: 62px;
+
+  margin-bottom: 8px;
+
+  border: 2px solid var(--azul);
+  border-radius: 50%;
+
+  background: #26375f;
+}
+
+/* NOME */
+
+.person-card h3 {
+  min-height: 22px;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+/* CURSO */
+
+.person-course {
+  min-height: 34px;
+  margin-top: 5px;
+  color: var(--silenciado);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* MATÉRIA */
+
+.person-subject {
+  min-height: 34px;
+  margin-top: 2px;
+  color: var(--verde);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* TAGS */
+
+.tags {
+  min-height: 40px;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  margin-top: 2px;
+}
+
+.tags span {
+  padding: 4px 9px;
+  border-radius: 15px;
+
+  background: var(--verde);
+  color: #09230d;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* BOTÃO CONECTAR */
+
+.connect-button {
+  min-height: 35px;
+  margin-top: auto;
+
+  padding: 4px 17px;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: var(--verde);
+  color: #071b0a;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.connect-button:hover {
+  filter: brightness(1.1);
+}
+
+/* LATERAL DIREITA */
+
+.right-sidebar {
+  min-height: calc(100vh - 102px);
+
+  padding: 20px 18px 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  background: var(--azul-escuro);
+}
+
+/* CARD DE PROGRESSO */
+
+.progress-card {
+  padding: 20px;
+
+  border: 1px solid var(--azul);
+  border-radius: 18px;
+
+  background: #26375f;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.card-title h2 {
+  font-size: 19px;
+}
+
+.title-icon {
+  font-size: 24px;
+}
+
+.xp-area {
+  margin-top: 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.xp-circle {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 5px solid var(--verde);
+  border-radius: 50%;
+
+  color: var(--verde);
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.xp-info {
+  flex: 1;
+}
+
+.xp-info strong {
+  font-size: 17px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 16px;
+
+  margin-top: 8px;
+
+  border: 2px solid var(--azul);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 45%;
+  height: 100%;
+
+  background: linear-gradient(90deg, var(--verde), var(--azul));
+}
+
+.progress-divider {
+  height: 1px;
+  margin: 20px 0 12px;
+  background: #315071;
+}
+
+.progress-card h3 {
+  font-size: 13px;
+}
+
+.area-tags {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.area-tags span {
+  flex: 1;
+  padding: 6px 7px;
+  border-radius: 8px;
+
+  background: #0d193d;
+  color: var(--verde);
+  text-align: center;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* SOS DÚVIDAS */
+
+.help-card {
+  padding: 20px;
+
+  border: 1px solid var(--azul);
+  border-radius: 18px;
+
+  background: #101f46;
+}
+
+.help-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.help-header h2 {
+  font-size: 19px;
+}
+
+.help-header p {
+  margin-top: 4px;
+  color: var(--silenciado);
+  font-size: 11px;
+}
+
+.online {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 7px 12px;
+  border-radius: 10px;
+
+  background: #052c32;
+  font-size: 11px;
+}
+
+.online i,
+.available i {
+  width: 9px;
+  height: 9px;
+
+  display: inline-block;
+  border-radius: 50%;
+
+  background: #00ff4c;
+}
+
+.help-content {
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 12px;
+
+  background: #075eb2;
+}
+
+.help-content h3 {
+  font-size: 15px;
+}
+
+.help-content p {
+  margin-top: 4px;
+  font-size: 11px;
+}
+
+.available {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 15px;
+  font-size: 11px;
+}
+
+.help-button {
+  width: 100%;
+  height: 38px;
+
+  margin-top: 18px;
+
+  border: 0;
+  border-radius: 12px;
+
+  background: var(--verde);
+  color: #0a2410;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.help-button:hover {
+  filter: brightness(1.1);
+}
+
+/* CARD MOTIVACIONAL DIREITA */
+
+.right-message {
+  min-height: 230px;
+  margin-top: auto;
+
+  padding: 25px 20px;
+
+  background: #26375f;
+  text-align: center;
+}
+
+.target-icon {
+  margin-bottom: 16px;
+  color: var(--verde);
+  font-size: 58px;
+  line-height: 1;
+}
+
+.right-message h2 {
+  color: var(--branco);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.right-message p {
+  margin-top: 18px;
+  color: var(--branco);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* responsividade */
+
+@media (max-width: 1200px) {
+  .page-layout {
+    grid-template-columns: 230px minmax(0, 1fr);
+  }
+
+  .right-sidebar {
+    display: none;
+  }
+
+  .logo-area {
+    width: 240px;
+  }
+
+  .search-input {
+    width: 450px;
+  }
+}
+
+@media (max-width: 850px) {
+  .page-layout {
+    display: block;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    padding: 0 20px 40px;
+  }
+
+  .people-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header {
+    padding: 0 20px;
+  }
+
+  .logo-area {
+    width: auto;
+  }
+
+  .logo-text {
+    font-size: 28px;
+  }
+
+  .logo-icon {
+    width: 45px;
+    font-size: 38px;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  .header {
+    height: auto;
+    padding: 15px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .logo-area {
+    width: 100%;
+  }
+
+  .search-form {
+    order: 3;
+    width: 100%;
+  }
+
+  .notification-button {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+  }
+
+  .hero-title {
+    font-size: 30px;
+  }
+
+  .people-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header {
+    align-items: flex-start;
+  }
+
+  .section-header h2 {
+    font-size: 20px;
+  }
+}

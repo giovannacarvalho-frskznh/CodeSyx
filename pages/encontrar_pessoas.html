@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/encontrar_pessoas.css">
     <title>CodeSyx - Encontrar Pessoas</title>
 </head>
 
@@ -87,12 +87,12 @@
                     </span>
                     Início
                 </a>
-                <a href="encontrar-pessoas.html" class="sidebar-link active">
+                <a href="encontrar_pessoas.html" class="sidebar-link active">
                       <img src="../assets/img/Find User Male.png" alt="" class="sidebar-icon">
                     Encontrar pessoas
                 </a>
                 <a href="conversas.html" class="sidebar-link">
-                    <img src="../assets/img/Speech Bubble.png " alt="" class="sidebar-icon">
+                    <img src="../assets/img/Speech Bubble.png" alt="" class="sidebar-icon">
                     Conversas
                 </a>
                 <a href="perfil.html" class="sidebar-link">
@@ -118,43 +118,70 @@
                 <img src="../assets/img/mascote-pessoas.png" alt="Mascote CodeSyx" class="hero-pessoas-mascote">
 
                 <div class="hero-pessoas-tags">
-                    <span class="tag-linguagem python"><img src="../assets/img/icone-python.png" alt="">Python</span>
-                    <span class="tag-linguagem java"><img src="../assets/img/icone-java.png" alt="">Java</span>
-                    <span class="tag-linguagem sql"><img src="../assets/img/icone-sql.png" alt="">SQL</span>
+                    <span class="tag-linguagem python"><img src="../assets/img/Python.png" alt="">Python</span>
+                    <span class="tag-linguagem java"><img src="../assets/img/Java.png" alt="">Java</span>
+                    <span class="tag-linguagem sql"><img src="../assets/img/SQL.png" alt="">SQL</span>
                 </div>
             </section>
 
-            <section class="filtros-pessoas">
-                <div class="filtro-campo">
-                    <label for="filtro-cursos">Cursos</label>
-                    <select id="filtro-cursos">
-                        <option value="">Todos</option>
-                    </select>
-                </div>
+           <section class="filtros-pessoas">
+    <div class="filtro-campo">
+        <label for="filtro-cursos">Cursos</label>
+        <select id="filtro-cursos">
+            <option value="">Todos</option>
+            <option value="ads">ADS</option>
+            <option value="gti">GTI</option>
+            <option value="ciencia-da-computacao">Ciência da Computação</option>
+            <option value="sistemas-de-informacao">Sistemas de Informação</option>
+            <option value="engenharia-de-software">Engenharia de Software</option>
+        </select>
+    </div>
 
-                <div class="filtro-campo">
-                    <label for="filtro-semestre">Semestre</label>
-                    <select id="filtro-semestre">
-                        <option value="">Todos</option>
-                    </select>
-                </div>
+    <div class="filtro-campo">
+        <label for="filtro-semestre">Semestre</label>
+        <select id="filtro-semestre">
+            <option value="">Todos</option>
+            <option value="1">1°Semestre</option>
+            <option value="2">2°Semestre</option>
+            <option value="3">3°Semestre</option>
+            <option value="4">4°Semestre</option>
+            <option value="5">5°Semestre</option>
+            <option value="6">6°Semestre</option>
+        </select>
+    </div>
 
-                <div class="filtro-campo">
-                    <label for="filtro-linguagens">Linguagens</label>
-                    <select id="filtro-linguagens">
-                        <option value="">Todos</option>
-                    </select>
-                </div>
+    <div class="filtro-campo">
+        <label for="filtro-linguagens">Linguagens</label>
+        <select id="filtro-linguagens">
+            <option value="">Todos</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="javascript">JavaScript</option>
+            <option value="sql">SQL</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="react">React</option>
+        </select>
+    </div>
 
-                <div class="filtro-campo">
-                    <label for="filtro-aprender">Preciso aprender</label>
-                    <select id="filtro-aprender">
-                        <option value="">Todos</option>
-                    </select>
-                </div>
+    <div class="filtro-campo">
+        <label for="filtro-aprender">Preciso aprender</label>
+        <select id="filtro-aprender">
+            <option value="">Todos</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="javascript">JavaScript</option>
+            <option value="sql">SQL</option>
+            <option value="react">React</option>
+            <option value="logica">Lógica</option>
+            <option value="git">Git</option>
+            <option value="poo">POO</option>
+        </select>
+    </div>
 
-                <button type="button" class="btn-limpar-filtros">Limpar</button>
-            </section>
+    <button type="button" class="btn-limpar-filtros">Buscar</button>
+</section>
+
 
             <section class="pessoas-resultado">
                 <div class="pessoas-resultado-titulo">
@@ -200,7 +227,12 @@
                             <p>30% Compatibilidade</p>
                         </div>
 
-                        <button type="button" class="btn-ver-perfil">Ver perfil</button>
+                        <button
+                            type="button"
+                            class="btn-ver-perfil"
+                            data-sobre="Gosto de tecnologia e de estudar em grupo. Acredito que compartilhar conhecimento é uma das melhores formas de evoluir.">
+                            Ver perfil
+                        </button>
                     </li>
 
                     <li class="pessoa-linha">
@@ -236,7 +268,12 @@
                             <p>30% Compatibilidade</p>
                         </div>
 
-                        <button type="button" class="btn-ver-perfil">Ver perfil</button>
+                        <button
+                            type="button"
+                            class="btn-ver-perfil"
+                            data-sobre="Curto programação e gosto de ajudar quem está começando. Sempre aberto a aprender algo novo.">
+                            Ver perfil
+                        </button>
                     </li>
 
                     <li class="pessoa-linha">
@@ -272,7 +309,12 @@
                             <p>30% Compatibilidade</p>
                         </div>
 
-                        <button type="button" class="btn-ver-perfil">Ver perfil</button>
+                        <button
+                            type="button"
+                            class="btn-ver-perfil"
+                            data-sobre="Estou no começo da jornada em tecnologia e quero trocar conhecimento com a galera.">
+                            Ver perfil
+                        </button>
                     </li>
 
                 </ul>
@@ -280,6 +322,70 @@
 
         </main>
     </div>
+
+
+    <!-- POP-UP DE CONEXÃO -->
+
+    <div class="modal-overlay" id="modalConexao" hidden>
+
+        <!--  perfil da pessoa -->
+        <div class="modal-conexao" id="modalPerfil" role="dialog" aria-modal="true" aria-labelledby="modalNome">
+
+            <button type="button" class="modal-fechar" aria-label="Fechar">✕</button>
+
+            <div class="modal-topo">
+
+                <img src="../assets/img/avatar-ana.png" alt="" class="modal-avatar" id="modalFoto">
+
+                <div class="modal-pessoa">
+                    <h2 id="modalNome">Ana Costa</h2>
+                    <p id="modalCurso">ADS 3°Semestre</p>
+                    <span class="modal-online"><i></i> Online agora</span>
+                </div>
+
+                <div class="modal-sobre">
+                    <h3>Sobre mim</h3>
+                    <p id="modalSobre"></p>
+                </div>
+
+            </div>
+
+            <div class="modal-troca">
+
+                <div class="modal-caixa">
+                    <h3>Você pode ensinar</h3>
+                    <div class="modal-techs" id="modalEnsinar"></div>
+                </div>
+
+                <img src="../assets/img/CodeSyx-mascote.png" alt="Mascote CodeSyx" class="modal-mascote">
+
+                <div class="modal-caixa modal-caixa-verde">
+                    <h3>Você pode aprender</h3>
+                    <div class="modal-techs" id="modalAprender"></div>
+                </div>
+
+            </div>
+
+            <button type="button" class="modal-botao" id="btnFazerConexao">Fazer conexão</button>
+
+        </div>
+
+        <!--  conexão realizada -->
+        <div class="modal-conexao modal-sucesso" id="modalSucesso" role="dialog" aria-modal="true" hidden>
+
+            <button type="button" class="modal-fechar" aria-label="Fechar">✕</button>
+
+            <div class="modal-check">✔</div>
+
+            <h2>Conexão realizada!</h2>
+            <p>Agora vocês podem conversar e estudar juntos.</p>
+
+            <a href="conversas.html" class="modal-botao">Ir para conversas</a>
+
+        </div>
+
+    </div>
+
 
     <script src="../assets/js/script.js"></script>
 </body>

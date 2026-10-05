@@ -1,5 +1,11 @@
+// login, cadastro e esqueci minha senha
+// (só roda na página que tem .container-auth)
+
 document.addEventListener("DOMContentLoaded", () => {
     const auth = document.querySelector(".container-auth");
+
+    // se não for a página de login/cadastro, não faz nada aqui
+    if (!auth) return;
 
     function mostrarCadastro() {
         auth.classList.remove("invertido");
@@ -13,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.title = "CodeSyx - Login";
     }
 
-    // faz o cadastro e o login trocarem na hora, sem recarregar
+    // faz o cadastro e o login trocarem na hora, sem recarregar a página
     document.querySelectorAll('a[href="#cadastro"]').forEach((link) => {
         link.addEventListener("click", (e) => {
             e.preventDefault();
@@ -29,7 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Se abrir com cadastro.html#cadastro (vindo da home), já abre no cadastro sem animar
+    // se a pessoa vier da home já clicando em "cadastre-se", abre direto
+    // no cadastro, sem a animação de deslizar (fica mais natural)
     if (location.hash === "#cadastro") {
         auth.classList.add("sem-animacao");
         mostrarCadastro();
@@ -38,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
-    // Confere se as duas senhas do cadastro são iguais
+    // confere se a senha e a confirmação do cadastro batem
     const senha = document.getElementById("cad-senha");
     const confirmar = document.getElementById("confirmar-senha");
 
@@ -51,7 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
     senha.addEventListener("input", conferirSenhas);
     confirmar.addEventListener("input", conferirSenhas);
 
-    // LOGIN: confere o e-mail e a senha no usuarios.json e manda pra tela inicial
+    // login: procura o e-mail e a senha digitados dentro do usuarios.json
+    // se bater, salva o nome no localStorage e manda pra tela inicial
     document.getElementById("form-login").addEventListener("submit", (e) => {
         e.preventDefault();
 
@@ -78,18 +86,19 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     });
 
-    // Sem back-end: o cadastro só impede o envio e volta pro login
+    // ainda não temos back-end de verdade, então o cadastro só
+    // segura o envio da página e devolve pro login
     document.getElementById("form-cadastro").addEventListener("submit", (e) => {
         e.preventDefault();
         mostrarLogin();
     });
 
-    //  ESQUECI MINHA SENHA 
-    // As telas extras (recuperar, verificar, definir-senha, senha-redefinida)
-    // ficam escondidas por padrão (CSS). Pra mostrar uma delas, a gente:
-    // 1. liga "tela-extra-ativa" no container (isso esconde login/cadastro à força)
+    // esqueci minha senha
+    // as telas extras (recuperar, verificar, definir-senha, senha-redefinida)
+    // começam todas escondidas (isso tá no css). pra mostrar uma delas:
+    // 1. liga a classe "tela-extra-ativa" no container (esconde login/cadastro à força)
     // 2. tira "tela-visivel" de todas as telas extras
-    // 3. coloca "tela-visivel" só na que queremos mostrar
+    // 3. bota "tela-visivel" só na que a gente quer mostrar agora
     function mostrarTelaExtra(classeDaTela) {
         auth.classList.add("tela-extra-ativa");
 
@@ -100,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("." + classeDaTela).classList.add("tela-visivel");
     }
 
-    // Tira o container do modo "tela extra" (usado antes de voltar pro login)
+    // tira o container do "modo tela extra" (usa antes de voltar pro login)
     function sairDaTelaExtra() {
         auth.classList.remove("tela-extra-ativa");
         document.querySelectorAll(
@@ -108,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ).forEach((tela) => tela.classList.remove("tela-visivel"));
     }
 
-    // Link "Esqueceu sua senha?" dentro do login
+    // link "esqueceu sua senha?" dentro do login
     document.querySelectorAll('a[href="#recuperar"]').forEach((link) => {
         link.addEventListener("click", (e) => {
             e.preventDefault();
@@ -116,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Envia o e-mail de recuperação (sem back-end: só avança a tela)
+    // "enviar" o e-mail de recuperação (sem back-end real, só avança a tela mesmo)
     const formRecuperar = document.getElementById("form-recuperar");
     if (formRecuperar) {
         formRecuperar.addEventListener("submit", (e) => {
@@ -125,8 +134,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Botão "Abrir aplicativo de e-mail" (sem back-end real de e-mail,
-    // aqui só simula que a pessoa clicou no link do e-mail dela)
+    // botão "abrir aplicativo de e-mail" - aqui a gente só finge que a
+    // pessoa clicou no link que teria vindo no e-mail dela
     const btnAbrirEmail = document.getElementById("btn-abrir-email");
     if (btnAbrirEmail) {
         btnAbrirEmail.addEventListener("click", () => {
@@ -134,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Confere se a nova senha e a confirmação são iguais
+    // confere se a nova senha bate com a confirmação
     const novaSenha = document.getElementById("nova-senha");
     const confirmarNovaSenha = document.getElementById("confirmar-nova-senha");
 
@@ -150,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
         confirmarNovaSenha.addEventListener("input", conferirNovaSenha);
     }
 
-    // Define a nova senha (sem back-end: só avança pra tela de sucesso)
+    // define a nova senha (de novo, sem back-end: só avança pra tela de sucesso)
     const formDefinirSenha = document.getElementById("form-definir-senha");
     if (formDefinirSenha) {
         formDefinirSenha.addEventListener("submit", (e) => {
@@ -159,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Botão "Continuar" depois da senha redefinida, volta pro login
+    // botão "continuar" depois que a senha foi redefinida, volta pro login
     const btnContinuarRedefinida = document.getElementById("btn-continuar-redefinida");
     if (btnContinuarRedefinida) {
         btnContinuarRedefinida.addEventListener("click", () => {
@@ -167,4 +176,91 @@ document.addEventListener("DOMContentLoaded", () => {
             mostrarLogin();
         });
     }
+});
+
+
+// pop-up de conexão
+// (só roda na página que tem #modalConexao: encontrar pessoas)
+
+document.addEventListener("DOMContentLoaded", () => {
+    const modalConexao = document.getElementById("modalConexao");
+
+    // se não for a página de encontrar pessoas, não faz nada aqui
+    if (!modalConexao) return;
+
+    const passoPerfil = document.getElementById("modalPerfil");
+    const passoSucesso = document.getElementById("modalSucesso");
+
+    // monta as tagzinhas (Python, Git...) dentro de uma caixa do pop-up
+    function preencherTags(container, tags) {
+        container.innerHTML = "";
+        tags.forEach((texto) => {
+            const span = document.createElement("span");
+            span.textContent = texto;
+            container.appendChild(span);
+        });
+    }
+
+    // pega as tags que já estão escritas numa coluna do card
+    // (tanto faz se é "pode te ensinar" ou "quer aprender")
+    function lerTags(coluna) {
+        return Array.from(coluna.querySelectorAll(".pessoa-tags span")).map(
+            (s) => s.textContent
+        );
+    }
+
+    // abre o pop-up já preenchido com os dados da pessoa que a gente clicou
+    function abrirModal(botao) {
+        const linha = botao.closest(".pessoa-linha");
+        const foto = linha.querySelector(".pessoa-foto");
+        const colunas = linha.querySelectorAll(".pessoa-coluna");
+
+        const modalFoto = document.getElementById("modalFoto");
+        modalFoto.src = foto.src;
+        modalFoto.alt = foto.alt;
+
+        document.getElementById("modalNome").textContent =
+            linha.querySelector("h3").textContent;
+        document.getElementById("modalCurso").textContent =
+            linha.querySelector(".pessoa-perfil p").textContent;
+        document.getElementById("modalSobre").textContent =
+            botao.dataset.sobre || "";
+
+        preencherTags(document.getElementById("modalEnsinar"), lerTags(colunas[0]));
+        preencherTags(document.getElementById("modalAprender"), lerTags(colunas[1]));
+
+        passoPerfil.hidden = false;
+        passoSucesso.hidden = true;
+        modalConexao.hidden = false;
+    }
+
+    function fecharModal() {
+        modalConexao.hidden = true;
+    }
+
+    // cada botão "ver perfil" abre o modal com os dados daquela pessoa
+    document.querySelectorAll(".btn-ver-perfil").forEach((botao) => {
+        botao.addEventListener("click", () => abrirModal(botao));
+    });
+
+    // clicar em "fazer conexão" troca pra tela de "conexão realizada"
+    document.getElementById("btnFazerConexao").addEventListener("click", () => {
+        passoPerfil.hidden = true;
+        passoSucesso.hidden = false;
+    });
+
+    // os botõezinhos de "x" fecham o modal
+    modalConexao.querySelectorAll(".modal-fechar").forEach((botao) => {
+        botao.addEventListener("click", fecharModal);
+    });
+
+    // clicar fora da caixinha também fecha
+    modalConexao.addEventListener("click", (evento) => {
+        if (evento.target === modalConexao) fecharModal();
+    });
+
+    // e apertar ESC fecha também, é mais prático
+    document.addEventListener("keydown", (evento) => {
+        if (evento.key === "Escape") fecharModal();
+    });
 });

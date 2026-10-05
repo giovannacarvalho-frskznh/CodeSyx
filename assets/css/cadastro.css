@@ -1,0 +1,286 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+:root {
+  --azul-escuro: #0a1433;
+  --sidebar-azul: #0b1738;
+  --carta-azul: #12396e;
+
+  --azul: #008cff;
+
+  --verde: #6fcc39;
+  --verde-claro: #00ff66;
+
+  --branco: #ffffff;
+
+  --texto: #e9edf7;
+  --silenciado: #b7c0d4;
+}
+
+
+
+body {
+  min-height: 100vh;
+  background: var(--azul-escuro);
+  color: var(--branco);
+  font-family: "Poppins", sans-serif;
+}
+
+/* LOGIN, SENHA E CADASTRO */
+
+.container-auth {
+  position: relative;
+
+  width: 1000px;
+  height: 650px;
+
+  margin: 40px auto;
+
+  border-radius: 30px;
+  overflow: hidden;
+
+  background: var(--azul-escuro);
+  box-shadow: 0 0 40px rgba(0, 140, 255, 0.25);
+}
+
+.card-auth,
+.lado-mascote {
+  transition: transform 0.8s ease;
+}
+
+.card-auth {
+  position: absolute;
+
+  top: 16px;
+  bottom: 16px;
+  left: 20px;
+
+  width: calc(50% - 40px);
+
+  padding: 24px 36px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border: 2px solid var(--azul);
+  border-radius: 26px;
+
+  background: var(--azul-escuro);
+}
+
+.card-auth .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+
+  margin-bottom: 10px;
+}
+
+.card-auth .logo img {
+  width: 48px;
+  height: auto;
+}
+
+.card-auth .logo h2 {
+  font-family: Georgia, serif;
+  font-size: 1.9rem;
+}
+
+.card-auth .logo span {
+  color: #00dca8;
+}
+
+.subtitulo-auth {
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 8px 0 6px;
+}
+
+/* texto pequeno de apoio embaixo do título, usado nas telas de senha */
+.texto-auxiliar {
+  text-align: center;
+  color: var(--silenciado);
+  font-size: 0.78rem;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+/* telas escondidas por padrão: login e cadastro já existiam,
+   estas quatro são as novas do fluxo de "esqueci minha senha" */
+.tela-login,
+.tela-recuperar,
+.tela-verificar,
+.tela-definir-senha,
+.tela-senha-redefinida {
+  display: none;
+}
+
+/* classe que o JS liga em QUALQUER uma dessas telas pra mostrar ela */
+.tela-visivel {
+  display: block !important;
+}
+
+/* quando uma tela extra está ativa, login e cadastro ficam escondidos
+   mesmo que o container esteja ou não com a classe "invertido" */
+.container-auth.tela-extra-ativa .tela-login,
+.container-auth.tela-extra-ativa .tela-cadastro {
+  display: none !important;
+}
+
+.grupo-input {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.grupo-input label {
+  font-size: 0.75rem;
+}
+
+.grupo-input input,
+.input-select {
+  padding: 8px 12px;
+
+  border: 1px solid var(--azul);
+  border-radius: 8px;
+
+  background: #1d2c52;
+  color: var(--branco);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+}
+
+.input-select option {
+  background: #1d2c52;
+}
+
+.grupo-input input:focus,
+.input-select:focus {
+  outline: 2px solid var(--verde);
+}
+
+/* evita o fundo branco do autopreenchimento do navegador */
+.grupo-input input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 100px #1d2c52 inset;
+  -webkit-text-fill-color: #fff;
+}
+
+/* link "Esqueceu sua senha?" dentro do form de login */
+.link-esqueceu {
+  text-align: right;
+  font-size: 0.75rem;
+  margin: -4px 0 14px;
+}
+
+.link-esqueceu a {
+  color: var(--verde);
+  text-decoration: none;
+}
+
+.btn-primeiro {
+  padding: 11px;
+
+  border: 0;
+  border-radius: 20px;
+
+  background: linear-gradient(100deg, var(--verde), #00bfa5, var(--azul));
+  color: var(--branco);
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.btn-primeiro:hover {
+  filter: brightness(1.1);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.link-alternativo {
+  text-align: center;
+  font-size: 0.75rem;
+  margin-top: 12px;
+}
+
+.link-alternativo a {
+  color: var(--verde);
+  text-decoration: none;
+}
+
+.lado-mascote {
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width: 50%;
+  height: 100%;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background: var(--sidebar-azul);
+}
+
+.mascote {
+  width: 75%;
+  max-height: 390px;
+  transition: transform 0.8s ease;
+}
+
+.frase {
+  max-width: 340px;
+  margin-top: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* login: o js liga a classe "invertido" e tudo troca de lado */
+
+.container-auth.invertido .card-auth {
+  transform: translateX(calc(100% + 40px));
+}
+
+.container-auth.invertido .lado-mascote {
+  transform: translateX(-100%);
+}
+
+.container-auth.invertido .mascote {
+  transform: scaleX(-1);
+}
+
+.container-auth.invertido .tela-login {
+  display: block;
+}
+
+.container-auth.invertido .tela-cadastro {
+  display: none;
+}
+
+/* abre direto numa tela sem animar (usado pelo js) */
+.sem-animacao,
+.sem-animacao * {
+  transition: none !important;
+}
