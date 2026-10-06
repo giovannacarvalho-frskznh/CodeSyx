@@ -280,11 +280,31 @@ body {
     padding: 30px;
     overflow: hidden;
    
-
-    background-image: url("../img/Fundo-tela-inicial.png");
+  
+    background-image: url("../img/Fundo-tela-inicial.png")
+    ;
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    background-image: url("../img/mascoteee.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+     right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    z-index: 1;
 }
 
 .hero-content {
