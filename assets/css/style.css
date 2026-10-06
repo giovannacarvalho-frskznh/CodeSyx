@@ -110,10 +110,6 @@ header {
     width: 50%;
 }
 
-.nav-home-header li a:not(.ativo):hover::after {
-    width: 50%;
-}
-
 .nav-home-header li a.ativo::after {
     width: 50%;
 }
