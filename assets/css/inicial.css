@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -35,57 +35,51 @@ body {
 
 .header {
   width: 100%;
-  height: 102px;
-
+ height: 100px;
   display: flex;
   align-items: center;
-
   padding: 0 36px;
-
   background: var(--azul-escuro);
   border-bottom: 1px solid var(--azul);
-
+  box-shadow: 0 5px 6px #0000008e;
   position: relative;
   z-index: 10;
 }
 
-/* LOGO */
-
 .logo-area {
   width: 300px;
-
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 30px;
 }
 
 .logo-icon {
-  width: 76px;
-  height: 76px;
-
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: var(--verde-claro);
-  font-size: 52px;
+ 
 }
 
 .logo-text {
-  font-family: Georgia, serif;
-  font-size: 38px;
-  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 800;
 }
 
 .logo-text span {
-  color: #00dca8;
+  background: linear-gradient(90deg, #0FE19A, #01AECE);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
 
 /* BUSCA */
 
 .search-form {
   flex: 1;
-
   display: flex;
   justify-content: center;
 }
@@ -93,18 +87,13 @@ body {
 .search-input {
   width: 540px;
   height: 52px;
-
-  padding: 0 20px;
-
+  padding: 13px 14px;
   border: 1px solid var(--azul);
   border-radius: 10px;
-
   background: #1d2c52;
   color: var(--branco);
-
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-
   outline: none;
 }
 
@@ -121,15 +110,17 @@ body {
 .notification-button {
   width: 70px;
   height: 50px;
-
   margin-left: 20px;
-
   border: 0;
   background: transparent;
   color: var(--branco);
   font-size: 28px;
 
   cursor: pointer;
+}
+.fa-bell{
+  font-size: 25px;
+  margin-right: 50px;
 }
 
 
@@ -153,45 +144,39 @@ body {
 }
 
 .user-nome {
-    font-weight: 600;
-    font-size: 14px;
-    color: #ffffff;
+    font-size: 13px;
+    color: var(--branco);
 }
 
 .user-curso {
     font-size: 12px;
-    color: #94a3b8;
+    color: #B7B7B7;
 }
 
 .user-dropdown {
     background: none;
     border: none;
-    color: #94a3b8;
-    font-size: 16px;
+    color: var(--branco);
+    font-size: 15px;
     cursor: pointer;
 }
 
-
-
 .page-layout {
   min-height: calc(100vh - 102px);
-
   display: grid;
-  grid-template-columns: 268px minmax(0, 1fr) 384px;
+  grid-template-columns: 270px minmax(0, 1fr) 384px;
 }
 
 /*  SIDEBAR ESQUERDA */
 
 .sidebar {
   min-height: calc(100vh - 102px);
-
-  padding: 58px 17px 25px;
-
+  padding: 58px 20px 25px;
   display: flex;
   flex-direction: column;
-
   background: var(--sidebar-azul);
   border-right: 1px solid var(--azul);
+  box-shadow: 0 7px 7px #0a0a0a;
 }
 
 .sidebar-navigation {
@@ -202,16 +187,13 @@ body {
 
 .sidebar-link {
   height: 64px;
-
   display: flex;
   align-items: center;
   gap: 18px;
-
   padding: 0 28px;
-
   color: var(--branco);
   text-decoration: none;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 500;
 
   border-radius: 14px;
@@ -224,17 +206,23 @@ body {
 .sidebar-link.active {
   background: #32a935;
 }
+.sidebar-link.active span{
+  color: var(--branco);
+  position: relative;
+  left: 20px;
+}
 
+.encontrar-pessoas-menu {
+    white-space: nowrap;
+}
 /* ÍCONES DA SIDEBAR */
 
 .sidebar-icon {
-  width: 28px;
-  height: 28px;
-
+  font-size: 18px;
+  color: #75F94C;
   display: flex;
   align-items: center;
   justify-content: center;
-
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -243,46 +231,42 @@ body {
 
 .sidebar-message {
   margin-top: auto;
-
   padding: 24px 18px;
   min-height: 150px;
-
   border: 1px solid var(--azul);
   border-radius: 18px;
-
   background: #26375f;
 }
 
 .sidebar-message h2 {
   color: var(--verde);
-  font-size: 20px;
-  line-height: 1.5;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .sidebar-message p {
   margin-top: 5px;
-  color: var(--branco);
-  font-size: 14px;
-  line-height: 1.5;
+  color: #F6F6F6;
+  font-size: 15px;
+  font-weight: 600;
+  
 }
 
 .main-content {
   min-width: 0;
-  padding: 0 28px 60px;
-  overflow: hidden;
+  margin-left: 40px;
 }
 
 /* HERO */
 
 .hero {
-    min-height: 520px;
+  width: 750px;
+    min-height: 400px;
     position: relative;
     padding: 30px;
     overflow: hidden;
-   
-  
-    background-image: url("../img/Fundo-tela-inicial.png")
-    ;
+   margin-left: -40px;
+    background-image: url("../img/Fundo-tela-inicial.png");
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -291,16 +275,14 @@ body {
 .hero::after {
     content: "";
     position: absolute;
-
     width: 380px;
     height: 380px;
-
     background-image: url("../img/mascoteee.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 
-     right: 10px;
+    right: -15px;
     top: 50%;
     transform: translateY(-50%);
 
@@ -314,14 +296,14 @@ body {
 }
 
 .welcome-text {
-  margin-bottom: 12px;
-  color: var(--verde);
+  margin-bottom: 10px;
+  color: #66E21E;
   font-size: 15px;
   font-weight: 600;
 }
 
 .hero-title {
-  font-size: 40px;
+  font-size: 35px;
   line-height: 1.35;
   font-weight: 700;
 }
@@ -333,34 +315,28 @@ body {
 .hero-description {
   margin-top: 8px;
   color: var(--branco);
-  font-size: 14px;
+  font-size: 13px;
+
   line-height: 1.6;
 }
 
 .primary-button {
   margin-top: 40px;
-
-  height: 60px;
+  height: 55px;
   padding: 0 24px;
-
-  border: 0;
+ border: none;
   border-radius: 18px;
-
   background: linear-gradient(100deg, var(--verde), #00bfa5, #008cff);
   color: var(--branco);
-
   font-family: "Poppins", sans-serif;
   font-size: 17px;
   font-weight: 600;
-
   cursor: pointer;
 }
 
 .primary-button:hover {
   filter: brightness(1.1);
 }
-
-
 
 .recommendations {
   padding-top: 35px;
@@ -370,7 +346,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   margin-bottom: 28px;
 }
 
@@ -384,7 +359,7 @@ body {
 
 .section-icon {
   color: var(--verde);
-  font-size: 27px;
+  font-size: 25px;
 }
 
 .see-all {
@@ -415,17 +390,16 @@ body {
 /* CARD DE PESSOA */
 
 .person-card {
+  margin-left: 10px;
+  width: 200px;
   height: 270px;
   padding: 14px 10px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-
   border: 1px solid var(--azul);
   border-radius: 16px;
-
   background: #0c3266;
 }
 
@@ -528,25 +502,22 @@ body {
 /* LATERAL DIREITA */
 
 .right-sidebar {
-  min-height: calc(100vh - 102px);
-
-  padding: 20px 18px 40px;
-
+  padding: 30px 18px ;
+margin-left: 50px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-
+  gap: 35px;
   background: var(--azul-escuro);
 }
 
 /* CARD DE PROGRESSO */
 
 .progress-card {
-  padding: 20px;
-
+  padding: 10px;
   border: 1px solid var(--azul);
   border-radius: 18px;
-
+width: 300px;
+box-shadow: 0 10px 30px rgba(9, 105, 211, 0.5);
   background: #26375f;
 }
 
@@ -554,27 +525,27 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
+ 
 }
 
 .card-title h2 {
-  font-size: 19px;
+  font-size: 14px;
 }
 
 .title-icon {
-  font-size: 24px;
+  font-size: 23px;
 }
 
 .xp-area {
-  margin-top: 20px;
-
+  margin-top: 10px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
 }
 
 .xp-circle {
-  width: 64px;
-  height: 64px;
+  width: 45px;
+  height: 45px;
   flex-shrink: 0;
 
   display: flex;
@@ -585,7 +556,7 @@ body {
   border-radius: 50%;
 
   color: var(--verde);
-  font-size: 21px;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -594,15 +565,13 @@ body {
 }
 
 .xp-info strong {
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .progress-bar {
-  width: 100%;
-  height: 16px;
-
+  width: 80%;
+  height: 13px;
   margin-top: 8px;
-
   border: 2px solid var(--azul);
   border-radius: 20px;
   overflow: hidden;
@@ -611,35 +580,36 @@ body {
 .progress-fill {
   width: 45%;
   height: 100%;
-
   background: linear-gradient(90deg, var(--verde), var(--azul));
 }
 
 .progress-divider {
+  width: 250px;
   height: 1px;
-  margin: 20px 0 12px;
+  margin: 20px 0 12px 40px;
   background: #315071;
 }
 
 .progress-card h3 {
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .area-tags {
   display: flex;
-  gap: 10px;
+  gap: 5px;
   margin-top: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .area-tags span {
-  flex: 1;
+  width: 80px;
   padding: 6px 7px;
-  border-radius: 8px;
 
+  border-radius: 8px;
   background: #0d193d;
   color: var(--verde);
   text-align: center;
-
   font-size: 11px;
   font-weight: 600;
 }
@@ -648,7 +618,7 @@ body {
 
 .help-card {
   padding: 20px;
-
+box-shadow: 0 10px 30px rgba(9, 105, 211, 0.5);
   border: 1px solid var(--azul);
   border-radius: 18px;
 
@@ -746,32 +716,27 @@ body {
 /* CARD MOTIVACIONAL DIREITA */
 
 .right-message {
-  min-height: 230px;
-  margin-top: auto;
-
-  padding: 25px 20px;
-
+  min-height: 130px;
+border-radius: 10px;
+display: flex;
+align-items: center;
+border: 1px solid #007CFE;
+box-shadow: 0 10px 30px rgba(9, 105, 211, 0.5);
   background: #26375f;
-  text-align: center;
-}
-
-.target-icon {
-  margin-bottom: 16px;
-  color: var(--verde);
-  font-size: 58px;
-  line-height: 1;
 }
 
 .right-message h2 {
+  width: 130px;
   color: var(--branco);
-  font-size: 17px;
+  font-size: 14px;
   line-height: 1.5;
 }
 
 .right-message p {
-  margin-top: 18px;
+  width: 200px;
+  margin-top: 5px;
   color: var(--branco);
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.6;
 }
 

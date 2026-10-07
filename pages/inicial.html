@@ -4,16 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>CodeSyx - Início</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/inicial.css">
 
-    <!-- Fonte -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 
@@ -42,7 +36,7 @@
 
         <button type="button" class="notification-button" aria-label="Notificações">
 
-            🔔
+            <i class="fa-regular fa-bell"></i>
 
         </button>
 
@@ -65,7 +59,7 @@
 
             <button type="button" class="user-dropdown" aria-label="Abrir menu do usuário">
 
-                ⌄
+                <i class="fa-solid fa-chevron-down"></i>
 
             </button>
 
@@ -78,19 +72,15 @@
     <div class="page-layout">
 
 
-        <!-- MENU LATERAL ESQUERDO -->
-
         <aside class="sidebar">
 
             <nav class="sidebar-navigation" aria-label="Menu principal">
 
 
-
-
                 <a href="#" class="sidebar-link active">
 
                     <span class="sidebar-icon">
-                        ⌂
+                        <i class="fa-solid fa-house"></i>
                     </span>
 
                     <span>
@@ -100,22 +90,21 @@
                 </a>
 
 
-
-
                 <a href="../pages/encontrar_pessoas.html" class="sidebar-link" id="findPeopleLink">
-                    <img src="../assets/img/Find User Male.png" alt="" class="sidebar-icon">
-                    <span>
+                    <span class="sidebar-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </span>
+                    <span class="encontrar-pessoas-menu">
                         Encontrar pessoas
                     </span>
                 </a>
 
 
-
-
                 <a href="#" class="sidebar-link">
 
-                    <img src="../assets/img/Speech Bubble.png " alt="" class="sidebar-icon">
-
+                    <span class="sidebar-icon">
+                        <i class="fa-solid fa-comment"></i>
+                    </span>
                     <span>
                         Conversas
                     </span>
@@ -123,10 +112,11 @@
                 </a>
 
 
-
                 <a href="#" class="sidebar-link">
 
-                    <img src="../assets/img/Profile.png" alt="" class="sidebar-icon">
+                    <span class="sidebar-icon">
+                        <i class="fa-solid fa-circle-user"></i>
+                    </span>
 
                     <span>
                         Perfil
@@ -214,7 +204,7 @@
                     <h2>
 
                         <span class="section-icon">
-                            ♧
+                            <i class="fa-solid fa-users"></i>
                         </span>
 
                         Recomendações para você
@@ -224,7 +214,7 @@
 
                     <a href="#" class="see-all">
 
-                        Ver todos →
+                        Ver todos <i class="fa-solid fa-arrow-right"></i>
 
                     </a>
 
@@ -240,7 +230,9 @@
 
                     <article class="person-card">
 
-                        <div class="avatar"></div>
+                        <div class="avatar">
+
+                        </div>
 
 
                         <h3>
@@ -582,25 +574,25 @@
 
 
                 <div class="target-icon">
-                    ◎
+                    <img src="../assets/img/Goal.png" alt="">
                 </div>
 
+                <div class="texto-right-message">
+                    <h2>
 
-                <h2>
+                        Seu esforço te leva
+                        mais longe.
 
-                    Seu esforço te leva<br>
-                    mais longe.
-
-                </h2>
+                    </h2>
 
 
-                <p>
+                    <p>
 
-                    Grandes conquistas começam<br>
-                    com pequenas conversas
+                        Grandes conquistas começam
+                        com pequenas conversas
 
-                </p>
-
+                    </p>
+                </div>
             </section>
 
         </aside>
