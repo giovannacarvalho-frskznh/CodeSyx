@@ -1,604 +1,208 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeSyx - Início</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/inicial.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CodeSyx | Início</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/inicial.css">
 </head>
+<body class="dash-body">
 
+  <header class="dash-topo">
+    <a href="#" class="logo">
+      <img src="../assets/img/logo.png" alt="Logo CodeSyx">
+      <h2>Code<span>Syx</span></h2>
+    </a>
 
-<body>
-    <header class="header">
+    <form class="dash-busca">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input class="dash-busca-input" type="text" placeholder="Buscar pessoas, linguagens, matérias...">
+    </form>
 
-        <div class="logo-area">
-
-            <div class="logo-icon">
-                <img src="../assets/img/logo.png" alt="logo CodeSyx">
-            </div>
-
-            <span class="logo-text">
-                Code<span>Syx</span>
-            </span>
-
+    <div class="dash-topo-direita">
+      <i class="fa-regular fa-bell dash-topo-sino"></i>
+      <div class="dash-topo-usuario">
+        <div class="dash-usuario-avatar"><img src="../assets/img/carlos.png" alt="foto carlos"></div>
+        <div class="dash-usuario-dados">
+          <span class="dash-usuario-nome">Carlos</span>
+          <span class="dash-usuario-semestre">1º Semestre | ADS</span>
         </div>
-
-
-        <form action="#" class="search-form">
-
-            <input type="search" class="search-input" placeholder="Buscar pessoas, linguagens, matérias...">
-
-        </form>
-
-
-        <button type="button" class="notification-button" aria-label="Notificações">
-
-            <i class="fa-regular fa-bell"></i>
-
-        </button>
-
-
-        <div class="user-area">
-
-            <img src="../assets/img/carlos.png" alt="Foto de Carlos" class="user-avatar">
-
-            <div class="user-info">
-
-                <p class="user-nome">
-                    Carlos
-                </p>
-
-                <p class="user-curso">
-                    1°Semestre | ADS
-                </p>
-
-            </div>
-
-            <button type="button" class="user-dropdown" aria-label="Abrir menu do usuário">
-
-                <i class="fa-solid fa-chevron-down"></i>
-
-            </button>
-
-        </div>
-
-    </header>
-
-
-
-    <div class="page-layout">
-
-
-        <aside class="sidebar">
-
-            <nav class="sidebar-navigation" aria-label="Menu principal">
-
-
-                <a href="#" class="sidebar-link active">
-
-                    <span class="sidebar-icon">
-                        <i class="fa-solid fa-house"></i>
-                    </span>
-
-                    <span>
-                        Início
-                    </span>
-
-                </a>
-
-
-                <a href="../pages/encontrar_pessoas.html" class="sidebar-link" id="findPeopleLink">
-                    <span class="sidebar-icon">
-                        <i class="fa-solid fa-users"></i>
-                    </span>
-                    <span class="encontrar-pessoas-menu">
-                        Encontrar pessoas
-                    </span>
-                </a>
-
-
-                <a href="#" class="sidebar-link">
-
-                    <span class="sidebar-icon">
-                        <i class="fa-solid fa-comment"></i>
-                    </span>
-                    <span>
-                        Conversas
-                    </span>
-
-                </a>
-
-
-                <a href="#" class="sidebar-link">
-
-                    <span class="sidebar-icon">
-                        <i class="fa-solid fa-circle-user"></i>
-                    </span>
-
-                    <span>
-                        Perfil
-                    </span>
-
-                </a>
-
-            </nav>
-
-
-            <section class="sidebar-message">
-
-                <h2>
-                    Juntos, vamos<br>
-                    mais longe.
-                </h2>
-
-                <p>
-                    Estude, Evolua e<br>
-                    Conquiste.
-                </p>
-
-            </section>
-
-        </aside>
-
-
-
-
-        <main class="main-content">
-
-
-            <section class="hero">
-
-                <div class="hero-content">
-
-
-                    <p class="welcome-text">
-                        Bem-vindo(a), Usuário!
-                    </p>
-
-
-                    <h1 class="hero-title">
-
-                        Encontre sua
-                        <span>turma.</span>
-
-                        <br>
-
-                        <span>
-                            Evolua junto.
-                        </span>
-
-                    </h1>
-
-
-                    <p class="hero-description">
-
-                        Conecte-se com outros estudantes da sua área,<br>
-                        mesmo semestre ou que já passaram pela matéria.<br>
-                        Juntos, o aprendizado fica mais fácil.
-
-                    </p>
-
-
-                    <button type="button" class="primary-button" id="findPeopleButton">
-
-                        Encontrar pessoas
-
-                    </button>
-
-                </div>
-
-            </section>
-
-
-
-
-            <section class="recommendations" id="recommendations">
-
-
-
-                <div class="section-header">
-
-                    <h2>
-
-                        <span class="section-icon">
-                            <i class="fa-solid fa-users"></i>
-                        </span>
-
-                        Recomendações para você
-
-                    </h2>
-
-
-                    <a href="#" class="see-all">
-
-                        Ver todos <i class="fa-solid fa-arrow-right"></i>
-
-                    </a>
-
-                </div>
-
-
-
-
-                <div class="people-grid">
-
-
-                    <!-- CARD 1 -->
-
-                    <article class="person-card">
-
-                        <div class="avatar">
-
-                        </div>
-
-
-                        <h3>
-                            Lucas Almeida
-                        </h3>
-
-
-                        <p class="person-course">
-                            2º semestre - GTI
-                        </p>
-
-
-                        <p class="person-subject">
-                            Python Listas
-                        </p>
-
-
-                        <div class="tags">
-
-                            <span>
-                                Python
-                            </span>
-
-                            <span>
-                                Funções
-                            </span>
-
-                            <span>
-                                Listas
-                            </span>
-
-                        </div>
-
-
-                        <button type="button" class="connect-button" data-user="Lucas Almeida">
-
-                            Conectar-se
-
-                        </button>
-
-                    </article>
-
-
-
-                    <!-- CARD 2 -->
-
-                    <article class="person-card">
-
-                        <div class="avatar"></div>
-
-
-                        <h3>
-                            Gabriel Santos
-                        </h3>
-
-
-                        <p class="person-course">
-                            3º semestre - ADS
-                        </p>
-
-
-                        <p class="person-subject">
-                            Java POO
-                        </p>
-
-
-                        <div class="tags">
-
-                            <span>
-                                POO
-                            </span>
-
-                            <span>
-                                Java
-                            </span>
-
-                            <span>
-                                React
-                            </span>
-
-                        </div>
-
-
-                        <button type="button" class="connect-button" data-user="Gabriel Santos">
-
-                            Conectar-se
-
-                        </button>
-
-                    </article>
-
-
-
-                    <!-- CARD 3 -->
-
-                    <article class="person-card">
-
-                        <div class="avatar"></div>
-
-
-                        <h3>
-                            Ana Castela
-                        </h3>
-
-
-                        <p class="person-course">
-                            2º semestre - Ciência da Computação
-                        </p>
-
-
-                        <p class="person-subject">
-                            Java Banco de Dados
-                        </p>
-
-
-                        <div class="tags">
-
-                            <span>
-                                POO
-                            </span>
-
-                            <span>
-                                Java
-                            </span>
-
-                            <span>
-                                SQL
-                            </span>
-
-                        </div>
-
-
-                        <button type="button" class="connect-button" data-user="Ana Castela">
-
-                            Conectar-se
-
-                        </button>
-
-                    </article>
-
-
-
-                    <!-- CARD 4
-                         Mantido para futuro uso -->
-
-                    <article class="person-card">
-
-                        <div class="avatar"></div>
-
-
-                        <h3>
-                            Maria Silva
-                        </h3>
-
-
-                        <p class="person-course">
-                            2º semestre - ADS
-                        </p>
-
-
-                        <p class="person-subject">
-                            JavaScript Avançado
-                        </p>
-
-
-                        <div class="tags">
-
-                            <span>
-                                JavaScript
-                            </span>
-
-                            <span>
-                                Web
-                            </span>
-
-                            <span>
-                                DOM
-                            </span>
-
-                        </div>
-
-
-                        <button type="button" class="connect-button" data-user="Maria Silva">
-
-                            Conectar-se
-
-                        </button>
-
-                    </article>
-
-                </div>
-
-            </section>
-
-        </main>
-
-
-
-        <aside class="right-sidebar">
-
-            <section class="progress-card">
-
-
-                <div class="card-title">
-
-                    <span class="title-icon">
-                        ☷
-                    </span>
-
-                    <h2>
-                        Seu progresso
-                    </h2>
-
-                </div>
-
-
-
-                <div class="xp-area">
-
-
-                    <div class="xp-circle">
-                        <span>
-                            XP
-                        </span>
-                    </div>
-
-
-                    <div class="xp-info">
-
-                        <strong>
-                            120 XP
-                        </strong>
-
-
-                        <div class="progress-bar">
-
-                            <div class="progress-fill"></div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="progress-divider"></div>
-
-
-                <h3>
-                    Sua área
-                </h3>
-
-
-                <div class="area-tags">
-
-                    <span>
-                        ADS
-                    </span>
-
-                    <span>
-                        2ºSemestre
-                    </span>
-
-                    <span>
-                        Python
-                    </span>
-
-                </div>
-
-            </section>
-
-
-
-            <section class="help-card">
-
-
-                <div class="help-header">
-
-
-                    <div>
-
-                        <h2>
-                            SOS Dúvida
-                        </h2>
-
-                        <p>
-                            Encontre alguém em instantes
-                        </p>
-
-                    </div>
-
-
-                    <span class="online">
-
-                        <i></i>
-
-                        Online
-
-                    </span>
-
-                </div>
-
-
-
-                <article class="help-content">
-
-                    <h3>
-                        Python Lista
-                    </h3>
-
-
-                    <p>
-                        2º Semestre
-                    </p>
-
-
-                    <span class="available">
-
-                        <i></i>
-
-                        3 pessoas disponíveis
-
-                    </span>
-
-
-                    <button type="button" class="help-button" id="helpButton">
-
-                        Encontrar ajuda agora
-
-                    </button>
-
-                </article>
-
-            </section>
-
-
-            <section class="right-message">
-
-
-                <div class="target-icon">
-                    <img src="../assets/img/Goal.png" alt="">
-                </div>
-
-                <div class="texto-right-message">
-                    <h2>
-
-                        Seu esforço te leva
-                        mais longe.
-
-                    </h2>
-
-
-                    <p>
-
-                        Grandes conquistas começam
-                        com pequenas conversas
-
-                    </p>
-                </div>
-            </section>
-
-        </aside>
-
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
     </div>
+  </header>
+
+  <div class="dash-layout">
+
+    <section class="dash-sidebar">
+      <div class="dash-menu">
+        <a href="inicial.html" class="dash-menu-link dash-menu-link-ativo">
+          <i class="fa-solid fa-house"></i>
+          <span>Início</span>
+        </a>
+        <a href="encontrar_pessoas.html" class="dash-menu-link">
+          <i class="fa-solid fa-user-group"></i>
+          <span>Encontrar pessoas</span>
+        </a>
+        <a href="conversas.html" class="dash-menu-link">
+          <i class="fa-regular fa-comment"></i>
+          <span>Conversas</span>
+        </a>
+        <a href="perfil.html" class="dash-menu-link">
+          <i class="fa-regular fa-circle-user"></i>
+          <span>Perfil</span>
+        </a>
+      </div>
+
+      <div class="dash-sidebar-frase">
+        <div class="dash-sidebar-frase-titulo">Juntos, vamos mais longe.</div>
+        <div class="dash-sidebar-frase-texto">Estude, Evolua e Conquiste.</div>
+      </div>
+    </section>
+
+    <main class="dash-principal">
+
+      <section class="dash-hero">
+        <div class="dash-hero-conteudo">
+          <span class="dash-hero-boasvindas">Bem-vindo(a), Usuário!</span>
+          <div class="dash-hero-titulo">Encontre sua <span class="dash-hero-destaque">turma.</span></div>
+          <div class="dash-hero-subtitulo">Evolua junto</div>
+          <div class="dash-hero-texto">
+            Conecte-se com outros estudantes da sua área, mesmo semestre ou que
+            já passaram pela matéria. Juntos, o aprendizado fica mais fácil.
+          </div>
+          <a href="encontrar_pessoas.html" class="dash-hero-botao">Encontrar pessoas</a>
+        </div>
+        <div class="dash-hero-mascote"></div>
+      </section>
+
+      <section class="dash-recomendacoes">
+        <div class="dash-recomendacoes-cabecalho">
+          <div class="dash-recomendacoes-titulo">
+            <i class="fa-solid fa-users"></i>
+            Recomendações para você
+          </div>
+          <a href="#" class="dash-recomendacoes-link">
+            Ver todos <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="dash-recomendacoes-lista">
+
+          <div class="dash-pessoa-card">
+            <div class="dash-pessoa-foto dash-pessoa-foto-lucas"></div>
+            <div class="dash-pessoa-nome">Lucas Almeida</div>
+            <div class="dash-pessoa-info">
+              <span>2º semestre - GTI</span>
+              <span>Python Listas</span>
+            </div>
+            <div class="dash-pessoa-tags">
+              <span class="dash-tag">Python</span>
+              <span class="dash-tag">Funções</span>
+              <span class="dash-tag">Listas</span>
+            </div>
+            <a href="encontrar_pessoas.html" class="dash-pessoa-botao">Conectar-se</a>
+          </div>
+
+          <div class="dash-pessoa-card">
+            <div class="dash-pessoa-foto dash-pessoa-foto-gabriel"></div>
+            <div class="dash-pessoa-nome">Gabriel Santos</div>
+            <div class="dash-pessoa-info">
+              <span>3º semestre - ADS</span>
+              <span>Java POO</span>
+            </div>
+            <div class="dash-pessoa-tags">
+              <span class="dash-tag">POO</span>
+              <span class="dash-tag">Java</span>
+              <span class="dash-tag">React</span>
+            </div>
+            <a href="encontrar_pessoas.html" class="dash-pessoa-botao">Conectar-se</a>
+          </div>
+
+          <div class="dash-pessoa-card">
+            <div class="dash-pessoa-foto dash-pessoa-foto-ana"></div>
+            <div class="dash-pessoa-nome">Ana Costa</div>
+            <div class="dash-pessoa-info">
+              <span>3º semestre - ADS</span>
+              <span>Java Banco de Dados</span>
+            </div>
+            <div class="dash-pessoa-tags">
+              <span class="dash-tag">Python</span>
+              <span class="dash-tag">Lógica</span>
+              <span class="dash-tag">Git</span>
+            </div>
+            <a href="encontrar_pessoas.html" class="dash-pessoa-botao">Conectar-se</a>
+          </div>
+
+          <div class="dash-pessoa-card">
+            <div class="dash-pessoa-foto dash-pessoa-foto-alice"></div>
+            <div class="dash-pessoa-nome">Gabriella Santos</div>
+            <div class="dash-pessoa-info">
+              <span>3º semestre - Ciência da computação- C# .NET</span>
+            </div>
+            <div class="dash-pessoa-tags">
+              <span class="dash-tag">POO</span>
+              <span class="dash-tag">C#</span>
+              <span class="dash-tag">.NET</span>
+            </div>
+            <a href="encontrar_pessoas.html" class="dash-pessoa-botao">Conectar-se</a>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <section class="dash-painel">
+
+      <div class="dash-painel-caixa dash-progresso">
+        <div class="dash-painel-titulo">Seu progresso</div>
+        <div class="dash-progresso-xp">
+          <div class="dash-progresso-icone">XP</div>
+          <div class="dash-progresso-info">
+            <span class="dash-progresso-valor">120 XP</span>
+            <div class="dash-progresso-barra">
+              <div class="dash-progresso-barra-cheia"></div>
+            </div>
+          </div>
+        </div>
+        <div class="dash-progresso-area-titulo">Sua área</div>
+        <div class="dash-progresso-area-tags">
+          <span class="dash-tag-area">ADS</span>
+          <span class="dash-tag-area">2º Semestre</span>
+          <span class="dash-tag-area">Python</span>
+        </div>
+      </div>
+
+      <div class="dash-painel-caixa dash-sos">
+        <div class="dash-sos-cabecalho">
+          <div>
+            <div class="dash-painel-titulo">SOS Dúvida</div>
+            <span class="dash-sos-subtitulo">Encontre alguém em instantes</span>
+          </div>
+          <span class="dash-sos-status">
+            <i class="fa-solid fa-circle"></i>Online
+          </span>
+        </div>
+
+        <div class="dash-sos-duvida">
+          <span class="dash-sos-materia">Python Lista</span>
+          <span class="dash-sos-semestre">2º Semestre</span>
+          <span class="dash-sos-disponiveis">3 pessoas disponíveis</span>
+          <a href="encontrar_pessoas.html" class="dash-sos-botao">Encontrar ajuda agora</a>
+        </div>
+      </div>
+
+      <div class="dash-painel-caixa dash-esforco">
+        <i class="fa-solid fa-bullseye dash-esforco-icone"></i>
+        <div class="dash-esforco-texto">
+          <div class="dash-esforco-titulo">Seu esforço te leva mais longe.</div>
+          <div class="dash-esforco-descricao">Grandes conquistas começam com pequenas conversas</div>
+        </div>
+      </div>
+
+    </section>
+  </div>
 
 </body>
-
 </html>

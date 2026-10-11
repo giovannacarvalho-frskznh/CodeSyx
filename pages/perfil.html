@@ -1,501 +1,182 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>CodeSyx - Perfil</title>
-
-    <link rel="stylesheet" href="../assets/css/perfil.css">
-
-    <!-- Fonte -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeSyx - Perfil</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/inicial.css">
+  <link rel="stylesheet" href="../assets/css/perfil.css">
 </head>
 
+<body class="dash-body">
 
-<body>
-<header class="header">
+  <header class="dash-topo">
+    <a href="inicial.html" class="logo">
+      <img src="../assets/img/logo.png" alt="Logo CodeSyx">
+      <h2>Code<span>Syx</span></h2>
+    </a>
 
-    <div class="logo-area">
-
-        <div class="logo-icon">
-            <img src="../assets/img/logo.png" alt="logo CodeSyx">
-        </div>
-
-        <span class="logo-text">
-            Code<span>Syx</span>
-        </span>
-
-    </div>
-
-
-    <form action="#" class="search-form">
-
-        <input
-            type="search"
-            class="search-input"
-            placeholder="Buscar pessoas, linguagens, matérias..."
-        >
-
+    <form class="dash-busca">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input class="dash-busca-input" type="text" placeholder="Buscar pessoas, linguagens, matérias...">
     </form>
 
+    <div class="dash-topo-direita">
+      <i class="fa-regular fa-bell dash-topo-sino"></i>
+      <div class="dash-topo-usuario">
+        <div class="dash-usuario-avatar"><img src="../assets/img/carlos.png" alt="foto carlos"></div>
+        <div class="dash-usuario-dados">
+          <span class="dash-usuario-nome">Carlos</span>
+          <span class="dash-usuario-semestre">1º Semestre | ADS</span>
+        </div>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+    </div>
+  </header>
 
-    <button
-        type="button"
-        class="notification-button"
-        aria-label="Notificações">
+  <div class="dash-layout dash-layout-duas-colunas">
 
-        🔔
+    <section class="dash-sidebar">
+      <div class="dash-menu">
+        <a href="inicial.html" class="dash-menu-link">
+          <i class="fa-solid fa-house"></i>
+          <span>Início</span>
+        </a>
+        <a href="encontrar_pessoas.html" class="dash-menu-link">
+          <i class="fa-solid fa-user-group"></i>
+          <span>Encontrar pessoas</span>
+        </a>
+        <a href="conversas.html" class="dash-menu-link">
+          <i class="fa-regular fa-comment"></i>
+          <span>Conversas</span>
+        </a>
+        <a href="perfil.html" class="dash-menu-link dash-menu-link-ativo">
+          <i class="fa-regular fa-circle-user"></i>
+          <span>Perfil</span>
+        </a>
+      </div>
 
-    </button>
+      <div class="dash-sidebar-frase">
+        <div class="dash-sidebar-frase-titulo">Juntos, vamos mais longe.</div>
+        <div class="dash-sidebar-frase-texto">Estude, Evolua e Conquiste.</div>
+      </div>
+    </section>
 
+    <main class="dash-principal perfil-principal">
 
-    <div class="user-area">
+      <!-- CARD DO TOPO -->
+      <section class="perfil-topo">
+        <img src="../assets/img/carlos.png" alt="Foto de Carlos" class="perfil-foto" id="perfil-foto">
 
-        <img
-            src="../assets/img/avatar-carlos.png"
-            alt="Foto de Carlos"
-            class="user-avatar">
-
-        <div class="user-info">
-
-            <p class="user-nome">
-                Carlos
-            </p>
-
-            <p class="user-curso">
-                1°Semestre | ADS
-            </p>
-
+        <div class="perfil-topo-dados">
+          <h1 class="perfil-nome" id="perfil-nome">Carlos Almeida</h1>
+          <p class="perfil-semestre" id="perfil-semestre">1ºSemestre | ADS</p>
         </div>
 
-        <button
-            type="button"
-            class="user-dropdown"
-            aria-label="Abrir menu do usuário">
-
-            ⌄
-
-        </button>
-
-    </div>
-
-</header>
-
-
-    <div class="page-layout">
-
-
-
-        <aside class="sidebar">
-
-            <nav class="sidebar-navigation" aria-label="Menu principal">
-
-
-
-
-                <a href="../pages/inicial.html" class="sidebar-link">
-
-                    <span class="sidebar-icon">
-                        ⌂
-                    </span>
-
-                    <span>
-                        Início
-                    </span>
-
-                </a>
-
-
-
-                <a
-                    href="../pages/encontrar_pessoas.html"
-                    class="sidebar-link">
-
-                    <img
-                        src="../assets/img/Find User Male.png"
-                        alt=""
-                        class="sidebar-icon">
-
-                    <span>
-                        Encontrar pessoas
-                    </span>
-
-                </a>
-
-
-                <a
-                    href="../pages/conversas.html"
-                    class="sidebar-link">
-
-                    <img
-                        src="../assets/img/Speech Bubble.png"
-                        alt=""
-                        class="sidebar-icon">
-
-                    <span>
-                        Conversas
-                    </span>
-
-                </a>
-
-
-
-                <a href="#" class="sidebar-link active">
-
-                    <img
-                        src="../assets/img/Profile.png"
-                        alt=""
-                        class="sidebar-icon">
-
-                    <span>
-                        Perfil
-                    </span>
-
-                </a>
-
-            </nav>
-
-
-            <!-- CARD MOTIVACIONAL -->
-
-            <section class="sidebar-message">
-
-                <h2>
-                    Juntos, vamos<br>
-                    mais longe.
-                </h2>
-
-                <p>
-                    Estude, Evolua e<br>
-                    Conquiste.
-                </p>
-
-            </section>
-
-        </aside>
-
-
-
-
-        <main class="main-content">
-
-
-
-
-            <section class="perfil-header">
-
-                <div class="perfil-identificacao">
-
-                    <img
-                        src="../assets/img/avatar-carlos.png"
-                        alt="Foto de Carlos Almeida"
-                        class="perfil-avatar">
-
-
-                    <div class="perfil-nome">
-
-                        <h1>
-                            Carlos Almeida
-                        </h1>
-
-                        <p>
-                            1ºSemestre | ADS
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="perfil-acoes">
-
-                    <button
-                        type="button"
-                        class="perfil-btn perfil-btn-verde">
-
-                        <span>▣</span>
-                        Alterar foto
-
-                    </button>
-
-
-                    <button
-                        type="button"
-                        class="perfil-btn perfil-btn-editar">
-
-                        ✎
-                        Editar perfil
-
-                    </button>
-
-                </div>
-
-            </section>
-
-
-
- 
-
-            <section class="perfil-grid">
-
-
-        
-
-                <article class="perfil-card sobre-card">
-
-                    <div class="perfil-card-header">
-
-                        <h2>
-                            ♧
-                            Sobre mim
-                        </h2>
-
-                        <button
-                            type="button"
-                            class="perfil-editar">
-
-                            ✎ Editar
-
-                        </button>
-
-                    </div>
-
-
-                    <p class="sobre-texto">
-
-                        Curto tecnologia, programação
-                        e sempre estou buscando
-                        aprender algo novo. Gosto de
-                        trocar ideias, ajudar quem está
-                        aprendendo e crescer junto com
-                        a galera.
-
-                    </p>
-
-                </article>
-
-
-
-                <article class="perfil-card aprender-card">
-
-                    <div class="perfil-card-header">
-
-                        <h2>
-                            ♧
-                            Quero aprender
-                        </h2>
-
-                        <button
-                            type="button"
-                            class="perfil-editar">
-
-                            ✎ Editar
-
-                        </button>
-
-                    </div>
-
-
-                    <div class="perfil-tecnologias">
-
-
-                        <div class="tecnologia">
-
-                            <img
-                                src="../assets/img/icone-python.png"
-                                alt="Python">
-
-                            <span>
-                                Python
-                            </span>
-
-                        </div>
-
-
-                        <div class="tecnologia">
-
-                            <span class="icone-tecnologia">
-                                ◉
-                            </span>
-
-                            <span>
-                                Lógica
-                            </span>
-
-                        </div>
-
-
-                        <div class="tecnologia">
-
-                            <span class="icone-tecnologia git">
-                                ◆
-                            </span>
-
-                            <span>
-                                Git
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-
-
-                <article class="perfil-card conhecimentos-card">
-
-                    <div class="perfil-card-header">
-
-                        <h2>
-                            ▱
-                            Conhecimentos
-                        </h2>
-
-                        <button
-                            type="button"
-                            class="perfil-editar">
-
-                            ✎ Editar
-
-                        </button>
-
-                    </div>
-
-
-                    <div class="perfil-tecnologias">
-
-
-                        <div class="tecnologia">
-
-                            <span class="icone-html">
-                                5
-                            </span>
-
-                            <span>
-                                HTML
-                            </span>
-
-                        </div>
-
-
-                        <div class="tecnologia">
-
-                            <span class="icone-css">
-                                3
-                            </span>
-
-                            <span>
-                                CSS
-                            </span>
-
-                        </div>
-
-
-                        <div class="tecnologia">
-
-                            <span class="icone-js">
-                                JS
-                            </span>
-
-                            <span>
-                                JavaScript
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-
-                <article class="perfil-card dados-card">
-
-                    <div class="perfil-card-header">
-
-                        <h2>
-                            ▧
-                            Dados Pessoais
-                        </h2>
-
-                        <button
-                            type="button"
-                            class="perfil-editar">
-
-                            ✎ Editar
-
-                        </button>
-
-                    </div>
-
-
-                    <div class="dados-lista">
-
-
-                        <div class="dado">
-
-                            <span class="dado-icone">
-                                ✉
-                            </span>
-
-                            <div>
-
-                                <strong>
-                                    E-mail
-                                </strong>
-
-                                <p>
-                                    carlosalmeida19@email.com
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="dado">
-
-                            <span class="dado-icone">
-                                ◇
-                            </span>
-
-                            <div>
-
-                                <strong>
-                                    Curso
-                                </strong>
-
-                                <p>
-                                    ADS - 3º Semestre
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-            </section>
-
-        </main>
-
-    </div>
-
-
-    <script src="/CodeSyx/assets/js/script.js"></script>
-
+        <div class="perfil-topo-botoes">
+          <button type="button" class="perfil-botao-foto" id="btn-alterar-foto">
+            <i class="fa-solid fa-camera"></i> Alterar foto
+          </button>
+          <button type="button" class="perfil-botao-editar" id="btn-editar-perfil">
+            <i class="fa-solid fa-pen"></i> Editar perfil
+          </button>
+          <input type="file" id="input-foto" accept="image/*" hidden>
+        </div>
+      </section>
+
+      <!-- CARDS -->
+      <section class="perfil-cards">
+
+        <div class="perfil-card">
+          <div class="perfil-card-topo">
+            <i class="fa-regular fa-user"></i>
+            <h2>Sobre mim</h2>
+            <button type="button" class="perfil-card-editar" id="btn-editar-sobre">
+              <i class="fa-solid fa-pen"></i> Editar
+            </button>
+          </div>
+          <p class="perfil-sobre" id="sobre-texto">
+            Curto tecnologia, programação e sempre estou buscando aprender algo novo.
+            Gosto de trocar ideias, ajudar quem está aprendendo e crescer junto com a galera.
+          </p>
+        </div>
+
+        <div class="perfil-card">
+          <div class="perfil-card-topo">
+            <i class="fa-regular fa-lightbulb"></i>
+            <h2>Quero aprender</h2>
+            <button type="button" class="perfil-card-editar" id="btn-editar-aprender">
+              <i class="fa-solid fa-pen"></i> Editar
+            </button>
+          </div>
+          <div class="perfil-techs" id="lista-aprender">
+            <div class="perfil-tech">
+              <img src="../assets/img/Python.png" alt="">
+              <span>Python</span>
+            </div>
+            <div class="perfil-tech">
+              <img src="../assets/img/Logica.png" alt="">
+              <span>Lógica</span>
+            </div>
+            <div class="perfil-tech">
+              <img src="../assets/img/Git.png" alt="">
+              <span>Git</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="perfil-card">
+          <div class="perfil-card-topo">
+            <i class="fa-solid fa-desktop"></i>
+            <h2>Conhecimentos</h2>
+            <button type="button" class="perfil-card-editar" id="btn-editar-conhecimentos">
+              <i class="fa-solid fa-pen"></i> Editar
+            </button>
+          </div>
+          <div class="perfil-techs" id="lista-conhecimentos">
+            <div class="perfil-tech">
+              <img src="../assets/img/HTML.png" alt="">
+              <span>HTML</span>
+            </div>
+            <div class="perfil-tech">
+              <img src="../assets/img/CSS.png" alt="">
+              <span>CSS</span>
+            </div>
+            <div class="perfil-tech">
+              <img src="../assets/img/JavaScript.png" alt="">
+              <span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="perfil-card">
+          <div class="perfil-card-topo">
+            <i class="fa-regular fa-id-card"></i>
+            <h2>Dados Pessoais</h2>
+            <button type="button" class="perfil-card-editar" id="btn-editar-dados">
+              <i class="fa-solid fa-pen"></i> Editar
+            </button>
+          </div>
+
+          <div class="perfil-dado">
+            <span class="perfil-dado-titulo"><i class="fa-regular fa-envelope"></i> E-mail</span>
+            <span class="perfil-dado-valor" id="dados-email">carlosalmeida19@email.com</span>
+          </div>
+
+          <div class="perfil-dado">
+            <span class="perfil-dado-titulo"><i class="fa-solid fa-graduation-cap"></i> Curso</span>
+            <span class="perfil-dado-valor" id="dados-curso">ADS - 3º Semestre</span>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+  <script src="../assets/js/perfil.js"></script>
 </body>
 
 </html>
