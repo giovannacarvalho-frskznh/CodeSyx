@@ -301,25 +301,25 @@
   height: 60px;
   margin: 0 auto 10px;
   border-radius: 8px;
-  background-color: var(--azul);
+ background-color: var(--azul);
   background-size: cover;
   background-position: center;
 }
 
 .dash-pessoa-foto-lucas {
-  background-image: url("../img/lucas.jpg");
+  background-image: url("../img/lucasalmeida.png");
 }
 
 .dash-pessoa-foto-gabriel {
-  background-image: url("../img/gabriel.jpg");
+  background-image: url("../img/gabrielsantos.png");
 }
 
 .dash-pessoa-foto-ana {
-  background-image: url("../img/ana.jpg");
+  background-image: url("../img/anacosta.png");
 }
 
-.dash-pessoa-foto-alice {
-  background-image: url("../img/alice.jpg");
+.dash-pessoa-foto-gabriella {
+  background-image: url("../img/gabriellaferreira.png");
 }
 
 .dash-pessoa-nome {
