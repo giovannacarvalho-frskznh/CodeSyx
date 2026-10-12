@@ -333,6 +333,7 @@ main {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    flex-shrink: 0;
 }
 
 .funcionalidades {
@@ -340,6 +341,13 @@ main {
     gap: 15px;
     position: relative;
     top: -96px;
+}
+
+.funcionalidades-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    overflow-y: visible;
 }
 
 .card-funcionalidade img {
