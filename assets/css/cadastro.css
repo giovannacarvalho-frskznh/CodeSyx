@@ -1,12 +1,9 @@
 
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-
 
 :root {
   --azul-escuro: #0a1433;
@@ -23,8 +20,6 @@
   --texto: #e9edf7;
   --silenciado: #b7c0d4;
 }
-
-
 
 body {
   min-height: 100vh;
@@ -61,15 +56,11 @@ body {
   top: 16px;
   bottom: 16px;
   left: 20px;
-
   width: calc(50% - 40px);
-
   padding: 24px 36px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   border: 2px solid var(--azul);
   border-radius: 26px;
 
@@ -283,4 +274,92 @@ body {
 .sem-animacao,
 .sem-animacao * {
   transition: none !important;
+}
+
+/* Tablet */
+@media (max-width: 1040px) {
+  .container-auth {
+    width: calc(100% - 32px);
+  }
+}
+
+/* Celular */
+  @media (max-width: 700px) {
+  body {
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+  }
+
+  .container-auth {
+    width: calc(100% - 24px);
+    height: auto;
+    margin: 0 auto;
+    border-radius: 24px;
+  }
+
+  .lado-mascote {
+    display: none;
+  }
+  
+  .card-auth {
+    position: static;
+    width: 100%;
+    padding: 32px 22px;
+    border-radius: 24px;
+  }
+
+  /* Cancela o deslize da classe invertido */
+  .container-auth.invertido .card-auth {
+    transform: none;
+  }
+
+  .card-auth .logo img {
+    width: 56px;
+  }
+
+  .card-auth .logo h2 {
+    font-size: 2rem;
+  }
+
+  .subtitulo-auth {
+    font-size: 1rem;
+  }
+
+  .texto-auxiliar {
+    font-size: 0.85rem;
+  }
+
+  .grupo-input label {
+    font-size: 0.85rem;
+  }
+
+  .grupo-input input,
+  .input-select {
+    padding: 12px 14px;
+    font-size: 16px;
+  }
+
+  .link-esqueceu,
+  .link-alternativo {
+    font-size: 0.85rem;
+  }
+
+  .btn-primeiro {
+    padding: 14px;
+    font-size: 1rem;
+  }
+}
+
+/* Celular pequeno */
+@media (max-width: 380px) {
+  .card-auth {
+    padding: 26px 16px;
+  }
+
+  .card-auth .logo h2 {
+    font-size: 1.7rem;
+  }
 }

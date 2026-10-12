@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,50 +8,64 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <title>CodeSyx - Sobre Nós</title>
 </head>
+
 <body>
-    <header class="header-home">
-        <div class="nav-home-header">
-              <div class="logo">
-                    <img src="../assets/img/logo.png" alt="Logo CodeSyx">
-                    <h2>Code<span>Syx</span></h2>
-                </div>
-            <nav class="nav-home">
-                <ul>
-                    <li><a href="../index.html">Como funciona</a></li>
-                    <li><a href="sobrenos.html" class="ativo">Sobre Nós</a></li>
-                </ul>
-            </nav>
-            <div class="login">
-                <a href="cadastro.html"><button class="btn login-entrar">Entrar</button></a>
-                <a href="cadastro.html"><button class="btn cadastro">Cadastrar</button></a>
-            </div>
+     <header class="header-home">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+    <div class="nav-home-header">
+        <div class="logo">
+            <img src="../assets/img/logo.png" alt="Logo CodeSyx">
+            <h2>Code<span>Syx</span></h2>
         </div>
-    </header>
+
+        <label for="menu-toggle" class="hamburguer" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <nav class="nav-home">
+            <ul>
+                <li><a href="../index.html" class="ativo">Como funciona</a></li>
+                <li><a href="sobrenos.html">Sobre Nós</a></li>
+            </ul>
+        </nav>
+
+        <div class="login">
+            <a href="cadastro.html"><button class="btn login-entrar">Entrar</button></a>
+            <a href="cadastro.html"><button class="btn cadastro">Cadastrar</button></a>
+        </div>
+    </div>
+</header>
     <main class="sobre-main">
         <section class="sobre-hero">
             <span class="tag-toco-home">Quem somos</span>
-            <h1>Aprender fica mais fácil quando a gente <span class="detalhe-titulo-h1">estuda junto.</span></h1>
-            <p>A CodeSyx conecta estudantes de tecnologia para trocar conhecimento, tirar dúvidas e evoluir em grupo.</p>
+            <h1>Uma nova forma de aprender<span class="detalhe-titulo-h1"> tecnologia juntos.</span></h1>
+            <p>A CodeSyx conecta estudantes de tecnologia com base nos conhecimentos que possuem e no que desejam
+                aprender.</p>
         </section>
         <section class="sobre-pilares">
             <div class="pilar-card">
                 <i class="fa-solid fa-bullseye pilar-icone"></i>
                 <h2>Missão</h2>
-                <p>Conectar estudantes de tecnologia para que um ajude o outro a aprender, transformando dúvidas em conversas e conversas em evolução.</p>
+                <p>Conectar estudantes de tecnologia para que possam compartilhar conhecimentos, aprender juntos e
+                    evoluir por meio da colaboração.</p>
             </div>
             <div class="pilar-card">
                 <i class="fa-solid fa-eye pilar-icone"></i>
                 <h2>Visão</h2>
-                <p>Ser a principal comunidade de estudo entre estudantes de tecnologia, onde ninguém precisa aprender sozinho.</p>
+                <p>Ser uma plataforma de referência na conexão entre estudantes de tecnologia, tornando a aprendizagem
+                    colaborativa mais acessível, simples e significativa..</p>
             </div>
             <div class="pilar-card">
                 <i class="fa-solid fa-heart pilar-icone"></i>
                 <h2>Valores</h2>
                 <ul class="pilar-valores">
                     <li><i class="fa-solid fa-check"></i> Colaboração</li>
-                    <li><i class="fa-solid fa-check"></i> Respeito</li>
-                    <li><i class="fa-solid fa-check"></i> Aprendizado contínuo</li>
-                    <li><i class="fa-solid fa-check"></i> Acessibilidade</li>
+                    <li><i class="fa-solid fa-check"></i> Evolução e Inovação</li>
+                    <li><i class="fa-solid fa-check"></i> Reciprocidade e Inclusão</li>
+                    <li><i class="fa-solid fa-check"></i> Respeito e Segurança</li>
                 </ul>
             </div>
         </section>
@@ -59,43 +74,97 @@
             <p class="devs-subtitulo">As pessoas por trás da CodeSyx.</p>
             <div class="devs-lista">
                 <div class="dev-card">
-                    <img class="dev-foto" src="../assets/img/dev1.png" alt="Foto de Nome Sobrenome">
-                    <h3 class="dev-nome">Nome Sobrenome</h3>
-                    <span class="dev-cargo">Desenvolvedor Front-end</span>
+                    <img class="dev-foto" src="../assets/img/Alicedev.png" alt="Foto de Nome Sobrenome">
+                    <h3 class="dev-nome">Alice Ferreira</h3>
+                    <span class="dev-cargo">Dev Front-end <br> UI/UX</span>
                     <div class="dev-links">
-                        <a href="https://www.linkedin.com/in/usuario" target="_blank" rel="noopener" class="dev-link"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
-                        <a href="https://github.com/usuario" target="_blank" rel="noopener" class="dev-link"><i class="fa-brands fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/alicefgalas" target="_blank" rel="noopener"
+                            class="dev-link"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                        <a href="https://github.com/usuario" target="_blank" rel="noopener" class="dev-link"><i
+                                class="fa-brands fa-github"></i> GitHub</a>
                     </div>
                 </div>
                 <div class="dev-card">
-                    <img class="dev-foto" src="../assets/img/dev2.png" alt="Foto de Nome Sobrenome">
-                    <h3 class="dev-nome">Nome Sobrenome</h3>
-                    <span class="dev-cargo">Desenvolvedor Back-end</span>
+                    <img class="dev-foto" src="../assets/img/Ederdev.png" alt="Foto de Nome Sobrenome">
+                    <h3 class="dev-nome">Eder Vieira</h3>
+                    <span class="dev-cargo">Desenvolvedor Front-end <br> Product Owner</span>
                     <div class="dev-links">
-                        <a href="https://www.linkedin.com/in/usuario" target="_blank" rel="noopener" class="dev-link"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
-                        <a href="https://github.com/usuario" target="_blank" rel="noopener" class="dev-link"><i class="fa-brands fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/eder-daniel-da-silva" target="_blank" rel="noopener"
+                            class="dev-link"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                        <a href="https://github.com/eder64ghjhj" target="_blank" rel="noopener" class="dev-link"><i
+                                class="fa-brands fa-github"></i> GitHub</a>
                     </div>
                 </div>
                 <div class="dev-card">
-                    <img class="dev-foto" src="../assets/img/dev3.png" alt="Foto de Nome Sobrenome">
-                    <h3 class="dev-nome">Nome Sobrenome</h3>
-                    <span class="dev-cargo">UI/UX Designer</span>
+                    <img class="dev-foto" src="../assets/img/Gustavodev.png" alt="Foto de Nome Sobrenome">
+                    <h3 class="dev-nome">Gustavo Henrique</h3>
+                    <span class="dev-cargo">Dev Front-end <br>Documentação</span>
                     <div class="dev-links">
-                        <a href="https://www.linkedin.com/in/usuario" target="_blank" rel="noopener" class="dev-link"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
-                        <a href="https://github.com/usuario" target="_blank" rel="noopener" class="dev-link"><i class="fa-brands fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/gustavo-silva-b78262277" target="_blank" rel="noopener"
+                            class="dev-link"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                        <a href="https://github.com/Gustavo54312" target="_blank" rel="noopener" class="dev-link"><i
+                                class="fa-brands fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+
+                <div class="dev-card">
+                    <img class="dev-foto" src="../assets/img/giovannadev.png" alt="Foto de Nome Sobrenome">
+                    <h3 class="dev-nome">Giovanna Carvalho</h3>
+                    <span class="dev-cargo">Dev Front-end <br>Scrum Master</span>
+                    <div class="dev-links">
+                        <a href="https://www.linkedin.com/in/giovannadscarvalho" target="_blank" rel="noopener"
+                            class="dev-link"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                        <a href="https://github.com/giovannacarvalho-frskznh" target="_blank" rel="noopener"
+                            class="dev-link"><i class="fa-brands fa-github"></i> GitHub</a>
                     </div>
                 </div>
                 <div class="dev-card">
-                    <img class="dev-foto" src="../assets/img/dev4.png" alt="Foto de Nome Sobrenome">
-                    <h3 class="dev-nome">Nome Sobrenome</h3>
-                    <span class="dev-cargo">Banco de Dados</span>
+                    <img class="dev-foto" src="../assets/img/Joaodev.png" alt="Foto de Nome Sobrenome">
+                    <h3 class="dev-nome">João Marcos</h3>
+                    <span class="dev-cargo">Dev Front-end <br>Documentação</span>
                     <div class="dev-links">
-                        <a href="https://www.linkedin.com/in/usuario" target="_blank" rel="noopener" class="dev-link"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
-                        <a href="https://github.com/usuario" target="_blank" rel="noopener" class="dev-link"><i class="fa-brands fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/joão-marcos-gomes-de-melo-088215388" target="_blank"
+                            rel="noopener" class="dev-link"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                        <a href="https://github.com/joaomarcso" target="_blank" rel="noopener" class="dev-link"><i
+                                class="fa-brands fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+                 <div class="dev-card">
+                    <img class="dev-foto" src="../assets/img/Vitoriadev.png" alt="Foto de Nome Sobrenome">
+                    <h3 class="dev-nome">Vitoria Rocha</h3>
+                    <span class="dev-cargo">Dev Front-end <br>Canva</span>
+                    <div class="dev-links">
+                        <a href="https://www.linkedin.com/victória-rocha-moreira-83b1a818b" target="_blank"
+                            rel="noopener" class="dev-link"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                        <a href="https://github.com/victoriamoreira02" target="_blank" rel="noopener" class="dev-link"><i
+                                class="fa-brands fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+                 <div class="dev-card">
+                    <img class="dev-foto" src="../assets/img/liviadev.png" alt="Foto de Nome Sobrenome">
+                    <h3 class="dev-nome">Livia Cristina</h3>
+                    <span class="dev-cargo">Dev Front-end <br>Canva</span>
+                    <div class="dev-links">
+                        <a href="https://www.linkedin.com/in/usuario" target="_blank"
+                            rel="noopener" class="dev-link"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                        <a href="https://github.com/usuario" target="_blank" rel="noopener" class="dev-link"><i
+                                class="fa-brands fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+                 <div class="dev-card">
+                    <img class="dev-foto" src="../assets/img/matiasdev.png" alt="Foto de Nome Sobrenome">
+                    <h3 class="dev-nome">Matias Cruz</h3>
+                    <span class="dev-cargo">Dev Front-end <br>Documentação</span>
+                    <div class="dev-links">
+                        <a href="https://www.linkedin.com/in/matias-cruz-38a10623b" target="_blank"
+                            rel="noopener" class="dev-link"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                        <a href="https://github.com/matscruz" target="_blank" rel="noopener" class="dev-link"><i
+                                class="fa-brands fa-github"></i> GitHub</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 </body>
+
 </html>

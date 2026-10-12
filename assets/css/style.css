@@ -149,6 +149,7 @@ header {
     border-radius: 20px;
     text-align: center;
     width: 300px;
+    font-weight: 600;
     background: linear-gradient(90deg, #0171FF, #0EBCB0, #3EDF81);
 
 }
@@ -401,9 +402,6 @@ position: relative;
 top: 1px;
 }
 
-/* sobre nos */
-
-
 .sobre-main {
     max-width: 1300px;
     margin: 0 auto;
@@ -449,6 +447,8 @@ top: 1px;
     display: flex;
     flex-direction: column;
     gap: 14px;
+    align-items: center;
+    justify-content: center;
     border: 2px solid transparent;
     border-radius: 20px;
     background:
@@ -481,6 +481,7 @@ top: 1px;
     font-size: 15px;
     line-height: 1.7;
     color: #DFDFDF;
+    text-align: center;
 }
 
 .pilar-valores {
@@ -495,6 +496,7 @@ top: 1px;
     align-items: center;
     gap: 10px;
     font-size: 15px;
+    text-align: center;
     color: #DFDFDF;
 }
 
@@ -616,5 +618,270 @@ top: 1px;
 
     .devs-lista {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Menu hambúrguer escondido*/
+.menu-toggle {
+    display: none;
+}
+
+.hamburguer {
+    display: none;
+}
+
+/* Telas médias */
+@media (max-width: 1340px) {
+    header {
+        padding: 0 16px;
+    }
+
+    .nav-home-header {
+        width: 100%;
+        max-width: 1299px;
+    }
+
+    .blur-home {
+        width: 100%;
+    }
+
+    .cta-inferior {
+        width: calc(100% - 32px);
+    }
+
+    .funcionalidades {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Tablet e celular */
+@media (max-width: 900px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .fundo-home {
+        background-attachment: scroll;
+    }
+
+    /* Header e hambúrguer */
+    .nav-home-header {
+        height: auto;
+        padding: 15px 20px;
+        flex-wrap: wrap;
+        border-radius: 25px;
+    }
+
+    .logo {
+        gap: 12px;
+    }
+
+    .logo h2 {
+        font-size: 28px;
+    }
+
+    .logo img {
+        width: 56px;
+        height: 54px;
+    }
+
+    .hamburguer {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 8px;
+        cursor: pointer;
+    }
+
+    .hamburguer span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        border-radius: 10px;
+        background: var(--cor-letra-nav);
+        transition: 0.3s ease;
+    }
+
+    .nav-home,
+    .login {
+        display: none;
+        width: 100%;
+    }
+
+    .menu-toggle:checked ~ .nav-home-header .nav-home {
+        display: block;
+        margin-top: 20px;
+    }
+
+    .menu-toggle:checked ~ .nav-home-header .login {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .nav-home ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .nav-home-header li a::after {
+        left: 50%;
+    }
+
+    .login .btn {
+        width: 100%;
+    }
+
+    /* Hambúrguer vira X */
+    .menu-toggle:checked ~ .nav-home-header .hamburguer span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .menu-toggle:checked ~ .nav-home-header .hamburguer span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked ~ .nav-home-header .hamburguer span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Home */
+    main {
+        margin: 24px 16px;
+    }
+
+    .escrita-home {
+        align-items: center;
+        text-align: center;
+    }
+
+    .tag-toco-home {
+        width: auto;
+        max-width: 100%;
+    }
+
+    .escrita-home h1 {
+        width: 100%;
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    .escrita-home p {
+        width: 100%;
+    }
+
+    .hero-botoes {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-conteudo,
+    .hero-imagem {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .hero-imagem img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Esconde as tags de linguagens */
+    .tags-flutuantes {
+        display: none;
+    }
+
+    .blur-home {
+        display: none;
+    }
+
+    .funcionalidades {
+        top: 0;
+        margin-top: 30px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-funcionalidade {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        padding: 15px;
+    }
+
+    .card-texto p {
+        width: auto;
+    }
+
+    .cta-inferior {
+        height: auto;
+        padding: 30px 20px;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        margin: 40px 16px 30px;
+        width: auto;
+    }
+
+    .cta-texto {
+        right: 0;
+    }
+
+    /* Sobre */
+    .sobre-main {
+        padding: 40px 16px 60px;
+        gap: 60px;
+    }
+
+    .sobre-hero h1 {
+        font-size: 36px;
+        line-height: 46px;
+    }
+
+    .devs-titulo {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .devs-subtitulo {
+        text-align: center;
+    }
+}
+
+/* Celular pequeno */
+@media (max-width: 600px) {
+    .logo h2 {
+        font-size: 24px;
+    }
+
+    .logo img {
+        width: 46px;
+        height: 44px;
+    }
+
+    .escrita-home h1 {
+        font-size: 28px;
+        line-height: 38px;
+    }
+
+    .sobre-hero h1 {
+        font-size: 28px;
+        line-height: 38px;
+    }
+
+    .pilar-card h2 {
+        font-size: 22px;
+    }
+
+    .devs-titulo {
+        font-size: 26px;
+    }
+
+    .dev-links {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
