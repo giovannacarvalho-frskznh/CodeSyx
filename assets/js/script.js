@@ -1,7 +1,7 @@
 
-/* ==========================================
+/* 
    LOGIN, CADASTRO E ESQUECI MINHA SENHA
-========================================== */
+ */
 
 document.addEventListener("DOMContentLoaded", () => {
     const auth = document.querySelector(".container-auth");
@@ -212,9 +212,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/* ==========================================
+/* 
    POP-UP DE CONEXÃO / MERGE
-========================================== */
+ */
 
 document.addEventListener("DOMContentLoaded", () => {
     const modalConexao = document.getElementById("modalConexao");
