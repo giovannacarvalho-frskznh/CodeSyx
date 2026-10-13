@@ -1,7 +1,7 @@
 
-/* 
-   LOGIN, CADASTRO E ESQUECI MINHA SENHA
- */
+// LOGIN, CADASTRO E RECUPERAÇÃO DE SENHA
+// ACESSO LIVRE À CODESYX
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const auth = document.querySelector(".container-auth");
@@ -19,137 +19,106 @@ document.addEventListener("DOMContentLoaded", () => {
         document.title = "CodeSyx - Login";
     }
 
-    document.querySelectorAll('a[href="#cadastro"]').forEach(link => {
-        link.addEventListener("click", e => {
-            e.preventDefault();
-            mostrarCadastro();
-        });
-    });
-
-    document.querySelectorAll('a[href="#login"]').forEach(link => {
-        link.addEventListener("click", e => {
-            e.preventDefault();
-            sairDaTelaExtra();
-            mostrarLogin();
-        });
-    });
-
-    if (location.hash === "#cadastro") {
-        auth.classList.add("sem-animacao");
-        mostrarCadastro();
-
-        requestAnimationFrame(() =>
-            requestAnimationFrame(() =>
-                auth.classList.remove("sem-animacao")
-            )
-        );
-    }
-
-    const senha = document.getElementById("cad-senha");
-    const confirmar = document.getElementById("confirmar-senha");
-
-    if (senha && confirmar) {
-        function conferirSenhas() {
-            confirmar.setCustomValidity(
-                confirmar.value !== senha.value
-                    ? "As senhas não são iguais"
-                    : ""
-            );
-        }
-
-        senha.addEventListener("input", conferirSenhas);
-        confirmar.addEventListener("input", conferirSenhas);
-    }
-
-    const formLogin = document.getElementById("form-login");
-
-    if (formLogin) {
-        formLogin.addEventListener("submit", e => {
-            e.preventDefault();
-
-            const emailDigitado =
-                document.getElementById("login-email").value.trim();
-
-            const senhaDigitada =
-                document.getElementById("login-senha").value;
-
-            const erroLogin = document.getElementById("erro-login");
-
-            fetch("../assets/js/usuarios.json")
-                .then(resposta => {
-                    if (!resposta.ok) {
-                        throw new Error("Não foi possível carregar usuários.");
-                    }
-
-                    return resposta.json();
-                })
-                .then(usuarios => {
-                    const usuarioEncontrado = usuarios.find(
-                        u =>
-                            u.email === emailDigitado &&
-                            u.senha === senhaDigitada
-                    );
-
-                    if (usuarioEncontrado) {
-                        localStorage.setItem(
-                            "usuarioLogado",
-                            usuarioEncontrado.nome
-                        );
-
-                        window.location.href = "inicial.html";
-                    } else if (erroLogin) {
-                        erroLogin.textContent =
-                            "E-mail ou senha incorretos.";
-                    }
-                })
-                .catch(() => {
-                    if (erroLogin) {
-                        erroLogin.textContent =
-                            "Erro ao verificar login. Tente novamente.";
-                    }
-                });
-        });
-    }
-
-    const formCadastro = document.getElementById("form-cadastro");
-
-    if (formCadastro) {
-        formCadastro.addEventListener("submit", e => {
-            e.preventDefault();
-            mostrarLogin();
-        });
-    }
-
     function mostrarTelaExtra(classeDaTela) {
         auth.classList.add("tela-extra-ativa");
 
         document.querySelectorAll(
-            ".tela-recuperar, .tela-verificar, " +
-            ".tela-definir-senha, .tela-senha-redefinida"
-        ).forEach(tela => {
-            tela.classList.remove("tela-visivel");
-        });
+            ".tela-recuperar, .tela-verificar, .tela-definir-senha, .tela-senha-redefinida"
+        ).forEach((tela) => tela.classList.remove("tela-visivel"));
 
-        const tela = document.querySelector("." + classeDaTela);
-
-        if (tela) {
-            tela.classList.add("tela-visivel");
-        }
+        document.querySelector("." + classeDaTela)?.classList.add("tela-visivel");
     }
 
     function sairDaTelaExtra() {
         auth.classList.remove("tela-extra-ativa");
 
         document.querySelectorAll(
-            ".tela-recuperar, .tela-verificar, " +
-            ".tela-definir-senha, .tela-senha-redefinida"
-        ).forEach(tela => {
-            tela.classList.remove("tela-visivel");
+            ".tela-recuperar, .tela-verificar, .tela-definir-senha, .tela-senha-redefinida"
+        ).forEach((tela) => tela.classList.remove("tela-visivel"));
+    }
+
+    // Alternar entre login e cadastro
+    document.querySelectorAll('a[href="#cadastro"]').forEach((link) => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            mostrarCadastro();
+        });
+    });
+
+    document.querySelectorAll('a[href="#login"]').forEach((link) => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            sairDaTelaExtra();
+            mostrarLogin();
+        });
+    });
+
+    // Abrir diretamente a tela de cadastro quando a URL tiver #cadastro
+    if (location.hash === "#cadastro") {
+        auth.classList.add("sem-animacao");
+        mostrarCadastro();
+
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                auth.classList.remove("sem-animacao");
+            });
         });
     }
 
-    document.querySelectorAll('a[href="#recuperar"]').forEach(link => {
-        link.addEventListener("click", e => {
+ 
+    // LOGIN LIVRE: NÃO EXIGE E-MAIL NEM SENHA
+
+
+    const emailLogin = document.getElementById("login-email");
+    const senhaLogin = document.getElementById("login-senha");
+    const erroLogin = document.getElementById("erro-login");
+    const formLogin = document.getElementById("form-login");
+
+    if (emailLogin) emailLogin.required = false;
+    if (senhaLogin) senhaLogin.required = false;
+
+    if (formLogin) {
+        formLogin.noValidate = true;
+
+        formLogin.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            localStorage.setItem("usuarioLogado", "Visitante CodeSyx");
+
+            if (erroLogin) {
+                erroLogin.textContent = "";
+            }
+
+            window.location.href = "inicial.html";
+        });
+    }
+
+  
+    // CADASTRO LIVRE: TAMBÉM ENTRA NO SITE
+
+
+    const formCadastro = document.getElementById("form-cadastro");
+
+    if (formCadastro) {
+        formCadastro.noValidate = true;
+
+        formCadastro.querySelectorAll("input").forEach((campo) => {
+            campo.required = false;
+        });
+
+        formCadastro.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            localStorage.setItem("usuarioLogado", "Visitante CodeSyx");
+
+            window.location.href = "inicial.html";
+        });
+    }
+
+
+    // RECUPERAR SENHA - SIMULAÇÃO VISUAL
+    document.querySelectorAll('a[href="#recuperar"]').forEach((link) => {
+        link.addEventListener("click", (e) => {
             e.preventDefault();
             mostrarTelaExtra("tela-recuperar");
         });
@@ -158,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const formRecuperar = document.getElementById("form-recuperar");
 
     if (formRecuperar) {
-        formRecuperar.addEventListener("submit", e => {
+        formRecuperar.addEventListener("submit", (e) => {
             e.preventDefault();
             mostrarTelaExtra("tela-verificar");
         });
@@ -173,8 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const novaSenha = document.getElementById("nova-senha");
-    const confirmarNovaSenha =
-        document.getElementById("confirmar-nova-senha");
+    const confirmarNovaSenha = document.getElementById("confirmar-nova-senha");
 
     if (novaSenha && confirmarNovaSenha) {
         function conferirNovaSenha() {
@@ -189,11 +157,10 @@ document.addEventListener("DOMContentLoaded", () => {
         confirmarNovaSenha.addEventListener("input", conferirNovaSenha);
     }
 
-    const formDefinirSenha =
-        document.getElementById("form-definir-senha");
+    const formDefinirSenha = document.getElementById("form-definir-senha");
 
     if (formDefinirSenha) {
-        formDefinirSenha.addEventListener("submit", e => {
+        formDefinirSenha.addEventListener("submit", (e) => {
             e.preventDefault();
             mostrarTelaExtra("tela-senha-redefinida");
         });
@@ -212,9 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/* 
-   POP-UP DE CONEXÃO / MERGE
- */
+// POP-UP DE CONEXÃO / MERGE
 
 document.addEventListener("DOMContentLoaded", () => {
     const modalConexao = document.getElementById("modalConexao");
@@ -231,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         container.replaceChildren();
 
-        tags.forEach(texto => {
+        tags.forEach((texto) => {
             const span = document.createElement("span");
             span.textContent = texto;
             container.appendChild(span);
@@ -239,18 +204,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function lerTags(coluna) {
+        if (!coluna) return [];
+
         return Array.from(
             coluna.querySelectorAll(".pessoa-tags span")
-        ).map(span => span.textContent);
+        ).map((span) => span.textContent);
     }
 
     function identificarPessoa(linha) {
-        const nome = linha
-            ?.querySelector("h3")
-            ?.textContent.trim().toLowerCase();
+        const nome = linha?.querySelector("h3")?.textContent
+            .trim()
+            .toLowerCase();
 
         if (!nome) return null;
-
         if (nome.includes("ana costa")) return "ana";
         if (nome.includes("gabriel santos")) return "gabriel";
         if (nome.includes("lucas almeida")) return "lucas";
@@ -264,7 +230,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!linha) return;
 
         pessoaSelecionada = identificarPessoa(linha);
-        if (!pessoaSelecionada) return;
 
         const foto = linha.querySelector(".pessoa-foto");
         const colunas = linha.querySelectorAll(".pessoa-coluna");
@@ -295,16 +260,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         preencherTags(
             document.getElementById("modalEnsinar"),
-            colunas[0] ? lerTags(colunas[0]) : []
+            lerTags(colunas[0])
         );
 
         preencherTags(
             document.getElementById("modalAprender"),
-            colunas[1] ? lerTags(colunas[1]) : []
+            lerTags(colunas[1])
         );
 
-        passoPerfil.hidden = false;
-        passoSucesso.hidden = true;
+        if (passoPerfil) passoPerfil.hidden = false;
+        if (passoSucesso) passoSucesso.hidden = true;
+
         modalConexao.hidden = false;
     }
 
@@ -312,7 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
         modalConexao.hidden = true;
     }
 
-    document.querySelectorAll(".btn-ver-perfil").forEach(botao => {
+    document.querySelectorAll(".btn-ver-perfil").forEach((botao) => {
         botao.addEventListener("click", () => abrirModal(botao));
     });
 
@@ -321,48 +287,39 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!pessoaSelecionada) return;
 
             const nome = document.getElementById("modalNome")?.textContent;
-            const foto = document.getElementById("modalFoto")?.getAttribute("src");
 
-            // Guarda a pessoa escolhida para a tela de conversas.
             localStorage.setItem(
                 "codesyxChatSelecionado",
                 pessoaSelecionada
             );
 
-            const sucessoNome = document.getElementById("sucessoNome");
-            const sucessoNome2 = document.getElementById("sucessoNome2");
-            const sucessoFoto = document.getElementById("sucessoFoto");
-            const sugestao = document.getElementById("sucessoSugestao");
-
-            if (sucessoNome) sucessoNome.textContent = nome || "";
-            if (sucessoNome2) sucessoNome2.textContent = nome || "";
-
-            if (sucessoFoto && foto) {
-                sucessoFoto.src = foto;
-                sucessoFoto.alt = `Foto de ${nome || "estudante"}`;
+            if (nome) {
+                localStorage.setItem("codesyxNomeSelecionado", nome);
             }
 
-            const sugestoes = {
-                ana: "Que tal começar revisando Python juntos?",
-                gabriel: "Que tal praticar Java e lógica juntos?",
-                lucas: "Que tal resolver alguns exercícios de Python juntos?",
-                gabriella: "Que tal trocar conhecimentos sobre programação?"
-            };
-
-            if (sugestao) {
-                sugestao.textContent =
-                    sugestoes[pessoaSelecionada] ||
-                    "Que tal começar a trocar conhecimentos?";
-            }
-
-            passoPerfil.hidden = true;
-            passoSucesso.hidden = false;
+            if (passoPerfil) passoPerfil.hidden = true;
+            if (passoSucesso) passoSucesso.hidden = false;
         });
     }
 
-    // O link mantém o HTML original: href="conversas.html".
-    // Este código garante que a pessoa escolhida seja guardada.
-    const linkConversa = passoSucesso?.querySelector("a.modal-botao");
+    modalConexao.querySelectorAll(".modal-fechar").forEach((botao) => {
+        botao.addEventListener("click", fecharModal);
+    });
+
+    modalConexao.addEventListener("click", (evento) => {
+        if (evento.target === modalConexao) {
+            fecharModal();
+        }
+    });
+
+    document.addEventListener("keydown", (evento) => {
+        if (evento.key === "Escape") {
+            fecharModal();
+        }
+    });
+
+    // Guarda a pessoa escolhida ao abrir a conversa.
+    const linkConversa = document.querySelector("#modalSucesso a.modal-botao");
 
     if (linkConversa) {
         linkConversa.addEventListener("click", () => {
@@ -374,29 +331,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-
-    modalConexao.querySelectorAll(".modal-fechar").forEach(botao => {
-        botao.addEventListener("click", fecharModal);
-    });
-
-    modalConexao.addEventListener("click", evento => {
-        if (evento.target === modalConexao) {
-            fecharModal();
-        }
-    });
-
-    document.addEventListener("keydown", evento => {
-        if (evento.key === "Escape") {
-            fecharModal();
-        }
-    });
 });
 
 
-/* ==========================================
-   CONVERSAS
-========================================== */
 
+// CONVERSAS - CHAT SIMULADO
 document.addEventListener("DOMContentLoaded", () => {
     const formulario = document.querySelector(".chat-form");
     const campo = document.querySelector(".chat-input");
@@ -411,23 +350,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const chave = "codesyxConversas";
 
-    // Os nomes e as fotos correspondem aos arquivos do seu HTML.
     const pessoas = {
         ana: {
             nome: "Ana Costa",
-            foto: "../assets/img/anacosta.png"
+            foto: "../assets/img/avatar-ana.png"
         },
         gabriel: {
             nome: "Gabriel Santos",
-            foto: "../assets/img/gabrielsantos.png"
+            foto: "../assets/img/avatar-gabriel.png"
         },
         lucas: {
             nome: "Lucas Almeida",
-            foto: "../assets/img/lucasalmeida.png"
+            foto: "../assets/img/avatar-lucas.png"
         },
         gabriella: {
             nome: "Gabriella Ferreira",
-            foto: "../assets/img/gabriellaferreira.png"
+            foto: "../assets/img/avatar-gabriella.png"
         }
     };
 
@@ -436,15 +374,26 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
         historico = JSON.parse(localStorage.getItem(chave) || "{}");
 
-        if (!historico || typeof historico !== "object" ||
-            Array.isArray(historico)) {
+        if (
+            !historico ||
+            typeof historico !== "object" ||
+            Array.isArray(historico)
+        ) {
             historico = {};
         }
     } catch {
         historico = {};
     }
 
-    let conversaAtual = "ana";
+    const pessoaSalva = localStorage.getItem("codesyxChatSelecionado");
+
+    let conversaAtual = pessoas[pessoaSalva]
+        ? pessoaSalva
+        : document.querySelector(".conversa-item.active")?.dataset.chat || "ana";
+
+    if (!pessoas[conversaAtual]) {
+        conversaAtual = "ana";
+    }
 
     function salvar() {
         localStorage.setItem(chave, JSON.stringify(historico));
@@ -480,7 +429,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function renderizarConversa() {
         areaMensagens.replaceChildren();
 
-        (historico[conversaAtual] || []).forEach(item => {
+        (historico[conversaAtual] || []).forEach((item) => {
             mostrarMensagem(item.texto, item.autor);
         });
 
@@ -499,7 +448,7 @@ document.addEventListener("DOMContentLoaded", () => {
             statusChat.textContent = "Online";
         }
 
-        conversas.forEach(botao => {
+        conversas.forEach((botao) => {
             botao.classList.toggle(
                 "active",
                 botao.dataset.chat === conversaAtual
@@ -507,24 +456,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             atualizarPrevia(botao.dataset.chat);
         });
-    }
-
-    function abrirConversa(id) {
-        if (!pessoas[id]) return;
-
-        // Não abre uma pessoa que não existe na lista lateral.
-        const botao = document.querySelector(
-            `.conversa-item[data-chat="${id}"]`
-        );
-
-        if (!botao) {
-            conversaAtual = "ana";
-            renderizarConversa();
-            return;
-        }
-
-        conversaAtual = id;
-        renderizarConversa();
     }
 
     function responder(texto) {
@@ -553,20 +484,24 @@ document.addEventListener("DOMContentLoaded", () => {
         return "Entendi! 😊 Me conta mais sobre isso.";
     }
 
-    conversas.forEach(botao => {
+    conversas.forEach((botao) => {
         botao.addEventListener("click", () => {
-            abrirConversa(botao.dataset.chat);
+            const id = botao.dataset.chat;
+            if (!pessoas[id]) return;
+
+            conversaAtual = id;
+            localStorage.setItem("codesyxChatSelecionado", id);
+            renderizarConversa();
         });
     });
 
-    formulario.addEventListener("submit", evento => {
+    formulario.addEventListener("submit", (evento) => {
         evento.preventDefault();
 
         const texto = campo.value.trim();
         if (!texto) return;
 
         historico[conversaAtual] ||= [];
-
         historico[conversaAtual].push({
             texto,
             autor: "voce"
@@ -576,14 +511,13 @@ document.addEventListener("DOMContentLoaded", () => {
         renderizarConversa();
         campo.value = "";
 
+        // Resposta fictícia para a demonstração do protótipo.
         const pessoaQueRecebeu = conversaAtual;
 
-        // Resposta automática simulada para a demonstração.
         setTimeout(() => {
             const resposta = responder(texto);
 
             historico[pessoaQueRecebeu] ||= [];
-
             historico[pessoaQueRecebeu].push({
                 texto: resposta,
                 autor: "outro"
@@ -600,104 +534,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (botaoLimpar) {
         botaoLimpar.addEventListener("click", () => {
-            historico[conversaAtual] = {};
             historico[conversaAtual] = [];
-
             salvar();
             renderizarConversa();
         });
     }
 
-    // Atualiza as prévias da lista.
-    conversas.forEach(botao => {
-        atualizarPrevia(botao.dataset.chat);
-    });
-
-    /*
-      CORREÇÃO DO MERGE:
-      Lê a pessoa selecionada na tela anterior.
-      Assim, não começa sempre na Ana.
-    */
-
-    const pessoaSalva = localStorage.getItem(
-        "codesyxChatSelecionado"
-    );
-
-    const conversaMarcada = document.querySelector(
-        ".conversa-item.active"
-    )?.dataset.chat;
-
-    if (pessoaSalva && pessoas[pessoaSalva]) {
-        abrirConversa(pessoaSalva);
-    } else {
-        abrirConversa(
-            pessoas[conversaMarcada] ? conversaMarcada : "ana"
-        );
-    }
-
-    // Remove apenas a seleção temporária depois de utilizá-la.
-    localStorage.removeItem("codesyxChatSelecionado");
-});
-
-
-/* ==========================================
-   CARROSSEL AUTOMÁTICO CONTÍNUO
-   Mantido do código original
-   Para elementos .funcionalidades
-========================================== */
-
-document.addEventListener("DOMContentLoaded", () => {
-    const carrossel = document.querySelector(".funcionalidades");
-    if (!carrossel) return;
-
-    const cards = Array.from(
-        carrossel.querySelectorAll(".card-funcionalidade")
-    );
-
-    if (cards.length < 2) return;
-
-    // Prepara os cards em uma única linha.
-    carrossel.style.display = "flex";
-    carrossel.style.flexDirection = "row";
-    carrossel.style.flexWrap = "nowrap";
-    carrossel.style.justifyContent = "flex-start";
-    carrossel.style.gap = "15px";
-    carrossel.style.width = "max-content";
-    carrossel.style.maxWidth = "none";
-    carrossel.style.willChange = "transform";
-
-    // Duplica os cards para formar o ciclo contínuo.
-    cards.forEach(card => {
-        const copia = card.cloneNode(true);
-        copia.setAttribute("aria-hidden", "true");
-        carrossel.appendChild(copia);
-    });
-
-    let posicao = 0;
-    let ultimoTempo = 0;
-    const velocidade = 45;
-
-    function animar(tempo) {
-        if (!ultimoTempo) ultimoTempo = tempo;
-
-        const delta = Math.min(
-            (tempo - ultimoTempo) / 1000,
-            0.05
-        );
-
-        ultimoTempo = tempo;
-        posicao += velocidade * delta;
-
-        const distanciaCiclo = carrossel.scrollWidth / 2;
-
-        if (distanciaCiclo > 0 && posicao >= distanciaCiclo) {
-            posicao -= distanciaCiclo;
-        }
-
-        carrossel.style.transform = `translateX(${-posicao}px)`;
-
-        requestAnimationFrame(animar);
-    }
-
-    requestAnimationFrame(animar);
+    renderizarConversa();
 });
