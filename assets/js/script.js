@@ -353,15 +353,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const pessoas = {
         ana: {
             nome: "Ana Costa",
-            foto: "../assets/img/avatar-ana.png"
+            foto: "../assets/img/anacosta.png"
         },
         gabriel: {
             nome: "Gabriel Santos",
-            foto: "../assets/img/avatar-gabriel.png"
+            foto: "../assets/img/gabrielsantos.png"
         },
         lucas: {
             nome: "Lucas Almeida",
-            foto: "../assets/img/avatar-lucas.png"
+            foto: "../assets/img/lucasalmeida.png"
         },
         gabriella: {
             nome: "Gabriella Ferreira",
