@@ -1,5 +1,3 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
@@ -20,23 +18,26 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--cor-de-fundo);
     color: var(--cor-letra-geral);
+    overflow-x: hidden;
 }
+
+/* ---------- HEADER ---------- */
 
 header {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    padding: 0 16px;
 }
 
 .nav-home-header {
-    background-color: #253255;
-    width: 1299px;
+    width: 100%;
+    max-width: 1299px;
     height: 100px;
     display: flex;
     align-items: center;
-    justify-items: center;
     justify-content: space-between;
+    gap: 20px;
     padding: 20px 40px;
     margin-top: 15px;
     border-radius: 30px;
@@ -140,22 +141,37 @@ header {
 }
 
 .btn:hover {
-    transition: 0.5s ease;
     transform: translateY(-5px);
 }
 
-.tag-toco-home {
-    padding: 8px 25px;
-    border-radius: 20px;
-    text-align: center;
-    width: 300px;
-    font-weight: 600;
-    background: linear-gradient(90deg, #0171FF, #0EBCB0, #3EDF81);
+/* Menu hambúrguer escondido no desktop */
+.menu-toggle {
+    display: none;
+}
 
+.hamburguer {
+    display: none;
+}
+
+/* ---------- HOME: HERO ---------- */
+
+.fundo-home {
+    background-image: url("../img/fundohome.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 main {
     margin: 32px;
+}
+
+.hero-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .escrita-home {
@@ -164,24 +180,34 @@ main {
     gap: 25px;
 }
 
+.tag-toco-home {
+    width: fit-content;
+    max-width: 100%;
+    padding: 8px 25px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 600;
+    background: linear-gradient(90deg, #0171FF, #0EBCB0, #3EDF81);
+}
+
 .escrita-home h1 {
+    width: 100%;
+    max-width: 523px;
     font-size: 48px;
     font-weight: 800;
-    width: 523px;
     line-height: 60px;
 }
 
 .detalhe-titulo-h1 {
-    width: 100px;
     background: linear-gradient(100deg, #008DFF, #36DF6C, #63F518);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-
 }
 
 .escrita-home p {
+    width: 100%;
+    max-width: 516px;
     font-size: 16px;
-    width: 516px;
 }
 
 .hero-botoes {
@@ -196,7 +222,6 @@ main {
     font-weight: 300;
     color: var(--cor-letra-geral);
     transition: 0.5s ease;
-
 }
 
 .primeiro-btn-hero {
@@ -218,25 +243,21 @@ main {
 }
 
 .btn-texto-hero:hover {
-    transition: 0.5s ease;
     transform: translateY(-5px);
-}
-
-.fundo-home {
-    background-image: url("../img/fundohome.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-.hero-conteudo {
-    display: flex;
 }
 
 .hero-imagem {
     display: flex;
+    align-items: center;
+    min-width: 0;
 }
+
+.hero-imagem img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tags flutuantes (Python, Java...) */
 
 .tag {
     padding: 11px 25px;
@@ -269,53 +290,20 @@ main {
     border: 1px solid var(--cor-principal01);
 }
 
-.tags-flutuantes .tag:nth-child(1) {
-    margin-left: -50px;
-}
+.tags-flutuantes .tag:nth-child(1) { margin-left: -50px; }
+.tags-flutuantes .tag:nth-child(2) { margin-left: -10px; }
+.tags-flutuantes .tag:nth-child(3) { margin-left: 30px; }
+.tags-flutuantes .tag:nth-child(4) { margin-left: -10px; }
+.tags-flutuantes .tag:nth-child(5) { margin-left: -50px; }
 
-.tags-flutuantes .tag:nth-child(2) {
-    margin-left: -10px;
-}
-
-.tags-flutuantes .tag:nth-child(3) {
-    margin-left: 30px;
-}
-
-.tags-flutuantes .tag:nth-child(4) {
-    margin-left: -10px;
-}
-
-.tags-flutuantes .tag:nth-child(5) {
-    margin-left: -50px;
-}
-
-.tags-flutuantes .tag:nth-child(1):hover {
-    transition: 0.5s ease;
+.tags-flutuantes .tag:hover {
     transform: translateX(10px);
 }
 
-.tags-flutuantes .tag:nth-child(2):hover {
-    transition: 0.5s ease;
-    transform: translateX(10px);
-}
-
-.tags-flutuantes .tag:nth-child(3):hover {
-    transition: 0.5s ease;
-    transform: translateX(10px);
-}
-
-.tags-flutuantes .tag:nth-child(4):hover {
-    transition: 0.5s ease;
-    transform: translateX(10px);
-}
-
-.tags-flutuantes .tag:nth-child(5):hover {
-    transition: 0.5s ease;
-    transform: translateX(10px);
-}
+/* ---------- HOME: CARDS (carrossel do script.js) ---------- */
 
 .blur-home {
-    width: 1340px;
+    width: 100%;
     height: 132px;
     position: relative;
     top: -80px;
@@ -323,9 +311,27 @@ main {
     filter: blur(30px);
 }
 
+/* O wrapper corta o que sai da tela, senão a página fica mais larga */
+.funcionalidades-wrapper {
+    position: relative;
+    z-index: 1;
+    margin-top: -96px;
+    overflow: hidden;
+}
+
+/* O script.js faz esta faixa correr sozinha */
+.funcionalidades {
+    display: flex;
+    gap: 15px;
+    padding-right: 15px;
+    margin: 0;
+}
+
 .card-funcionalidade {
     width: 349px;
-    height: 123px;
+    flex-shrink: 0;
+    min-height: 123px;
+    padding: 15px;
     background-color: #00152C;
     border: 1px solid #82B1FE;
     border-radius: 20px;
@@ -333,58 +339,48 @@ main {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    flex-shrink: 0;
-}
-
-.funcionalidades {
-    display: flex;
-    gap: 15px;
-    position: relative;
-    top: -96px;
-}
-
-.funcionalidades-wrapper {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: clip;
-    overflow-y: visible;
 }
 
 .card-funcionalidade img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+}
+
+.card-texto {
+    min-width: 0;
+}
+
+.card-texto h3 {
+    font-size: 18px;
 }
 
 .card-texto p {
     font-size: 13px;
-    width: 194px;
 }
 
+/* ---------- HOME: BANNER FINAL ---------- */
+
 .cta-inferior {
-    margin: 0 auto 45px;
+    width: calc(100% - 32px);
+    max-width: 1300px;
+    margin: 40px auto 45px;
+    padding: 20px 50px;
     background-color: rgba(0, 124, 254, 0.2);
-    width: 1300px;
-    height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 50px;
+    gap: 20px;
     border-radius: 20px;
     border: 2px solid var(--cor-principal02);
-    
-    
 }
-.cta-inferior img{
+
+.cta-inferior img {
     width: 120px;
     height: 90px;
 }
 
-.cta-texto{
-    position: relative;
-    right: 130px;
-}
-
-.cta-texto h2{
+.cta-texto h3 {
     font-size: 22px;
     font-weight: 700;
 }
@@ -394,7 +390,7 @@ main {
     color: #DFDFDF;
 }
 
-.btn-cta-inferior{
+.btn-cta-inferior {
     background-color: var(--cor-principal02);
     border: none;
     padding: 14px 25px;
@@ -402,13 +398,14 @@ main {
     font-size: 16px;
     font-weight: 700;
     color: var(--cor-letra-geral);
-    
 }
 
-.fa-arrow-right{
-position: relative;
-top: 1px;
+.fa-arrow-right {
+    position: relative;
+    top: 1px;
 }
+
+/* ---------- PÁGINA SOBRE ---------- */
 
 .sobre-main {
     max-width: 1300px;
@@ -432,10 +429,6 @@ top: 1px;
     font-size: 46px;
     font-weight: 800;
     line-height: 58px;
-}
-
-.sobre-hero .detalhe-titulo-h1 {
-    width: auto;
 }
 
 .sobre-hero p {
@@ -524,10 +517,6 @@ top: 1px;
     font-weight: 800;
 }
 
-.devs-titulo .detalhe-titulo-h1 {
-    width: auto;
-}
-
 .devs-subtitulo {
     margin-bottom: 30px;
     font-size: 16px;
@@ -608,7 +597,81 @@ top: 1px;
     border-color: transparent;
 }
 
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+/* Notebook pequeno / tablet largo: hero continua lado a lado */
 @media (max-width: 1100px) {
+    .nav-home-header {
+        padding: 15px 24px;
+    }
+
+    .logo {
+        gap: 15px;
+    }
+
+    .logo h2 {
+        font-size: 32px;
+    }
+
+    .logo img {
+        width: 64px;
+        height: 62px;
+    }
+
+    .nav-home ul li a {
+        font-size: 17px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+    }
+
+    /* Hero */
+    .escrita-home h1 {
+        font-size: 40px;
+        line-height: 50px;
+        max-width: 440px;
+    }
+
+    .escrita-home p {
+        max-width: 440px;
+    }
+
+    .primeiro-btn-hero {
+        padding: 15px 35px;
+    }
+
+    .hero-imagem {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .hero-imagem img {
+        max-width: 380px;
+        width: 100%;
+    }
+
+    .tags-flutuantes {
+        display: none;
+    }
+
+    /* A barra de blur cobria os botões nessa largura */
+    .blur-home {
+        display: none;
+    }
+
+    /* Carrossel de cards: um pouco menor */
+    .funcionalidades-wrapper {
+        margin-top: 30px;
+    }
+
+    .card-funcionalidade {
+        width: 330px;
+    }
+
+    /* Sobre */
     .sobre-pilares {
         grid-template-columns: 1fr;
     }
@@ -618,71 +681,17 @@ top: 1px;
     }
 }
 
-@media (max-width: 600px) {
-    .sobre-hero h1 {
-        font-size: 32px;
-        line-height: 42px;
-    }
-
-    .devs-lista {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Menu hambúrguer escondido*/
-.menu-toggle {
-    display: none;
-}
-
-.hamburguer {
-    display: none;
-}
-
-/* Telas médias */
-@media (max-width: 1340px) {
-    header {
-        padding: 0 16px;
-    }
-
-    .nav-home-header {
-        width: 100%;
-        max-width: 1299px;
-    }
-
-    .blur-home {
-        width: 100%;
-    }
-
-    .cta-inferior {
-        width: calc(100% - 32px);
-    }
-
-    .funcionalidades {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-}
-
-/* Tablet e celular */
+/* Tablet pequeno e celular: hambúrguer e tudo empilhado */
 @media (max-width: 900px) {
-    body {
-        overflow-x: hidden;
-    }
-
     .fundo-home {
         background-attachment: scroll;
     }
 
-    /* Header e hambúrguer */
     .nav-home-header {
         height: auto;
         padding: 15px 20px;
         flex-wrap: wrap;
         border-radius: 25px;
-    }
-
-    .logo {
-        gap: 12px;
     }
 
     .logo h2 {
@@ -728,6 +737,11 @@ top: 1px;
         margin-top: 20px;
     }
 
+    .login a,
+    .login .btn {
+        width: 100%;
+    }
+
     .nav-home ul {
         flex-direction: column;
         align-items: center;
@@ -736,10 +750,6 @@ top: 1px;
 
     .nav-home-header li a::after {
         left: 50%;
-    }
-
-    .login .btn {
-        width: 100%;
     }
 
     /* Hambúrguer vira X */
@@ -755,9 +765,14 @@ top: 1px;
         transform: translateY(-9px) rotate(-45deg);
     }
 
-    /* Home */
+    /* Hero empilhado */
     main {
         margin: 24px 16px;
+    }
+
+    .hero-conteudo {
+        flex-direction: column;
+        gap: 30px;
     }
 
     .escrita-home {
@@ -765,19 +780,14 @@ top: 1px;
         text-align: center;
     }
 
-    .tag-toco-home {
-        width: auto;
+    .escrita-home h1 {
+        font-size: 36px;
+        line-height: 46px;
         max-width: 100%;
     }
 
-    .escrita-home h1 {
-        width: 100%;
-        font-size: 32px;
-        line-height: 42px;
-    }
-
     .escrita-home p {
-        width: 100%;
+        max-width: 100%;
     }
 
     .hero-botoes {
@@ -785,57 +795,51 @@ top: 1px;
         justify-content: center;
     }
 
-    .hero-conteudo,
     .hero-imagem {
+        flex: none;
+        width: 100%;
         flex-direction: column;
         align-items: center;
-        gap: 30px;
+        gap: 20px;
     }
 
     .hero-imagem img {
-        max-width: 100%;
-        height: auto;
+        max-width: 340px;
     }
 
-    /* Esconde as tags de linguagens */
+    /* Tags de linguagens viram uma fileira de chips */
     .tags-flutuantes {
-        display: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
     }
 
-    .blur-home {
-        display: none;
+    .tags-flutuantes .tag:nth-child(n) {
+        margin-left: 0;
     }
 
-    .funcionalidades {
-        top: 0;
-        margin-top: 30px;
-        flex-direction: column;
-        align-items: center;
+    .tag {
+        padding: 8px 16px;
+        font-size: 14px;
     }
 
+    .tag img {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* Cards do carrossel: tablet pequeno */
     .card-funcionalidade {
-        width: 100%;
-        max-width: 400px;
-        height: auto;
-        padding: 15px;
+        width: 320px;
     }
 
-    .card-texto p {
-        width: auto;
-    }
-
+    /* Banner final empilhado */
     .cta-inferior {
-        height: auto;
-        padding: 30px 20px;
         flex-direction: column;
-        gap: 20px;
+        padding: 30px 20px;
         text-align: center;
-        margin: 40px 16px 30px;
-        width: auto;
-    }
-
-    .cta-texto {
-        right: 0;
     }
 
     /* Sobre */
@@ -859,7 +863,7 @@ top: 1px;
     }
 }
 
-/* Celular pequeno */
+/* Celular */
 @media (max-width: 600px) {
     .logo h2 {
         font-size: 24px;
@@ -875,6 +879,34 @@ top: 1px;
         line-height: 38px;
     }
 
+    .primeiro-btn-hero {
+        padding: 15px 40px;
+    }
+
+    .hero-imagem img {
+        max-width: 260px;
+    }
+
+    /* Cards do carrossel: celular */
+    .card-funcionalidade {
+        width: 280px;
+        min-height: 100px;
+        padding: 12px;
+    }
+
+    .card-funcionalidade img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .card-texto h3 {
+        font-size: 16px;
+    }
+
+    .card-texto p {
+        font-size: 12px;
+    }
+
     .sobre-hero h1 {
         font-size: 28px;
         line-height: 38px;
@@ -888,82 +920,12 @@ top: 1px;
         font-size: 26px;
     }
 
+    .devs-lista {
+        grid-template-columns: 1fr;
+    }
+
     .dev-links {
         flex-wrap: wrap;
         justify-content: center;
-    }
-}
-
-
-/* CARROSSEL DA HOME */
-
-.carrossel-funcionalidades {
-    position: relative;
-    width: 100%;
-    top: -96px;
-}
-
-.carrossel-funcionalidades .funcionalidades {
-    top: 0;
-    overflow-x: auto;
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 15px;
-    padding: 5px 2px;
-    scrollbar-width: none;
-}
-
-.carrossel-funcionalidades .funcionalidades::-webkit-scrollbar {
-    display: none;
-}
-
-.carrossel-funcionalidades .card-funcionalidade {
-    flex: 0 0 calc((100% - 45px) / 4);
-    min-width: 250px;
-}
-
-.carrossel-seta {
-    position: absolute;
-    top: 50%;
-    z-index: 5;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    border: 1px solid #0171FF;
-    border-radius: 50%;
-    background: #253255;
-    color: white;
-    cursor: pointer;
-}
-
-.carrossel-seta:hover {
-    background: #0171FF;
-}
-
-.carrossel-anterior {
-    left: -15px;
-}
-
-.carrossel-proxima {
-    right: -15px;
-}
-
-.carrossel-seta:disabled {
-    cursor: default;
-}
-
-@media (max-width: 900px) {
-    .carrossel-funcionalidades {
-        top: 0;
-        margin-top: 30px;
-    }
-
-    .carrossel-funcionalidades .card-funcionalidade {
-        flex-basis: 85%;
-        min-width: 0;
-    }
-
-    .carrossel-seta {
-        display: none;
     }
 }
