@@ -365,7 +365,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         gabriella: {
             nome: "Gabriella Ferreira",
-            foto: "../assets/img/avatar-gabriella.png"
+            foto: "../assets/img/gabriellaferreira.png"
         }
     };
 
