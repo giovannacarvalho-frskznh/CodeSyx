@@ -542,3 +542,64 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderizarConversa();
 });
+
+
+
+   //CARROSSEL 
+
+ 
+document.addEventListener("DOMContentLoaded", () => {
+    const carrossel = document.querySelector(".funcionalidades");
+    if (!carrossel) return;
+ 
+    const cards = Array.from(
+        carrossel.querySelectorAll(".card-funcionalidade")
+    );
+ 
+    if (cards.length < 2) return;
+ 
+    // Prepara os cards em uma única linha.
+    carrossel.style.display = "flex";
+    carrossel.style.flexDirection = "row";
+    carrossel.style.flexWrap = "nowrap";
+    carrossel.style.justifyContent = "flex-start";
+    carrossel.style.gap = "15px";
+    carrossel.style.width = "max-content";
+    carrossel.style.maxWidth = "none";
+    carrossel.style.willChange = "transform";
+ 
+    // Duplica os cards para formar o ciclo contínuo.
+    cards.forEach(card => {
+        const copia = card.cloneNode(true);
+        copia.setAttribute("aria-hidden", "true");
+        carrossel.appendChild(copia);
+    });
+ 
+    let posicao = 0;
+    let ultimoTempo = 0;
+    const velocidade = 45;
+ 
+    function animar(tempo) {
+        if (!ultimoTempo) ultimoTempo = tempo;
+ 
+        const delta = Math.min(
+            (tempo - ultimoTempo) / 1000,
+            0.05
+        );
+ 
+        ultimoTempo = tempo;
+        posicao += velocidade * delta;
+ 
+        const distanciaCiclo = carrossel.scrollWidth / 2;
+ 
+        if (distanciaCiclo > 0 && posicao >= distanciaCiclo) {
+            posicao -= distanciaCiclo;
+        }
+ 
+        carrossel.style.transform = `translateX(${-posicao}px)`;
+ 
+        requestAnimationFrame(animar);
+    }
+ 
+    requestAnimationFrame(animar);
+});
