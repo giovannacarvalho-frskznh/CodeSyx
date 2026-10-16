@@ -66,6 +66,10 @@
           <i class="fa-regular fa-circle-user"></i>
           <span>Perfil</span>
         </a>
+        <a href="../index.html" class="dash-menu-link" id="btn-sair">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Sair</span>
+        </a>
       </div>
 
       <div class="dash-sidebar-frase">
@@ -407,6 +411,17 @@
   </div>
 
   <script src="../assets/js/script.js"></script>
+
+  <script>
+    // Sair do site: apaga o login e o link leva pra index.html
+    document.getElementById("btn-sair").addEventListener("click", () => {
+      try {
+        localStorage.removeItem("usuarioLogado");
+      } catch {
+        // sem acesso ao armazenamento: só volta pra index
+      }
+    });
+  </script>
 </body>
 
 </html>

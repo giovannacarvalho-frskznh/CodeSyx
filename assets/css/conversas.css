@@ -237,6 +237,7 @@
   word-break: break-word;
 }
 
+/* Resposta da outra pessoa: lado esquerdo */
 .mensagem-recebida {
   align-self: flex-start;
   border: 1px solid var(--azul);
@@ -245,6 +246,9 @@
   color: var(--texto);
 }
 
+/* Mensagem que você envia: lado direito
+   (o script.js usa a classe mensagem-propria) */
+.mensagem-propria,
 .mensagem-enviada {
   align-self: flex-end;
   border-radius: 16px 16px 4px 16px;
