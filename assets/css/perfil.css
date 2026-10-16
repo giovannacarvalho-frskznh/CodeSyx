@@ -1,14 +1,17 @@
 .dash-layout-duas-colunas {
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 240px minmax(0, 1fr);
 }
 
 .perfil-principal {
   min-width: 0;
+  max-width: 100%;
   padding: 28px 32px;
   gap: 32px;
 }
 
 .perfil-topo {
+  min-width: 0;
+  height: auto;
   display: flex;
   align-items: center;
   gap: 28px;
@@ -30,12 +33,14 @@
 
 .perfil-topo-dados {
   flex: 1;
+  min-width: 0;
   padding-left: 20px;
 }
 
 .perfil-nome {
   font-size: 28px;
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .perfil-semestre {
@@ -46,7 +51,9 @@
 
 .perfil-topo-botoes {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 12px;
 }
 
@@ -55,6 +62,7 @@
   padding: 9px 20px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   border-radius: 8px;
   color: var(--branco);
@@ -95,6 +103,7 @@
 }
 
 .perfil-card {
+  min-width: 0;
   padding: 20px 22px;
   min-height: 210px;
   border: 1px solid var(--azul);
@@ -113,12 +122,14 @@
 }
 
 .perfil-card-topo h2 {
+  min-width: 0;
   font-size: 17px;
   font-weight: 700;
 }
 
 .perfil-card-editar {
   margin-left: auto;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -142,17 +153,21 @@
   font-weight: 600;
   line-height: 1.6;
   text-align: center;
+  overflow-wrap: anywhere;
 }
 
+/* Tecnologias: quebram de linha quando não cabem */
 .perfil-techs {
   margin-top: 24px;
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: flex-start;
-  gap: 12px;
+  gap: 16px 22px;
 }
 
 .perfil-tech {
+  min-width: 56px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -165,9 +180,25 @@
   object-fit: contain;
 }
 
+/* Ícone das tecnologias adicionadas pelo usuário (sem imagem) */
+.perfil-tech > i {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--azul);
+  border-radius: 50%;
+  background: var(--azul-escuro);
+  color: var(--verde-claro);
+  font-size: 20px;
+}
+
 .perfil-tech span {
+  max-width: 90px;
   font-size: 10px;
   font-weight: 600;
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 
 .perfil-dado {
@@ -186,29 +217,83 @@
 }
 
 .perfil-dado-valor {
+  min-width: 0;
   font-size: 12px;
   font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/*  POP-UPS DE EDITAR (criados pelo perfil.js)  */
+/* O perfil.js injeta o CSS base dos pop-ups depois deste arquivo.
+   Por isso estes seletores são mais específicos: pra ganhar dele. */
+
+/* Fundo escuro: sempre do tamanho exato da tela, sem grade que estica */
+body .pf-modal-fundo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+/* Caixa do pop-up */
+body .pf-modal-fundo .pf-modal {
+  width: 100%;
+  max-width: 440px;
+  overflow-x: hidden;
+}
+
+.pf-modal .pf-campos,
+.pf-modal .pf-campo,
+.pf-modal .pf-grade,
+.pf-modal .pf-check {
+  min-width: 0;
+}
+
+.pf-modal .pf-campo input,
+.pf-modal .pf-campo textarea {
+  width: 100%;
+  min-width: 0;
+}
+
+.pf-modal .pf-check input {
+  flex-shrink: 0;
+}
+
+/*RESPONSIVO DOS QUADROS */
+
+@media (max-width: 1200px) {
+  .perfil-cards {
+    gap: 28px 32px;
+  }
 }
 
 @media (max-width: 1000px) {
+  /* Trava a página na largura da tela: nada empurra pra fora */
   .dash-layout-duas-colunas {
-    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100vw;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .perfil-principal {
+    width: 100%;
+    max-width: 100vw;
     padding: 20px;
   }
 
   .perfil-cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 20px;
   }
 }
 
-@media (max-width: 700px) {
+/* Tablet: foto e nome em cima, botões na linha de baixo */
+@media (max-width: 900px) {
   .perfil-topo {
-    flex-direction: column;
-    text-align: center;
+    flex-wrap: wrap;
+    gap: 20px;
   }
 
   .perfil-topo-dados {
@@ -216,7 +301,108 @@
   }
 
   .perfil-topo-botoes {
-    flex-wrap: wrap;
-    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* Celular: tudo em coluna, botões lado a lado ou empilhados */
+@media (max-width: 700px) {
+  .perfil-topo {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 20px 16px;
+    text-align: center;
+  }
+
+  .perfil-topo-dados {
+    width: 100%;
+    flex: none;
+  }
+
+  .perfil-nome {
+    font-size: 24px;
+  }
+
+  .perfil-topo-botoes {
+    width: 100%;
+    flex: none;
+  }
+
+  .perfil-botao-foto,
+  .perfil-botao-editar {
+    flex: 1 1 140px;
+  }
+
+  .perfil-card {
+    min-height: 0;
+    padding: 18px 16px;
+  }
+}
+
+/* POP-UPS NO CELULAR*/
+
+@media (max-width: 600px) {
+  body .pf-modal-fundo {
+    padding: 10px;
+    align-items: flex-end;
+  }
+
+  /* A largura é a da tela menos as margens (10px de cada lado) */
+  body .pf-modal-fundo .pf-modal {
+    width: calc(100vw - 20px);
+    max-width: calc(100vw - 20px);
+    max-height: 92vh;
+    max-height: 92dvh;
+    padding: 18px 16px;
+    gap: 14px;
+  }
+
+  .pf-modal h2 {
+    font-size: 18px;
+  }
+
+  /* 16px evita o zoom automático do iPhone ao digitar */
+  .pf-modal .pf-campo input,
+  .pf-modal .pf-campo textarea {
+    font-size: 16px;
+  }
+
+  .pf-modal .pf-grade {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pf-modal .pf-check {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .pf-modal .pf-check span {
+    overflow-wrap: anywhere;
+  }
+
+  .pf-modal .pf-previa {
+    width: 130px;
+    height: 130px;
+  }
+
+  /* Botões em largura total, com "Salvar" em cima */
+  .pf-modal .pf-acoes {
+    flex-direction: column-reverse;
+  }
+
+  .pf-modal .pf-extras {
+    flex-direction: column;
+  }
+
+  .pf-modal .pf-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 340px) {
+  .pf-modal .pf-grade {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
